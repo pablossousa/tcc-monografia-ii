@@ -7,7 +7,7 @@ Um dos trabalhos mais próximos ao contexto deste estudo é o desenvolvido por S
 
 A solução apresentada por Silva Júnior \cite{silvajunior2025} utiliza a biometria por impressão digital como mecanismo de autenticação dos estudantes. Essa abordagem apresenta vantagens em relação a controles manuais, pois associa o acesso a uma característica biométrica do usuário e reduz a possibilidade de uso indevido por terceiros. Entretanto, essa escolha implica a necessidade de sensores específicos, além do armazenamento de um dado biométrico considerado altamente sensível. Além disso, o foco do trabalho está voltado principalmente à integração dos módulos do sistema, sem uma análise aprofundada de representações vetoriais, métricas de similaridade ou do comportamento do sistema sob diferentes limiares de decisão.
 
-O presente trabalho compartilha com a proposta de Silva Júnior \cite{silvajunior2025} o mesmo cenário de aplicação, porém adota uma abordagem técnica distinta. Em vez de utilizar impressão digital, propõe-se o uso de reconhecimento facial baseado em \textit{embeddings}, explorando modelos pré-treinados e métricas de similaridade no espaço vetorial. Essa escolha possibilita o reaproveitamento de equipamentos já existentes, como câmeras comuns, reduzindo a necessidade de \textit{hardware} dedicado. Além disso, o foco desloca-se para a análise do comportamento das representações faciais no espaço métrico, considerando a separação entre identidades e as taxas FAR e FRR em função do limiar de decisão.
+O presente trabalho compartilha com a proposta de Silva Júnior \cite{silvajunior2025} o mesmo cenário de aplicação, porém adota uma abordagem técnica distinta. Em vez de utilizar impressão digital, propõe-se o uso de reconhecimento facial baseado em \textit{embeddings}, explorando modelos pré-treinados e métricas de similaridade no espaço vetorial. Essa escolha possibilita o reaproveitamento de equipamentos já existentes, como câmeras comuns, reduzindo a necessidade de \textit{hardware} dedicado. Além disso, o foco desloca-se para a análise do comportamento das representações faciais no espaço métrico, considerando a separação entre identidades e as taxas FAR e FRR em função do limiar de decisão. Além disso, o presente trabalho inclui o desenvolvimento de um protótipo funcional de reconhecimento facial em tempo real, contemplando mecanismos de cadastro, gerenciamento e identificação automática de usuários, permitindo avaliar não apenas a viabilidade conceitual da abordagem, mas também sua aplicação prática em um cenário próximo ao uso real.
 
 Outro trabalho relevante é a dissertação de Rocha, intitulada \textit{Reconhecimento facial de alunos de escola pública no uso de ônibus escolar em cidade inteligente} \cite{rocha2023}. Nesse estudo, o autor propõe uma plataforma para monitoramento de estudantes com o objetivo de mitigar problemas como evasão escolar e desaparecimento de crianças e adolescentes. O sistema utiliza reconhecimento facial para identificar os alunos em diferentes pontos do trajeto escolar e integra aplicações \textit{web} e móveis para acompanhamento por responsáveis e autoridades. Do ponto de vista técnico, são exploradas diferentes técnicas de inteligência artificial, incluindo descritores clássicos e redes neurais convolucionais, com resultados experimentais expressivos em termos de acurácia e demais métricas de classificação.
 
@@ -15,6 +15,41 @@ A proposta de Rocha \cite{rocha2023} evidencia o potencial do reconhecimento fac
 
 O presente trabalho aproxima-se da proposta de Rocha \cite{rocha2023} ao adotar o reconhecimento facial como tecnologia central, mas diferencia-se ao enquadrar explicitamente o problema no contexto do aprendizado métrico. Utilizam-se \textit{embeddings} faciais e métricas de distância para estudar a separação entre identidades e o compromisso entre segurança e usabilidade por meio das taxas \acs{FAR} e \acs{FRR}. Além disso, enquanto Rocha trabalha com dados reais de estudantes, esta pesquisa opta pelo uso de uma base de dados sintética, de modo a mitigar riscos éticos e legais associados ao tratamento de dados biométricos sensíveis.
 
-De forma geral, os dois trabalhos analisados demonstram a relevância do uso de biometria em ambientes educacionais, seja por meio de impressão digital para controle de acesso a serviços institucionais \cite{silvajunior2025}, seja por meio de reconhecimento facial para monitoramento de estudantes \cite{rocha2023}. A proposta deste trabalho insere-se nesse mesmo panorama, mas contribui ao direcionar o foco para a análise do reconhecimento facial baseado em \textit{embeddings} como alternativa ao uso de cartões \acs{NFC}, enfatizando a simplicidade de integração, o reaproveitamento de infraestrutura existente e a avaliação quantitativa do comportamento do sistema sob diferentes critérios de decisão.
+De forma geral, os dois trabalhos analisados demonstram a relevância do uso de biometria em ambientes educacionais, seja por meio de impressão digital para controle de acesso a serviços institucionais \cite{silvajunior2025}, seja por meio de reconhecimento facial para monitoramento de estudantes \cite{rocha2023}. A proposta deste trabalho insere-se nesse mesmo panorama, mas diferencia-se ao combinar a validação experimental de técnicas de reconhecimento facial baseadas em \textit{embeddings} com o desenvolvimento de um protótipo funcional de identificação biométrica em tempo real. Além da análise de métricas como \acs{FAR} e \acs{FRR}, a solução incorpora mecanismos de cadastro multi-pose, agregação temporal das decisões e proteção criptográfica dos dados biométricos armazenados, buscando aproximar a avaliação teórica de um cenário real de utilização.
 
-A análise dos trabalhos relacionados permitiu identificar diferentes abordagens para o uso de biometria em contextos educacionais e de controle de acesso, bem como suas principais características e limitações. Com base nessas referências e nos conceitos discutidos anteriormente, o próximo capítulo apresenta a metodologia adotada neste trabalho, descrevendo a construção da base de dados, o \textit{pipeline} de reconhecimento facial e o protocolo experimental utilizado para avaliar a proposta.
+A ~\ref{tab:comparacao_trabalhos} apresenta uma síntese das principais características dos trabalhos analisados e da proposta desenvolvida nesta pesquisa, destacando os aspectos que diferenciam a solução proposta das abordagens encontradas na literatura.
+
+\begin{table}[H]
+\centering
+\caption{Comparação entre os trabalhos relacionados e a proposta desenvolvida}
+\label{tab:comparacao_trabalhos}
+\begin{tabular}{l|c|c|c}
+\hline
+\textbf{Característica} & \textbf{Silva Júnior} & \textbf{Rocha} & \textbf{Trabalho Proposto} \\
+\hline
+Contexto educacional & \checkmark & \checkmark & \checkmark \\
+\hline
+Controle de acesso & \checkmark & \xmark & \checkmark \\
+\hline
+Reconhecimento facial & \xmark & \checkmark & \checkmark \\
+\hline
+Biometria por impressão digital & \checkmark & \xmark & \xmark \\
+\hline
+Reconhecimento baseado em embeddings & \xmark & \xmark & \checkmark \\
+\hline
+Análise de FAR e FRR & \xmark & \xmark & \checkmark \\
+\hline
+Cadastro multi-pose & \xmark & \xmark & \checkmark \\
+\hline
+Agregação temporal de decisões & \xmark & \xmark & \checkmark \\
+\hline
+Proteção criptográfica dos dados biométricos & \xmark & \xmark & \checkmark \\
+\hline
+Protótipo funcional & \checkmark & \checkmark & \checkmark \\
+\hline
+\end{tabular}
+\caption*{Fonte: Elaborado pelo autor (2026).}
+\end{table}
+
+
+A análise dos trabalhos relacionados permitiu identificar diferentes abordagens para o uso de biometria em contextos educacionais e de controle de acesso, bem como suas principais características e limitações. As comparações realizadas evidenciaram oportunidades para a aplicação de reconhecimento facial baseado em \textit{embeddings} como alternativa aos mecanismos tradicionais de identificação. Com base nessas referências e nos conceitos discutidos anteriormente, o próximo capítulo apresenta a metodologia adotada neste trabalho, abrangendo tanto a etapa de validação experimental da abordagem quanto o desenvolvimento do protótipo funcional de reconhecimento facial, incluindo sua arquitetura, componentes principais e procedimentos de avaliação.

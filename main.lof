@@ -1,15 +1,16 @@
 \babel@toc {brazil}{}\relax 
 \babel@toc {english}{}\relax 
 \babel@toc {brazil}{}\relax 
-\contentsline {figure}{\numberline {Figura\hfill 1 -- }{\ignorespaces Modos de operação do NFC}}{7}{figure.caption.44}%
-\contentsline {figure}{\numberline {Figura\hfill 2 -- }{\ignorespaces Similaridade entre dois vetores com base no modelo de espaço vetorial.}}{13}{figure.caption.50}%
-\contentsline {figure}{\numberline {Figura\hfill 3 -- }{\ignorespaces Espaço de \textit {embeddings} antes e após o aprendizado.}}{18}{figure.caption.51}%
-\contentsline {figure}{\numberline {Figura\hfill 4 -- }{\ignorespaces \textit {Pipeline} típico de reconhecimento facial}}{21}{figure.caption.52}%
-\contentsline {figure}{\numberline {Figura\hfill 5 -- }{\ignorespaces \textit {Pipeline} metodológico adotado.}}{31}{figure.caption.78}%
-\contentsline {figure}{\numberline {Figura\hfill 6 -- }{\ignorespaces Variações sintéticas de uma identidade facial.}}{35}{figure.caption.85}%
-\contentsline {figure}{\numberline {Figura\hfill 7 -- }{\ignorespaces Distribuição das distâncias cosseno no espaço de \textit {embeddings}}}{40}{figure.caption.94}%
-\contentsline {figure}{\numberline {Figura\hfill 8 -- }{\ignorespaces Exemplo de par da mesma identidade corretamente aceitos}}{43}{figure.caption.110}%
-\contentsline {figure}{\numberline {Figura\hfill 9 -- }{\ignorespaces Exemplo de par de identidades diferentes corretamente rejeitados}}{43}{figure.caption.111}%
+\contentsline {figure}{\numberline {Figura\hfill 1 -- }{\ignorespaces Modos de operação do NFC}}{8}{figure.caption.48}%
+\contentsline {figure}{\numberline {Figura\hfill 2 -- }{\ignorespaces Similaridade entre dois vetores com base no modelo de espaço vetorial.}}{15}{figure.caption.54}%
+\contentsline {figure}{\numberline {Figura\hfill 3 -- }{\ignorespaces Espaço de \textit {embeddings} antes e após o aprendizado.}}{20}{figure.caption.55}%
+\contentsline {figure}{\numberline {Figura\hfill 4 -- }{\ignorespaces Etapas do MTCNN para detecção facial e localização de pontos de referência.}}{23}{figure.caption.62}%
+\contentsline {figure}{\numberline {Figura\hfill 5 -- }{\ignorespaces \textit {Pipeline} típico de reconhecimento facial}}{25}{figure.caption.63}%
+\contentsline {figure}{\numberline {Figura\hfill 6 -- }{\ignorespaces \textit {Pipeline} metodológico adotado.}}{35}{figure.caption.85}%
+\contentsline {figure}{\numberline {Figura\hfill 7 -- }{\ignorespaces Variações sintéticas de uma identidade facial.}}{39}{figure.caption.92}%
+\contentsline {figure}{\numberline {Figura\hfill 8 -- }{\ignorespaces Distribuição das distâncias cosseno no espaço de \textit {embeddings}}}{44}{figure.caption.101}%
+\contentsline {figure}{\numberline {Figura\hfill 9 -- }{\ignorespaces Exemplo de par da mesma identidade corretamente aceitos}}{47}{figure.caption.119}%
+\contentsline {figure}{\numberline {Figura\hfill 10 -- }{\ignorespaces Exemplo de par de identidades diferentes corretamente rejeitados}}{48}{figure.caption.120}%
 \babel@toc {brazil}{}\relax 
 \babel@toc {brazil}{}\relax 
 \babel@toc {brazil}{}\relax 

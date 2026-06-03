@@ -13,7 +13,9 @@ Os resultados apresentados a seguir concentram-se na análise da separabilidade 
 
 Esta seção analisa a separabilidade das representações faciais no espaço de \textit{embeddings} a partir da distribuição das distâncias cosseno calculadas entre pares de imagens. O objetivo é verificar se amostras da mesma identidade apresentam maior similaridade entre si do que amostras pertencentes a identidades distintas.
 
-Para isso, todas as combinações possíveis de pares foram comparadas e classificadas em dois grupos: pares da mesma identidade, formados por imagens diferentes associadas ao mesmo identificador, e pares de identidades diferentes, formados por imagens pertencentes a indivíduos distintos. No experimento realizado, foram obtidos 1800 pares da mesma identidade e 717.600 pares de identidades diferentes. Essa diferença numérica é esperada, uma vez que o número de pares impostores cresce de forma combinatória quando se consideram todas as combinações entre identidades distintas, enquanto os pares genuínos dependem apenas do número de variações disponíveis por identidade.
+Para isso, todas as combinações possíveis de pares foram comparadas e classificadas em dois grupos: pares da mesma identidade, formados por imagens diferentes associadas ao mesmo identificador, e pares de identidades diferentes, formados por imagens pertencentes a indivíduos distintos. No experimento realizado, foram obtidos 1.800 pares da mesma identidade e 717.600 pares de identidades diferentes. Essa diferença numérica é esperada, uma vez que o número de pares impostores cresce de forma combinatória quando se consideram todas as combinações entre identidades distintas, enquanto os pares genuínos dependem apenas do número de variações disponíveis por identidade.
+
+A ~\ref{fig:result1} apresenta a distribuição das distâncias cosseno para ambos os grupos. Observa-se que os pares da mesma identidade concentram-se em valores menores de distância, enquanto os pares de identidades diferentes apresentam distâncias predominantemente maiores, indicando separação entre os grupos no espaço de \textit{embeddings}. O limiar de referência de 0,3 é exibido apenas como apoio visual, ilustrando a região em que ocorreria a decisão de correspondência, sem ser utilizado nesta etapa para classificação.
 
 \begin{figure}[H]
     \centering
@@ -23,8 +25,6 @@ Para isso, todas as combinações possíveis de pares foram comparadas e classif
         \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
     \end{minipage}
 \end{figure}
-
-A \ref{fig:result1} apresenta a distribuição das distâncias cosseno para ambos os grupos. Observa-se que os pares da mesma identidade concentram-se em valores menores de distância, enquanto os pares de identidades diferentes apresentam distâncias predominantemente maiores, indicando separação entre os grupos no espaço de \textit{embeddings}. O limiar de referência de 0,3 é exibido apenas como apoio visual, ilustrando a região em que ocorreria a decisão de correspondência, sem ser utilizado nesta etapa para classificação.
 
 De forma geral, os resultados indicam que o espaço de \textit{embeddings} apresenta separabilidade adequada entre identidades, constituindo a base para as análises quantitativas de desempenho apresentadas a seguir.
 
@@ -37,6 +37,8 @@ Nesta seção é avaliado o desempenho do sistema de reconhecimento facial por m
 Para essa avaliação, foram considerados 719.400 pares de comparação, obtidos a partir de 1200 amostras faciais com \textit{embeddings} válidos. Cada par foi classificado de acordo com sua identidade real (mesma identidade ou identidades distintas) e comparado com base na distância cosseno. A decisão de correspondência foi tomada comparando-se essa distância com um valor de \textit{threshold}, sendo considerada uma correspondência positiva quando a distância é inferior ao limiar.
 
 O valor de 719.400 é consistente com a fórmula do total pares possíveis, uma vez que esse número corresponde a $\frac{1200 \times 1199}{2}$ $\Big(\frac{N\times (N-1)}{2}\Big)$ combinações possíveis entre vetores válidos.
+
+A tabela abaixo apresenta o desempenho do sistema para diferentes valores de \textit{threshold}. Observa-se que, conforme o limiar aumenta, surgem falsos positivos e a \acs{FAR} cresce, enquanto a \acs{FRR} permanece nula.
 
 \begin{table}[H]
 \centering

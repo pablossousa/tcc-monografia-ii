@@ -1,6 +1,6 @@
 \chapter{Introdução}
 
-Sistemas de controle de acesso baseados em cartões de proximidade, como aqueles que utilizam tecnologias \acs{RFID} e \acs{NFC}, são amplamente empregados em ambientes institucionais por sua simplicidade operacional e facilidade de integração. No contexto do \acs{CEFET-MG}, esse tipo de solução é utilizado em diferentes serviços do cotidiano acadêmico, como o acesso às catracas da portaria, o empréstimo de livros na biblioteca e o pagamento de refeições no restaurante universitário. Embora funcionais, esses sistemas baseiam-se essencialmente na posse de um objeto físico, o que implica limitações práticas e de segurança, como perdas, extravios, compartilhamento indevido e a necessidade de reposição constante de cartões.
+Sistemas de controle de acesso baseados em cartões de proximidade, como aqueles que utilizam tecnologias \textit{Radio Frequency Identification} (\acs{RFID}) e \textit{Near Field Communication} (\acs{NFC}), são amplamente empregados em ambientes institucionais por sua simplicidade operacional e facilidade de integração. No contexto do \acs{CEFET-MG}, esse tipo de solução é utilizado em diferentes serviços do cotidiano acadêmico, como o acesso às catracas da portaria, o empréstimo de livros na biblioteca e o pagamento de refeições no restaurante universitário. Embora funcionais, esses sistemas baseiam-se essencialmente na posse de um objeto físico, o que implica limitações práticas e de segurança, como perdas, extravios, compartilhamento indevido e a necessidade de reposição constante de cartões.
 
 Como alternativa, sistemas biométricos buscam associar o processo de autenticação diretamente à identidade do indivíduo, explorando características físicas ou comportamentais, como a face ou a impressão digital \cite{jain2004biometric, bolle2013guide}. Entre as diferentes modalidades, o reconhecimento facial destaca-se por permitir autenticação sem contato físico e por utilizar dispositivos de captura amplamente disponíveis, como câmeras. Em abordagens modernas, a identidade não é verificada por comparação direta de imagens, mas por meio de representações vetoriais compactas, conhecidas como \textit{embeddings}, que permitem medir a similaridade entre faces no espaço vetorial \cite{schroff2015facenet}. Essa forma de representação está inserida no paradigma do aprendizado métrico, no qual o objetivo é organizar o espaço de características de modo que amostras da mesma identidade fiquem próximas entre si e amostras de identidades diferentes fiquem mais distantes \cite{bellet2015survey, ge2018hierarchical}.
 
@@ -8,11 +8,11 @@ O uso de técnicas de aprendizado profundo para reconhecimento facial, incluindo
 
 Diversos autores já investigaram o uso de biometria em ambientes educacionais e em sistemas de controle de acesso, empregando diferentes modalidades e arquiteturas. Entretanto, essas propostas geralmente partem de premissas e contextos distintos, como o uso de sensores específicos ou o desenvolvimento de sistemas completos do zero. O presente trabalho diferencia-se por direcionar o foco à realidade do \acs{CEFET-MG} e por investigar a viabilidade de substituir os cartões físicos atualmente utilizados por um mecanismo de autenticação baseado em reconhecimento facial, concebido como um módulo adicional a sistemas já existentes.
 
-Dessa forma, a pergunta de pesquisa que orienta este trabalho pode ser formulada da seguinte maneira: \textit{é possível substituir os cartões físicos utilizados na cobrança de refeições e no controle de acesso no âmbito do \acs{CEFET-MG} por um sistema baseado em reconhecimento facial, mantendo níveis adequados de confiabilidade e viabilidade técnica?} Para responder a essa questão, o estudo adota uma abordagem experimental fundamentada no uso de \textit{embeddings} faciais e métricas de similaridade, avaliando o comportamento do sistema sob diferentes critérios de decisão.
+Dessa forma, a pergunta de pesquisa que orienta este trabalho pode ser formulada da seguinte maneira: \textit{é possível substituir os cartões físicos utilizados na cobrança de refeições e no controle de acesso no âmbito do \acs{CEFET-MG} por um sistema baseado em reconhecimento facial, mantendo níveis adequados de confiabilidade e viabilidade técnica?} Para responder a essa questão, o estudo foi desenvolvido em duas etapas complementares. Inicialmente, realizou-se uma validação experimental da abordagem por meio da análise de \textit{embeddings} faciais e métricas biométricas de desempenho. Em seguida, foi desenvolvido um protótipo funcional de reconhecimento facial em tempo real, permitindo avaliar a aplicabilidade prática da solução em um cenário próximo ao uso real. Dessa forma, o trabalho combina evidências experimentais e implementação prática para analisar a viabilidade da substituição dos cartões físicos por mecanismos de autenticação biométrica.
 
 \section{Objetivo Geral}
 
-O objetivo geral deste trabalho é avaliar a viabilidade tecnológica do uso de reconhecimento facial baseado em \textit{embeddings} como alternativa aos cartões \acs{NFC} atualmente utilizados no controle de acesso, empréstimo de livros e na cobrança de refeições no \acs{CEFET-MG}.
+O objetivo geral deste trabalho é avaliar a viabilidade tecnológica do uso de reconhecimento facial baseado em \textit{embeddings} como alternativa aos cartões \acs{NFC} atualmente utilizados no controle de acesso, empréstimo de livros e cobrança de refeições no \acs{CEFET-MG}, por meio da validação experimental da abordagem e do desenvolvimento de um protótipo funcional de reconhecimento facial em tempo real.
 
 \section{Objetivos Específicos}
 
@@ -23,6 +23,8 @@ Como desdobramento do objetivo geral, definem-se os seguintes objetivos específ
     \item Implementar um \textit{pipeline} de reconhecimento facial utilizando modelos pré-treinados para extração de \textit{embeddings} faciais e métricas de similaridade no espaço vetorial.
     \item Avaliar experimentalmente a capacidade do sistema em verificar e identificar identidades, analisando métricas como \acs{FAR} e \acs{FRR} em função do limiar de decisão.
     \item Verificar se os resultados obtidos indicam a viabilidade técnica da substituição dos cartões físicos por um mecanismo de autenticação baseado em reconhecimento facial no contexto proposto.
+    \item Desenvolver um protótipo funcional de reconhecimento facial em tempo real, incluindo mecanismos de cadastro, gerenciamento e identificação de usuários.
+    \item Implementar estratégias para aumento da robustez do reconhecimento, como cadastro multi-pose, avaliação de qualidade das capturas e votação temporal.
 \end{itemize}
 
 \section{Organização do Trabalho}
@@ -33,5 +35,5 @@ Este trabalho está organizado da seguinte forma:
     \item O \ref{chap:trabalhos-relacionados} discute os trabalhos relacionados, situando a proposta deste estudo no contexto da literatura.
     \item O \ref{chap:metodologia} descreve a metodologia adotada, incluindo a construção da base de dados sintética, o \textit{pipeline} de reconhecimento e o protocolo experimental.
     \item O \ref{chap:resultados} apresenta os resultados obtidos e a respectiva discussão.
-    \item O \ref{chap:conclusao} apresenta as conclusões e considerações finais do trabalho.
+    \item O \ref{chap:conclusao} apresenta as conclusões do \textit{pipeline} proposto..
 \end{itemize}
