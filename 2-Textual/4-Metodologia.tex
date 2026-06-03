@@ -3,6 +3,8 @@
 
 Este trabalho adota uma metodologia experimental com o objetivo de avaliar a viabilidade tecnológica do uso de reconhecimento facial como alternativa ao controle de acesso baseado em cartões \acs{NFC}, no contexto acadêmico do \acs{CEFET-MG}.
 
+\section{Experimentação com base de dados sintética}
+
 A \ref{fig:diagrama1} apresenta uma visão geral do \textit{pipeline} metodológico adotado neste trabalho, destacando as principais etapas do processo experimental, desde a aquisição das imagens faciais até a avaliação do reconhecimento para fins de controle de acesso.
 
 \begin{figure}[!htb]
@@ -18,7 +20,7 @@ Nesse contexto, busca-se verificar se \textit{embeddings} faciais extraídos por
 
 %---------------------------------------------------------
 
-\section{Construção da base de dados sintética}
+\subsection{Construção da base de dados sintética}
 
 A construção da base de dados utilizada neste estudo teve como objetivo viabilizar a realização de experimentos de reconhecimento facial sem a utilização de dados biométricos reais, em conformidade com princípios éticos e com a \acs{LGPD} (Lei nº 13.709/2018) \cite{lgpd2018lei}. Para esse fim, foi empregada uma base de imagens faciais sintéticas geradas artificialmente por meio de redes generativas adversariais (\acs{GANs}), disponibilizadas publicamente pelo projeto \textit{This Person Does Not Exist}, o qual produz imagens fotorrealistas de rostos inexistentes, disponível em \cite{thispersondoesnotexist}.
 
@@ -32,7 +34,7 @@ Essa organização possibilita a realização de experimentos de reconhecimento 
 
 %---------------------------------------------------------
 
-\section{Modelagem do cadastro de identidades}
+\subsection{Modelagem do cadastro de identidades}
 
 Após a construção e organização da base de dados sintética, procedeu-se à modelagem do cadastro de identidades a ser utilizado nos experimentos de reconhecimento facial. Essa modelagem teve como objetivo estruturar as informações de cada indivíduo de forma padronizada, facilitando o armazenamento, o processamento e a reprodutibilidade das etapas subsequentes da metodologia.
 
@@ -42,7 +44,7 @@ Com o intuito de organizar adequadamente os experimentos e consolidar as informa
 
 %---------------------------------------------------------
 
-\section{Validação funcional do pipeline com modelo geométrico (Prova de Conceito)}
+\subsection{Validação funcional do pipeline com modelo geométrico (Prova de Conceito)}
 
 Como etapa inicial do estudo de viabilidade, foi implementada uma abordagem baseada na extração de características geométricas do rosto, utilizando o modelo MediaPipe FaceMesh \cite{mlkit_face_mesh}. O objetivo desta etapa não foi estabelecer uma linha de base (\textit{baseline}) competitiva para as métricas finais de reconhecimento, mas sim atuar como uma Prova de Conceito (\acs{PoC}) estritamente funcional. Buscou-se validar a integração e o funcionamento lógico dos \textit{scripts} desenvolvidos para o \textit{pipeline} de processamento, contemplando a detecção facial, a extração de características em formato de vetor e o cálculo da distância cosseno em um cenário simplificado de busca 1:N.
 
@@ -54,7 +56,7 @@ Essa validação inicial do fluxo de trabalho confirmou que a arquitetura propos
 
 %---------------------------------------------------------
 
-\section{Geração de variações sintéticas das imagens}
+\subsection{Geração de variações sintéticas das imagens}
 
 Com o objetivo de aumentar a diversidade das amostras disponíveis para cada identidade e simular variações comuns no processo de captura de imagens faciais em ambientes reais, foi realizada a geração de variações sintéticas das imagens originais presentes no conjunto de desenvolvimento. Essa etapa visa tornar o processo de avaliação mais robusto frente a alterações de condições que podem ocorrer em cenários de controle de acesso, como mudanças de iluminação, pequenas variações de pose e degradações na qualidade da imagem.
 
@@ -101,7 +103,7 @@ A geração dessas variações sintéticas é particularmente relevante no conte
 
 %---------------------------------------------------------
 
-\section{Extração de embeddings faciais por modelo pré-treinado}
+\subsection{Extração de embeddings faciais por modelo pré-treinado}
 
 Após a geração das variações sintéticas das imagens faciais, procedeu-se à extração de \textit{embeddings} faciais por meio de um modelo de reconhecimento facial pré-treinado baseado em aprendizado profundo. Essa etapa tem como objetivo representar cada face em um espaço vetorial no qual amostras da mesma identidade apresentem maior proximidade entre si, enquanto identidades distintas sejam mapeadas para regiões mais distantes, característica essencial para sistemas de reconhecimento facial baseados em métricas de similaridade \cite{ge2018hierarchical}.
 
@@ -113,7 +115,7 @@ Os \textit{embeddings} extraídos foram associados às respectivas identidades e
 
 %---------------------------------------------------------
 
-\section{Definição da métrica de similaridade}
+\subsection{Definição da métrica de similaridade}
 
 Com os \textit{embeddings} faciais extraídos e associados às identidades, definiu-se o método de comparação entre amostras no espaço vetorial, conforme o paradigma de reconhecimento baseado em aprendizado métrico \cite{schroff2015facenet}.
 
@@ -124,7 +126,7 @@ A decisão de correspondência foi determinada por um limiar $\tau$ (\textit{thr
 
 %---------------------------------------------------------
 
-\section{Protocolo experimental de avaliação}
+\subsection{Protocolo experimental de avaliação}
 
 O protocolo experimental adotado neste trabalho tem como finalidade avaliar o comportamento das representações faciais no espaço de \textit{embeddings} e verificar a capacidade da abordagem proposta em distinguir identidades distintas por meio de métricas de similaridade. Para isso, foram definidas estratégias de comparação entre amostras faciais, bem como métricas quantitativas para análise do desempenho do sistema, sem a realização de ajustes ou treinamentos adicionais dos modelos empregados.
 
@@ -137,3 +139,21 @@ Como métricas de avaliação, foram consideradas a taxa de falsa aceitação (\
 Esse protocolo experimental foi aplicado tanto à abordagem inicial baseada em características geométricas quanto à abordagem baseada em \textit{embeddings} extraídos por modelo pré-treinado, permitindo uma avaliação consistente do comportamento das diferentes representações faciais consideradas neste estudo.
 
 A metodologia apresentada definiu o conjunto de procedimentos adotados para a construção da base de dados, a implementação do \textit{pipeline} de reconhecimento facial e o protocolo experimental de avaliação. A partir dessa configuração experimental, o capítulo a seguir apresenta os resultados obtidos e discute o comportamento do sistema proposto diante das métricas e cenários avaliados.
+
+\section{Desenvolvimento do protótipo funcional de reconhecimento facial em tempo real}
+
+\subsection{Arquitetura geral do sistema}
+
+\subsection{Tecnologias utilizadas}
+
+\subsection{Cadastro de usuários}
+
+\subsection{Armazenamento seguro das identidades}
+
+\subsection{Reconhecimento facial em tempo real}
+
+\subsection{Votação temporal}
+
+\subsection{Digitação automática de credenciais}
+
+\subsection{Interface Gráfica}
