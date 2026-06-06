@@ -2586,6 +2586,15 @@
     <bcf:citekey order="115" intorder="1">schroff2015facenet</bcf:citekey>
     <bcf:citekey order="116" intorder="1">jain2004biometric</bcf:citekey>
     <bcf:citekey order="117" intorder="1">jain2004biometric</bcf:citekey>
+    <bcf:citekey order="118" intorder="1">python_docs</bcf:citekey>
+    <bcf:citekey order="119" intorder="1">opencv_python_docs</bcf:citekey>
+    <bcf:citekey order="120" intorder="1">tkinter_docs</bcf:citekey>
+    <bcf:citekey order="121" intorder="1">facenet_pytorch_repo</bcf:citekey>
+    <bcf:citekey order="122" intorder="1">numpy_docs</bcf:citekey>
+    <bcf:citekey order="123" intorder="1">sqlite_docs</bcf:citekey>
+    <bcf:citekey order="124" intorder="1">cryptography_fernet_docs</bcf:citekey>
+    <bcf:citekey order="125" intorder="1">pillow_docs</bcf:citekey>
+    <bcf:citekey order="126" intorder="1">pynput_docs</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

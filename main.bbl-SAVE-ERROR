@@ -19,40 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
-    \entry{anderson2020security}{book}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=0496e0f930cf8ad164981c51cafb41f2}{%
-           family={Anderson},
-           familyi={A\bibinitperiod},
-           given={Ross\bibnamedelima J.},
-           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {Hoboken, NJ, USA}%
-      }
-      \list{publisher}{1}{%
-        {Wiley}%
-      }
-      \strng{namehash}{0496e0f930cf8ad164981c51cafb41f2}
-      \strng{fullhash}{0496e0f930cf8ad164981c51cafb41f2}
-      \strng{fullhashraw}{0496e0f930cf8ad164981c51cafb41f2}
-      \strng{bibnamehash}{0496e0f930cf8ad164981c51cafb41f2}
-      \strng{authorbibnamehash}{0496e0f930cf8ad164981c51cafb41f2}
-      \strng{authornamehash}{0496e0f930cf8ad164981c51cafb41f2}
-      \strng{authorfullhash}{0496e0f930cf8ad164981c51cafb41f2}
-      \strng{authorfullhashraw}{0496e0f930cf8ad164981c51cafb41f2}
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{3}
-      \field{isbn}{9781119642787}
-      \field{title}{Security Engineering: A Guide to Building Dependable Distributed Systems}
-      \field{year}{2020}
-    \endentry
     \entry{bellet2015survey}{article}{}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=13661eaafb5c293bc8bebb8c2250a7d8}{%
@@ -855,6 +821,51 @@
       \verb 10.1088/1742-6596/1399/3/033093
       \endverb
     \endentry
+    \entry{meng2019fan}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=6f05d496a3e4cadd4e490d500ccd77a8}{%
+           family={Meng},
+           familyi={M\bibinitperiod},
+           given={Debin},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6e1b562b9254107984d46949e937c63a}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={Xiaojiang},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b7567123ad8063ff975519a285490851}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Kai},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2addc56ce0ea3a8fc05ff9b0995f74f4}{%
+           family={Qiao},
+           familyi={Q\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{fa1636604a59155aa48a58f751982527}
+      \strng{fullhash}{1bc60900fc3296f15d84f2e88a5c2cdd}
+      \strng{fullhashraw}{1bc60900fc3296f15d84f2e88a5c2cdd}
+      \strng{bibnamehash}{fa1636604a59155aa48a58f751982527}
+      \strng{authorbibnamehash}{fa1636604a59155aa48a58f751982527}
+      \strng{authornamehash}{fa1636604a59155aa48a58f751982527}
+      \strng{authorfullhash}{1bc60900fc3296f15d84f2e88a5c2cdd}
+      \strng{authorfullhashraw}{1bc60900fc3296f15d84f2e88a5c2cdd}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1907.00193}
+      \field{title}{Frame Attention Networks for Facial Expression Recognition in Videos}
+      \field{year}{2019}
+    \endentry
     \entry{ng2021deeplearning}{misc}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=bdb4d740fc9548d1c32a62103c30169d}{%
@@ -919,6 +930,72 @@
       \verb{doi}
       \verb 10.1007/s10551-019-04143-6
       \endverb
+    \endentry
+    \entry{numpy_docs}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5d41e41313a1c6d48282954d2eae2421}{%
+           family={{NumPy Developers}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {NumPy}%
+      }
+      \strng{namehash}{5d41e41313a1c6d48282954d2eae2421}
+      \strng{fullhash}{5d41e41313a1c6d48282954d2eae2421}
+      \strng{fullhashraw}{5d41e41313a1c6d48282954d2eae2421}
+      \strng{bibnamehash}{5d41e41313a1c6d48282954d2eae2421}
+      \strng{authorbibnamehash}{5d41e41313a1c6d48282954d2eae2421}
+      \strng{authornamehash}{5d41e41313a1c6d48282954d2eae2421}
+      \strng{authorfullhash}{5d41e41313a1c6d48282954d2eae2421}
+      \strng{authorfullhashraw}{5d41e41313a1c6d48282954d2eae2421}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{NumPy Documentation}}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://numpy.org/doc/stable/
+      \endverb
+      \verb{url}
+      \verb https://numpy.org/doc/stable/
+      \endverb
+      \warn{\item misc entry 'numpy_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{opencv_python_docs}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5bd3dfdc302c8d0660444d98cf3baa60}{%
+           family={{OpenCV Team}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {OpenCV}%
+      }
+      \strng{namehash}{5bd3dfdc302c8d0660444d98cf3baa60}
+      \strng{fullhash}{5bd3dfdc302c8d0660444d98cf3baa60}
+      \strng{fullhashraw}{5bd3dfdc302c8d0660444d98cf3baa60}
+      \strng{bibnamehash}{5bd3dfdc302c8d0660444d98cf3baa60}
+      \strng{authorbibnamehash}{5bd3dfdc302c8d0660444d98cf3baa60}
+      \strng{authornamehash}{5bd3dfdc302c8d0660444d98cf3baa60}
+      \strng{authorfullhash}{5bd3dfdc302c8d0660444d98cf3baa60}
+      \strng{authorfullhashraw}{5bd3dfdc302c8d0660444d98cf3baa60}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{OpenCV-Python Tutorials}}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html
+      \endverb
+      \verb{url}
+      \verb https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html
+      \endverb
+      \warn{\item misc entry 'opencv_python_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring}
     \endentry
     \entry{openface}{misc}{}{}
       \name{author}{1}{}{%
@@ -1025,6 +1102,39 @@
       \field{pages}{84\bibrangedash 86}
       \range{pages}{3}
     \endentry
+    \entry{pillow_docs}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=2bce6985a0b4e753114dbd67584efa93}{%
+           family={{Pillow Contributors}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Pillow}%
+      }
+      \strng{namehash}{2bce6985a0b4e753114dbd67584efa93}
+      \strng{fullhash}{2bce6985a0b4e753114dbd67584efa93}
+      \strng{fullhashraw}{2bce6985a0b4e753114dbd67584efa93}
+      \strng{bibnamehash}{2bce6985a0b4e753114dbd67584efa93}
+      \strng{authorbibnamehash}{2bce6985a0b4e753114dbd67584efa93}
+      \strng{authornamehash}{2bce6985a0b4e753114dbd67584efa93}
+      \strng{authorfullhash}{2bce6985a0b4e753114dbd67584efa93}
+      \strng{authorfullhashraw}{2bce6985a0b4e753114dbd67584efa93}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Pillow (PIL Fork) Documentation}}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://pillow.readthedocs.io/en/stable/
+      \endverb
+      \verb{url}
+      \verb https://pillow.readthedocs.io/en/stable/
+      \endverb
+      \warn{\item misc entry 'pillow_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring}
+    \endentry
     \entry{lgpd2018lei}{misc}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=ccfe84f6240d870749d406d3b8a7a9df}{%
@@ -1049,6 +1159,165 @@
       \field{note}{Brasil}
       \field{title}{{Lei Geral de Proteção de Dados Pessoais (LGPD) - Lei nº 13.709/2018}}
       \field{year}{2018}
+    \endentry
+    \entry{cryptography_fernet}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b09fb13e73253f5fa00d4095bdd71f19}{%
+           family={{PyCA Cryptography Developers}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{b09fb13e73253f5fa00d4095bdd71f19}
+      \strng{fullhash}{b09fb13e73253f5fa00d4095bdd71f19}
+      \strng{fullhashraw}{b09fb13e73253f5fa00d4095bdd71f19}
+      \strng{bibnamehash}{b09fb13e73253f5fa00d4095bdd71f19}
+      \strng{authorbibnamehash}{b09fb13e73253f5fa00d4095bdd71f19}
+      \strng{authornamehash}{b09fb13e73253f5fa00d4095bdd71f19}
+      \strng{authorfullhash}{b09fb13e73253f5fa00d4095bdd71f19}
+      \strng{authorfullhashraw}{b09fb13e73253f5fa00d4095bdd71f19}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://cryptography.io/en/latest/fernet/}}
+      \field{note}{Acesso em: 02 jun. 2026}
+      \field{title}{{Fernet (Symmetric Encryption) — Cryptography Documentation}}
+      \field{year}{2026}
+    \endentry
+    \entry{pynput_docs}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=10ea083452269b9fa108dbc6a0172d4b}{%
+           family={{pynput Contributors}},
+           familyi={p\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {pynput}%
+      }
+      \strng{namehash}{10ea083452269b9fa108dbc6a0172d4b}
+      \strng{fullhash}{10ea083452269b9fa108dbc6a0172d4b}
+      \strng{fullhashraw}{10ea083452269b9fa108dbc6a0172d4b}
+      \strng{bibnamehash}{10ea083452269b9fa108dbc6a0172d4b}
+      \strng{authorbibnamehash}{10ea083452269b9fa108dbc6a0172d4b}
+      \strng{authornamehash}{10ea083452269b9fa108dbc6a0172d4b}
+      \strng{authorfullhash}{10ea083452269b9fa108dbc6a0172d4b}
+      \strng{authorfullhashraw}{10ea083452269b9fa108dbc6a0172d4b}
+      \field{sortinit}{p}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{pynput Package Documentation}}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://pynput.readthedocs.io/en/latest/
+      \endverb
+      \verb{url}
+      \verb https://pynput.readthedocs.io/en/latest/
+      \endverb
+      \warn{\item misc entry 'pynput_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{cryptography_fernet_docs}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=79203e53c19d2668884a0bb3f9d54bcc}{%
+           family={{Python Cryptographic Authority}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {pyca/cryptography}%
+      }
+      \strng{namehash}{79203e53c19d2668884a0bb3f9d54bcc}
+      \strng{fullhash}{79203e53c19d2668884a0bb3f9d54bcc}
+      \strng{fullhashraw}{79203e53c19d2668884a0bb3f9d54bcc}
+      \strng{bibnamehash}{79203e53c19d2668884a0bb3f9d54bcc}
+      \strng{authorbibnamehash}{79203e53c19d2668884a0bb3f9d54bcc}
+      \strng{authornamehash}{79203e53c19d2668884a0bb3f9d54bcc}
+      \strng{authorfullhash}{79203e53c19d2668884a0bb3f9d54bcc}
+      \strng{authorfullhashraw}{79203e53c19d2668884a0bb3f9d54bcc}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Fernet (symmetric encryption)}}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://cryptography.io/en/latest/fernet/
+      \endverb
+      \verb{url}
+      \verb https://cryptography.io/en/latest/fernet/
+      \endverb
+      \warn{\item misc entry 'cryptography_fernet_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{python_docs}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c7b5508dc5e59a2846d22617276cc27c}{%
+           family={{Python Software Foundation}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Python Software Foundation}%
+      }
+      \strng{namehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{fullhash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{fullhashraw}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{bibnamehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authorbibnamehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authornamehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authorfullhash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authorfullhashraw}{c7b5508dc5e59a2846d22617276cc27c}
+      \field{extraname}{1}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Python 3 Documentation}}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://docs.python.org/3/
+      \endverb
+      \verb{url}
+      \verb https://docs.python.org/3/
+      \endverb
+      \warn{\item misc entry 'python_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{tkinter_docs}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c7b5508dc5e59a2846d22617276cc27c}{%
+           family={{Python Software Foundation}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Python Software Foundation}%
+      }
+      \strng{namehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{fullhash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{fullhashraw}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{bibnamehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authorbibnamehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authornamehash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authorfullhash}{c7b5508dc5e59a2846d22617276cc27c}
+      \strng{authorfullhashraw}{c7b5508dc5e59a2846d22617276cc27c}
+      \field{extraname}{2}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{tkinter --- Python interface to Tcl/Tk}}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://docs.python.org/3/library/tkinter.html
+      \endverb
+      \verb{url}
+      \verb https://docs.python.org/3/library/tkinter.html
+      \endverb
+      \warn{\item misc entry 'tkinter_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring}
     \endentry
     \entry{ratha2001enhancing}{article}{}{}
       \name{author}{3}{}{%
@@ -1092,43 +1361,6 @@
       \field{year}{2001}
       \field{pages}{614\bibrangedash 634}
       \range{pages}{21}
-    \endentry
-    \entry{rfc8446}{report}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=fbed942ce41bbd27cb1ee6a803bdf541}{%
-           family={Rescorla},
-           familyi={R\bibinitperiod},
-           given={Eric},
-           giveni={E\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{institution}{1}{%
-        {Internet Engineering Task Force (IETF)}%
-      }
-      \strng{namehash}{fbed942ce41bbd27cb1ee6a803bdf541}
-      \strng{fullhash}{fbed942ce41bbd27cb1ee6a803bdf541}
-      \strng{fullhashraw}{fbed942ce41bbd27cb1ee6a803bdf541}
-      \strng{bibnamehash}{fbed942ce41bbd27cb1ee6a803bdf541}
-      \strng{authorbibnamehash}{fbed942ce41bbd27cb1ee6a803bdf541}
-      \strng{authornamehash}{fbed942ce41bbd27cb1ee6a803bdf541}
-      \strng{authorfullhash}{fbed942ce41bbd27cb1ee6a803bdf541}
-      \strng{authorfullhashraw}{fbed942ce41bbd27cb1ee6a803bdf541}
-      \field{sortinit}{R}
-      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{number}{8446}
-      \field{title}{The Transport Layer Security (TLS) Protocol Version 1.3}
-      \field{type}{RFC}
-      \field{year}{2018}
-      \verb{urlraw}
-      \verb https://www.rfc-editor.org/rfc/rfc8446
-      \endverb
-      \verb{url}
-      \verb https://www.rfc-editor.org/rfc/rfc8446
-      \endverb
     \endentry
     \entry{rfidsilicone_nfc}{misc}{}{}
       \name{author}{1}{}{%
@@ -1189,6 +1421,35 @@
       \field{title}{Reconhecimento facial de alunos de escola pública no uso de ônibus escolar em cidade inteligente}
       \field{type}{Dissertação de Mestrado}
       \field{year}{2023}
+    \endentry
+    \entry{schlett2022facequality}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8cd8e1d269d5c13be0deae6f431037fe}{%
+           family={Schlett},
+           familyi={S\bibinitperiod},
+           given={Torsten},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{425b705016ba0c262b877f260561ee88}
+      \strng{fullhash}{425b705016ba0c262b877f260561ee88}
+      \strng{fullhashraw}{425b705016ba0c262b877f260561ee88}
+      \strng{bibnamehash}{425b705016ba0c262b877f260561ee88}
+      \strng{authorbibnamehash}{425b705016ba0c262b877f260561ee88}
+      \strng{authornamehash}{425b705016ba0c262b877f260561ee88}
+      \strng{authorfullhash}{425b705016ba0c262b877f260561ee88}
+      \strng{authorfullhashraw}{425b705016ba0c262b877f260561ee88}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM Computing Surveys}
+      \field{title}{Face Image Quality Assessment: A Literature Survey}
+      \field{year}{2022}
     \endentry
     \entry{schroff2015facenet}{inproceedings}{}{}
       \name{author}{3}{}{%
@@ -1263,6 +1524,39 @@
       \field{title}{UniAccess: uma aplicação que auxilia no gerenciamento do acesso e consumo das refeições do restaurante estudantil do IFPB -- Campus Cajazeiras}
       \field{type}{Trabalho de Conclusão de Curso (Tecnólogo em Análise e Desenvolvimento de Sistemas)}
       \field{year}{2025}
+    \endentry
+    \entry{sqlite_docs}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=497757a9c5b2ec17ded656170b51c788}{%
+           family={{SQLite}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {SQLite}%
+      }
+      \strng{namehash}{497757a9c5b2ec17ded656170b51c788}
+      \strng{fullhash}{497757a9c5b2ec17ded656170b51c788}
+      \strng{fullhashraw}{497757a9c5b2ec17ded656170b51c788}
+      \strng{bibnamehash}{497757a9c5b2ec17ded656170b51c788}
+      \strng{authorbibnamehash}{497757a9c5b2ec17ded656170b51c788}
+      \strng{authornamehash}{497757a9c5b2ec17ded656170b51c788}
+      \strng{authorfullhash}{497757a9c5b2ec17ded656170b51c788}
+      \strng{authorfullhashraw}{497757a9c5b2ec17ded656170b51c788}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{SQLite Documentation}}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://www.sqlite.org/docs.html
+      \endverb
+      \verb{url}
+      \verb https://www.sqlite.org/docs.html
+      \endverb
+      \warn{\item misc entry 'sqlite_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring}
     \endentry
     \entry{stallings2017cns}{book}{}{}
       \name{author}{1}{}{%
@@ -1345,6 +1639,156 @@
       \field{howpublished}{\url{https://thispersondoesnotexist.com/}}
       \field{note}{Gerador de faces humanas sintéticas com redes neurais (acesso em: 30 jan. 2026)}
       \field{title}{{ThisPersonDoesNotExist.com – AI Generated Human Faces}}
+    \endentry
+    \entry{facenet_pytorch_repo}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3b51c23626bc15b79536de5c6b54d443}{%
+           family={{Timesler}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {GitHub}%
+      }
+      \strng{namehash}{3b51c23626bc15b79536de5c6b54d443}
+      \strng{fullhash}{3b51c23626bc15b79536de5c6b54d443}
+      \strng{fullhashraw}{3b51c23626bc15b79536de5c6b54d443}
+      \strng{bibnamehash}{3b51c23626bc15b79536de5c6b54d443}
+      \strng{authorbibnamehash}{3b51c23626bc15b79536de5c6b54d443}
+      \strng{authornamehash}{3b51c23626bc15b79536de5c6b54d443}
+      \strng{authorfullhash}{3b51c23626bc15b79536de5c6b54d443}
+      \strng{authorfullhashraw}{3b51c23626bc15b79536de5c6b54d443}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{facenet-pytorch: Pretrained Pytorch face detection and recognition models}}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://github.com/timesler/facenet-pytorch
+      \endverb
+      \verb{url}
+      \verb https://github.com/timesler/facenet-pytorch
+      \endverb
+      \warn{\item misc entry 'facenet_pytorch_repo' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{yuan2020minor}{inproceedings}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=49052fbd02964f21e7d1300d2b4a40a0}{%
+           family={Yuan},
+           familyi={Y\bibinitperiod},
+           given={Meng},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dc37be45250babbe9631db590e46ed99}{%
+           family={Nikouei},
+           familyi={N\bibinitperiod},
+           given={Seyed\bibnamedelima Yahya},
+           giveni={S\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7f59904c9deda7f6b0ac2a828b99a318}{%
+           family={Fitwi},
+           familyi={F\bibinitperiod},
+           given={Alem},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5ffb5aba0d9858b862639d446d48f8eb}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1eaf38505d32c8a83570013a4dd4894f}{%
+           family={Dong},
+           familyi={D\bibinitperiod},
+           given={Yunxi},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{a3c32b56770fe2b9445af14268510b73}
+      \strng{fullhash}{4db4a2176fdbb57dcb1eb6bfbac3c6e1}
+      \strng{fullhashraw}{4db4a2176fdbb57dcb1eb6bfbac3c6e1}
+      \strng{bibnamehash}{a3c32b56770fe2b9445af14268510b73}
+      \strng{authorbibnamehash}{a3c32b56770fe2b9445af14268510b73}
+      \strng{authornamehash}{a3c32b56770fe2b9445af14268510b73}
+      \strng{authorfullhash}{4db4a2176fdbb57dcb1eb6bfbac3c6e1}
+      \strng{authorfullhashraw}{4db4a2176fdbb57dcb1eb6bfbac3c6e1}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2020 29th International Conference on Computer Communications and Networks (ICCCN)}
+      \field{title}{Minor Privacy Protection Through Real-time Video Processing at the Edge}
+      \field{year}{2020}
+      \field{pages}{1\bibrangedash 9}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/ICCCN49398.2020.9209632
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1109/ICCCN49398.2020.9209632
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1109/ICCCN49398.2020.9209632
+      \endverb
+    \endentry
+    \entry{zhang2016mtcnn}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=8d2b1627b2e3b6cff1b1ed025022d0df}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Kaipeng},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=038d1a58d8d49317592eda66c39ac456}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Zhanpeng},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=828a5b63771fe4db7767e6bd65ec78ce}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Zhifeng},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2addc56ce0ea3a8fc05ff9b0995f74f4}{%
+           family={Qiao},
+           familyi={Q\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0ca2f38f79c3c5d127a13a17d7b27590}
+      \strng{fullhash}{7cf250efdbc56a875fede85b42f8b85e}
+      \strng{fullhashraw}{7cf250efdbc56a875fede85b42f8b85e}
+      \strng{bibnamehash}{0ca2f38f79c3c5d127a13a17d7b27590}
+      \strng{authorbibnamehash}{0ca2f38f79c3c5d127a13a17d7b27590}
+      \strng{authornamehash}{0ca2f38f79c3c5d127a13a17d7b27590}
+      \strng{authorfullhash}{7cf250efdbc56a875fede85b42f8b85e}
+      \strng{authorfullhashraw}{7cf250efdbc56a875fede85b42f8b85e}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Signal Processing Letters}
+      \field{number}{10}
+      \field{title}{Joint Face Detection and Alignment Using Multitask Cascaded Convolutional Networks}
+      \field{volume}{23}
+      \field{year}{2016}
+      \field{pages}{1499\bibrangedash 1503}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/LSP.2016.2603342
+      \endverb
     \endentry
     \entry{zhao2003face}{article}{}{}
       \name{author}{4}{}{%

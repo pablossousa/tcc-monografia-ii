@@ -6,11 +6,41 @@
 \contentsline {figure}{\numberline {Figura\hfill 3 -- }{\ignorespaces Espaço de \textit {embeddings} antes e após o aprendizado.}}{20}{figure.caption.55}%
 \contentsline {figure}{\numberline {Figura\hfill 4 -- }{\ignorespaces Etapas do MTCNN para detecção facial e localização de pontos de referência.}}{23}{figure.caption.62}%
 \contentsline {figure}{\numberline {Figura\hfill 5 -- }{\ignorespaces \textit {Pipeline} típico de reconhecimento facial}}{25}{figure.caption.63}%
-\contentsline {figure}{\numberline {Figura\hfill 6 -- }{\ignorespaces \textit {Pipeline} metodológico adotado.}}{35}{figure.caption.85}%
+\contentsline {figure}{\numberline {Figura\hfill 6 -- }{\ignorespaces \textit {Pipeline} metodológico adotado para a experimentação com base de dados sintética.}}{35}{figure.caption.85}%
 \contentsline {figure}{\numberline {Figura\hfill 7 -- }{\ignorespaces Variações sintéticas de uma identidade facial.}}{39}{figure.caption.92}%
-\contentsline {figure}{\numberline {Figura\hfill 8 -- }{\ignorespaces Distribuição das distâncias cosseno no espaço de \textit {embeddings}}}{45}{figure.caption.101}%
-\contentsline {figure}{\numberline {Figura\hfill 9 -- }{\ignorespaces Exemplo de par da mesma identidade corretamente aceitos}}{48}{figure.caption.119}%
-\contentsline {figure}{\numberline {Figura\hfill 10 -- }{\ignorespaces Exemplo de par de identidades diferentes corretamente rejeitados}}{49}{figure.caption.120}%
+\contentsline {figure}{\numberline {Figura\hfill 8 -- }{\ignorespaces \textit {Pipeline} metodológico adotado para o sistema funcional de reconhecimento facial.}}{44}{figure.caption.98}%
+\contentsline {figure}{\numberline {Figura\hfill 9 -- }{\ignorespaces Tela inicial do sistema quando um usuário ainda não foi cadastrado.}}{48}{figure.caption.100}%
+\contentsline {figure}{\numberline {Figura\hfill 11 -- }{\ignorespaces Tela durante a captura da pose lateral esquerda.}}{49}{figure.caption.102}%
+\contentsline {figure}{\numberline {Figura\hfill 12 -- }{\ignorespaces Tela durante a captura da pose lateral direita.}}{49}{figure.caption.103}%
+\contentsline {figure}{\numberline {Figura\hfill 13 -- }{\ignorespaces Mensagem de confirmação de cadastro.}}{50}{figure.caption.104}%
+\contentsline {figure}{\numberline {Figura\hfill 14 -- }{\ignorespaces Tela após a conclusão do cadastro com as informações do usuário.}}{51}{figure.caption.105}%
+\contentsline {figure}{\numberline {Figura\hfill 15 -- }{\ignorespaces Processo de armazenamento das identidades cadastradas.}}{51}{figure.caption.106}%
+\contentsline {figure}{\numberline {Figura\hfill 17 -- }{\ignorespaces Botões de configuração relacionados à digitação automática de credenciais.}}{55}{figure.caption.110}%
+\contentsline {figure}{\numberline {Figura\hfill 18 -- }{\ignorespaces \textit {Pop up} de confirmação para a digitação automática da credencial.}}{56}{figure.caption.111}%
+\contentsline {figure}{\numberline {Figura\hfill 19 -- }{\ignorespaces Cabeçalho da aplicação exibindo o nome do sistema e o status de reconhecimento.}}{57}{figure.caption.112}%
+\contentsline {figure}{\numberline {Figura\hfill 20 -- }{\ignorespaces Área central da interface exibindo o vídeo da webcam e os indicadores relacionados ao reconhecimento facial.}}{57}{figure.caption.113}%
+\contentsline {figure}{\numberline {Figura\hfill 21 -- }{\ignorespaces Coluna lateral direita da interface exibindo os controles operacionais e indicadores de status do sistema.}}{58}{figure.caption.114}%
+\contentsline {figure}{\numberline {Figura\hfill 22 -- }{\ignorespaces Distribuição das distâncias cosseno no espaço de \textit {embeddings}}}{61}{figure.caption.120}%
+\contentsline {figure}{\numberline {Figura\hfill 23 -- }{\ignorespaces Exemplo de par da mesma identidade corretamente aceitos}}{64}{figure.caption.138}%
+\contentsline {figure}{\numberline {Figura\hfill 24 -- }{\ignorespaces Exemplo de par de identidades diferentes corretamente rejeitados}}{65}{figure.caption.139}%
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
 \babel@toc {brazil}{}\relax 
 \babel@toc {brazil}{}\relax 
 \babel@toc {brazil}{}\relax 
