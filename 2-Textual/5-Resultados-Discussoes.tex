@@ -1,7 +1,9 @@
 \chapter{Resultados}
 \label{chap:resultados}
 
-Este capítulo apresenta os resultados obtidos a partir dos experimentos realizados com a base de dados sintética e os modelos de reconhecimento facial descritos na metodologia. 
+Este capítulo apresenta os resultados da avaliação experimental e dos testes funcionais do protótipo desenvolvido. A primeira parte discute os experimentos com base de dados sintética, considerando separabilidade dos \textit{embeddings}, métricas biométricas, definição do limiar de decisão e identificação 1:N. A segunda parte apresenta a validação do sistema em funcionamento, incluindo cadastro multipose, reconhecimento em tempo real, votação temporal, armazenamento, exclusão de usuários e digitação automática da credencial.
+
+\section{Resultados experimentais do reconhecimento facial}
 
 Conforme detalhado no capítulo anterior, o \textit{pipeline} computacional foi inicialmente submetido a uma Prova de Conceito (\acs{PoC}) utilizando representações geométricas extraídas pelo modelo MediaPipe FaceMesh. Essa etapa cumpriu seu propósito ao confirmar o funcionamento integrado dos módulos de detecção facial, geração de vetores de características e cálculo de similaridade matemática em buscas 1:N. Uma vez validado o fluxo de trabalho, os testes quantitativos rigorosos de desempenho biométrico, que compõem o escopo central deste capítulo, foram conduzidos exclusivamente com os \textit{embeddings} gerados pelo modelo pré-treinado baseado em aprendizado profundo (InsightFace). 
 
@@ -9,7 +11,7 @@ Os resultados apresentados a seguir concentram-se na análise da separabilidade 
 
 %---------------------------------------------------------
 
-\section{Separabilidade no espaço de embeddings}
+\subsection{Separabilidade no espaço de embeddings}
 
 Esta seção analisa a separabilidade das representações faciais no espaço de \textit{embeddings} a partir da distribuição das distâncias cosseno calculadas entre pares de imagens. O objetivo é verificar se amostras da mesma identidade apresentam maior similaridade entre si do que amostras pertencentes a identidades distintas.
 
@@ -30,7 +32,7 @@ De forma geral, os resultados indicam que o espaço de \textit{embeddings} apres
 
 %---------------------------------------------------------
 
-\section{Avaliação biométrica por FAR e FRR}
+\subsection{Avaliação biométrica por FAR e FRR}
 
 Nesta seção é avaliado o desempenho do sistema de reconhecimento facial por meio das métricas biométricas de falsa aceitação (\acs{FAR}) e falsa rejeição (\acs{FRR}), calculadas a partir das distâncias cosseno entre pares de \textit{embeddings} para diferentes valores de limiar de decisão (\textit{threshold}). O objetivo é analisar como a escolha do limiar influencia o comportamento do sistema em termos de segurança e confiabilidade.
 
@@ -67,7 +69,7 @@ Os resultados indicam elevada separabilidade entre as representações faciais, 
 
 %---------------------------------------------------------
 
-\section{Definição do limiar de decisão (threshold)}
+\subsection{Definição do limiar de decisão (threshold)}
 
 Com base na análise quantitativa realizada, definiu-se o limiar de decisão a ser utilizado no sistema. Considerando que, a partir de 0,40, passam a ocorrer falsas aceitações, optou-se por um valor dentro do intervalo que preserva erro zero para ambas as métricas.
 
@@ -75,7 +77,7 @@ Assim, foi adotado o threshold de 0,30 por representar o maior valor testado que
 
 %---------------------------------------------------------
 
-\section{Análise qualitativa dos pares de comparação}
+\subsection{Análise qualitativa dos pares de comparação}
 
 Esta seção apresenta uma análise qualitativa dos resultados obtidos, com o objetivo de complementar as métricas quantitativas discutidas anteriormente por meio da inspeção visual de pares de imagens faciais. Essa análise busca verificar se o comportamento observado nas distâncias entre \textit{embeddings} é consistente com a percepção visual das imagens comparadas, contribuindo para a validação empírica do sistema.
 
@@ -105,10 +107,36 @@ De forma geral, a análise qualitativa confirma que as decisões baseadas em sim
 
 %---------------------------------------------------------
 
-\section{Avaliação do processo de identificação (1:N)}
+\subsection{Avaliação do processo de identificação (1:N)}
 
 Nesta seção avalia-se o funcionamento do processo de identificação facial no cenário 1:N, no qual uma amostra de consulta é comparada com as representações faciais armazenadas na base de referência, com o objetivo de recuperar a identidade mais semelhante. A avaliação tem caráter funcional e ilustra a aplicação prática do critério de similaridade e do limiar definido nas seções anteriores ($\tau = 0{,}30$).
 
 Para o teste, utilizou-se o subconjunto contendo 1200 amostras com \textit{embeddings} válidos. Uma amostra foi selecionada como consulta e seu \textit{embedding} foi comparado, por distância cosseno, com todas as demais amostras da base. Para evitar auto-comparação, removeu-se apenas a própria amostra de consulta do conjunto de referência, mantendo-se outras amostras da mesma identidade quando disponíveis. O resultado da identificação foi definido pela menor distância observada, e a correspondência foi aceita quando $d_{\cos}(x,y)\leq\tau$.
 
 Como resultado, a busca recuperou uma amostra da mesma identidade como candidata mais próxima, com distância cosseno significativamente inferior a $\tau$, caracterizando uma correspondência genuína e coerente com o comportamento observado nas métricas \acs{FAR}/\acs{FRR}. Ressalta-se que este experimento não constitui uma avaliação estatística completa de desempenho 1:N (por exemplo, com múltiplas consultas e métricas de \textit{rank-1 accuracy}), mas serve como validação funcional do \textit{pipeline} de identificação em um cenário compatível com aplicações de controle de acesso.
+
+
+%-------------------------------------------------
+
+
+\section{Resultados do sistema real desenvolvido}
+
+Nesta seção são apresentados os resultados da validação do sistema de reconhecimento facial em tempo real, desenvolvido como protótipo funcional. A avaliação abrange diversos aspectos operacionais, incluindo a interface gráfica, o processo de cadastro multipose, o armazenamento das identidades, o comportamento do reconhecimento em tempo real, a votação temporal para estabilização de decisões, a digitação automática da credencial e a exclusão de usuários.
+
+\subsection{Validação da interface gráfica}
+
+\subsection{Validação do cadastro multipose}
+
+\subsection{Validação do armazenamento das identidades}
+
+\subsection{Validação do reconhecimento facial em tempo real}
+
+\subsection{Comportamento da votação temporal}
+
+\subsection{Validação da digitação automática da credencial}
+
+\subsection{Validação da exclusão de usuários}
+
+\subsection{Síntese dos testes funcionais}
+
+\subsection{Limitações observadas}

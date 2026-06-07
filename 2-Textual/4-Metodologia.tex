@@ -3,6 +3,10 @@
 
 Este trabalho adota uma metodologia experimental com o objetivo de avaliar a viabilidade tecnológica do uso de reconhecimento facial como alternativa ao controle de acesso baseado em cartões \acs{NFC}, no contexto acadêmico do \acs{CEFET-MG}.
 
+\section{Caracterização da pesquisa}
+
+Este trabalho adota uma abordagem experimental e aplicada, com o objetivo de avaliar a viabilidade do reconhecimento facial como alternativa ao controle de acesso baseado em cartões \acs{NFC}. A metodologia foi organizada em duas etapas principais: a experimentação com base de dados sintética, voltada à análise do comportamento dos \textit{embeddings} faciais, e o desenvolvimento de um protótipo funcional em tempo real, voltado à validação prática da solução proposta.
+
 \section{Experimentação com base de dados sintética}
 
 A \ref{fig:diagrama1} apresenta uma visão geral do \textit{pipeline} metodológico adotado neste trabalho, destacando as principais etapas do processo experimental, desde a aquisição das imagens faciais até a avaliação do reconhecimento para fins de controle de acesso.
@@ -142,7 +146,7 @@ A metodologia apresentada definiu o conjunto de procedimentos adotados para a co
 
 \section{Desenvolvimento do protótipo funcional de reconhecimento facial em tempo real}
 
-Após a validação experimental da abordagem baseada em \textit{embeddings}, foi desenvolvido um protótipo funcional capaz de realizar o reconhecimento facial em tempo real. Diferentemente dos experimentos apresentados nas seções anteriores, cujo foco esteve na avaliação do comportamento dos \textit{embeddings} e na calibração dos parâmetros biométricos, esta etapa concentrou-se na implementação de uma aplicação completa, integrando captura por \text{webcam}, cadastro de usuários, reconhecimento facial, armazenamento seguro das identidades e automação da inserção de credenciais. As subseções seguintes descrevem a arquitetura da solução desenvolvida e os principais componentes que compõem o sistema.
+Após a validação experimental da abordagem baseada em \textit{embeddings}, foi desenvolvido um protótipo funcional capaz de realizar o reconhecimento facial em tempo real. Diferentemente dos experimentos apresentados nas seções anteriores, cujo foco esteve na avaliação do comportamento dos \textit{embeddings} e na calibração dos parâmetros biométricos, esta etapa concentrou-se na implementação de uma aplicação completa, integrando captura por \textit{webcam}, cadastro de usuários, reconhecimento facial, armazenamento seguro das identidades e automação da inserção de credenciais. As subseções seguintes descrevem a arquitetura da solução desenvolvida e os principais componentes que compõem o sistema.
 
 
 
@@ -154,12 +158,11 @@ Após a validação experimental da abordagem baseada em \textit{embeddings}, fo
 
 A etapa experimental apresentada anteriormente teve como objetivo validar a viabilidade do reconhecimento facial baseado em \textit{embeddings}, avaliando a separabilidade entre identidades e o comportamento de diferentes limiares de decisão por meio de métricas biométricas. Para essa finalidade, foi utilizado o pacote InsightFace, que oferece modelos otimizados para extração de características faciais e análise de desempenho em cenários de identificação.
 
-Entretanto, o desenvolvimento do sistema funcional exigiu requisitos adicionais que não estavam presentes na etapa experimental, como captura em tempo real por \text{webcam}, detecção facial contínua, alinhamento automático das faces, gerenciamento de usuários cadastrados e integração com a interface gráfica da aplicação.
+Entretanto, o desenvolvimento do sistema funcional exigiu requisitos adicionais que não estavam presentes na etapa experimental, como captura em tempo real por \textit{webcam}, detecção facial contínua, alinhamento automático das faces, gerenciamento de usuários cadastrados e integração com a interface gráfica da aplicação.
 
-Dessa forma, optou-se pela utilização da biblioteca \textit{facenet-pytorch}, que disponibiliza de forma integrada os modelos \acs{MTCNN} para detecção e alinhamento facial e FaceNet (\textit{InceptionResnetV1}) para geração dos \textit{embeddings}. Essa escolha simplificou a implementação do sistema em tempo real e permitiu a construção de um \textit{pipeline} único para captura, processamento e reconhecimento facial.
+Dessa forma, optou-se pela utilização da biblioteca \texttt{facenet-pytorch}, que disponibiliza de forma integrada os modelos \acs{MTCNN} para detecção e alinhamento facial e FaceNet (\textit{InceptionResnetV1}) para geração dos \textit{embeddings}. Essa escolha simplificou a implementação do sistema em tempo real e permitiu a construção de um \textit{pipeline} único para captura, processamento e reconhecimento facial.
 
 Embora tenha ocorrido a substituição do modelo utilizado na fase experimental, o princípio fundamental da abordagem permaneceu inalterado. Tanto na validação experimental quanto no sistema implementado, o reconhecimento é realizado por meio da geração de \textit{embeddings} faciais e da comparação dessas representações em um espaço vetorial de características. Assim, a mudança realizada representa uma adaptação tecnológica voltada à implementação prática da solução, sem alterar os fundamentos conceituais investigados ao longo da pesquisa.
-
 
 \subsection{Arquitetura geral do sistema}
 
@@ -178,7 +181,7 @@ O fluxo de funcionamento inicia-se com a captura contínua de imagens pela \text
 
 Os \textit{embeddings} gerados são comparados com as representações previamente cadastradas na base de usuários, possibilitando a identificação do indivíduo mais semelhante. Para aumentar a confiabilidade do reconhecimento, o sistema utiliza um mecanismo de votação temporal baseado em múltiplos quadros consecutivos, reduzindo oscilações e decisões incorretas causadas por ruídos momentâneos durante a captura.
 
-Após a confirmação da identidade, o sistema recupera a credencial associada ao usuário reconhecido e disponibiliza mecanismos para sua inserção automática em aplicações externas por meio da simulação de eventos de teclado. Paralelamente, informações de cadastro, configurações e representações faciais são armazenadas em banco de dados local, permitindo o gerenciamento dos usuários cadastrados e a persistência das informações necessárias para o funcionamento da aplicação.
+Após a confirmação da identidade, o sistema recupera a credencial associada ao usuário reconhecido e disponibiliza mecanismos para sua inserção automática em aplicações externas por meio da simulação de eventos de teclado. Paralelamente, as informações cadastrais e as representações faciais necessárias ao reconhecimento são armazenadas em banco de dados local, permitindo o gerenciamento dos usuários cadastrados e a persistência das informações essenciais ao funcionamento da aplicação.
 
 Essa arquitetura foi concebida com foco em simplicidade de implantação, processamento local e independência de sistemas externos, permitindo a execução do reconhecimento facial em tempo real sem a necessidade de comunicação com servidores ou serviços de terceiros.
 
@@ -223,7 +226,7 @@ A automação da inserção de credenciais foi implementada utilizando a bibliot
 
 O cadastro de usuários foi desenvolvido com o objetivo de criar representações faciais robustas e adequadas para o reconhecimento em tempo real. Diferentemente de abordagens baseadas em uma única imagem de referência, o sistema adota uma estratégia de cadastro multipose, permitindo que diferentes perspectivas do rosto sejam incorporadas ao conjunto de amostras da identidade cadastrada.
 
-O processo é iniciado pelo operador por meio da interface gráfica do sistema. Inicialmente, são informados o nome do usuário e o código da credencial que será associado à identidade facial. A \ref{fig:zerado} apresenta a interface da aplicação antes da realização do cadastro do usuário.
+O processo é iniciado pelo operador por meio da interface gráfica do sistema. Inicialmente, são informados o nome do usuário e o código da credencial que será associado à identidade facial. O código da credencial é validado pelo sistema antes do início da captura, aceitando apenas caracteres hexadecimais e limitando o tamanho máximo permitido. Após a validação, o valor é normalizado e associado à identidade facial cadastrada. A \ref{fig:zerado} apresenta a interface da aplicação antes da realização do cadastro do usuário.
 
 \begin{figure}[H]
     \centering
@@ -331,6 +334,8 @@ Uma vez validada a qualidade do quadro, a face detectada é alinhada utilizando 
 
 A face alinhada é então processada pelo modelo FaceNet (\textit{InceptionResnetV1}), responsável pela geração do \textit{embedding} facial. O vetor obtido é comparado com os \textit{embeddings} previamente armazenados na base local de usuários por meio da distância euclidiana entre as representações vetoriais.
 
+Quando existem amostras cadastradas em diferentes poses, o sistema também considera a pose associada a cada amostra durante a comparação. Dessa forma, representações capturadas em orientação semelhante à pose detectada no quadro atual recebem maior prioridade, sem que amostras de outras poses sejam completamente descartadas.
+
 Para cada quadro processado, o sistema determina o usuário mais semelhante e registra a distância correspondente. Essas informações são exibidas na interface juntamente com indicadores relacionados à qualidade da captura, à pose detectada e ao estado atual do reconhecimento.
 
 Diferentemente de abordagens baseadas em decisões instantâneas, o sistema não confirma uma identidade utilizando apenas um único quadro. Os resultados individuais produzidos em cada captura são encaminhados para um mecanismo de votação temporal, descrito na seção seguinte, responsável por aumentar a estabilidade e a confiabilidade do reconhecimento.
@@ -399,6 +404,12 @@ Para evitar repetições indevidas, foi implementado um mecanismo de controle de
 
 Essa abordagem permite que o reconhecimento facial seja utilizado como mecanismo alternativo de autenticação em diferentes aplicações, mantendo independência em relação aos sistemas de destino e reduzindo a necessidade de adaptações específicas para cada ambiente de utilização.
 
+\subsection{Exclusão de usuários}
+
+A aplicação também permite a exclusão de usuários cadastrados. Esse procedimento é realizado a partir do código da credencial, evitando a remoção baseada apenas no nome do usuário. A interface apresenta uma lista com os usuários registrados, permitindo selecionar um cadastro existente ou localizar um usuário por meio do campo de busca.
+
+Antes da exclusão definitiva, o sistema exibe uma mensagem de confirmação contendo o nome e o código associado ao usuário selecionado. Após a confirmação, o registro do usuário é removido do banco de dados SQLite, juntamente com os \textit{embeddings} faciais relacionados. Em seguida, a base carregada em memória é atualizada, garantindo que o usuário excluído não seja mais considerado durante o processo de reconhecimento facial.
+
 \subsection{Interface gráfica}
 
 A interface gráfica foi desenvolvida com o objetivo de permitir a operação do sistema de forma simples e intuitiva, concentrando em uma única janela as funcionalidades de cadastro, reconhecimento facial e monitoramento do estado da aplicação.
@@ -412,11 +423,11 @@ A tela principal é composta por três regiões principais. Na parte superior en
 \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
 \end{figure}
 
-Na região central é apresentado o fluxo de vídeo capturado pela webcam, que constitui o principal elemento de interação do operador com o sistema. 
+Na região central é apresentado o fluxo de vídeo capturado pela \textit{webcam}, que constitui o principal elemento de interação do operador com o sistema. 
 
 \begin{figure}[H]
 \centering
-\caption{\label{fig:area_central} Área central da interface exibindo o vídeo da webcam e os indicadores relacionados ao reconhecimento facial.}
+\caption{\label{fig:area_central} Área central da interface exibindo o vídeo da \textit{webcam} e os indicadores relacionados ao reconhecimento facial.}
 \includegraphics[width=0.7\textwidth]{Imagens/area_central.png}
 \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
 \end{figure}
@@ -441,7 +452,7 @@ A interface também foi projetada para funcionar em diferentes tamanhos de janel
 
 \subsubsection{Indicadores exibidos durante a execução}
 
-\begin{table}[htbp]
+\begin{table}[!htbp]
 \centering
 \caption{Principais indicadores exibidos durante a operação do sistema}
 \label{tab:indicadores_interface}
@@ -489,3 +500,8 @@ Apresenta o usuário mais semelhante encontrado durante a comparação dos \text
 \end{tabular}
 \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
 \end{table}
+
+\FloatBarrier
+
+\subsection{Procedimentos de teste do protótipo}
+

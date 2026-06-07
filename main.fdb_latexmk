@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1780719273.91744 "main.bcf" "main.bbl" "main" 1780719365.21985 0
+["biber main"] 1780719273.91744 "main.bcf" "main.bbl" "main" 1780862066.2406 0
   "Referencias.bib" 1780631254 15643 a332a932598f1b0543974b03fd144000 ""
-  "main.bcf" 1780719364 123466 040815e124bb9c883546ffb46271e1d6 "pdflatex"
+  "main.bcf" 1780862065 123466 040815e124bb9c883546ffb46271e1d6 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1780719359.69279 "c:/Users/pablo/Desktop/TCC/TCC_2/monografia/main.tex" "main.pdf" "main" 1780719365.22059 0
+["pdflatex"] 1780862060.84927 "c:/Users/pablo/Desktop/TCC/TCC_2/monografia/main.tex" "main.pdf" "main" 1780862066.24131 0
   "./Pacotes/CEFET.sty" 1770347310 9831 d89539233a40e6dde1eb50159658e721 ""
   "./Pacotes/biblatex-abnt/latex/bbx/abnt.bbx" 1769203940 71996 11dbc19d4619916cb1bbe9955f3bd32b ""
   "./Pacotes/biblatex-abnt/latex/cbx/abnt.cbx" 1769203940 23085 0d6fa66ecdb71036cb7075216ea01753 ""
@@ -20,10 +20,10 @@
   "2-Textual/1-Introducao.tex" 1780369705 7448 9b2cafba37e1734ae352899335029cbf ""
   "2-Textual/2-Fundamentacao-Teorica.tex" 1780455981 52097 3f2f77473ddafe823f97fca5c527d545 ""
   "2-Textual/3-Trabalhos-Relacionados.tex" 1780450557 8590 98ba1dc508acbc82c001749ab5393d4b ""
-  "2-Textual/4-Metodologia.tex" 1780719351 47889 2bfdf2e4c395ceec7a8db1a036f5790f ""
-  "2-Textual/5-Resultados-Discussoes.tex" 1775152590 12409 0132797fe1cc293605205fe820afe95f ""
+  "2-Textual/4-Metodologia.tex" 1780862047 49940 3cb397c5c8ad0741175b5baf5887109b ""
+  "2-Textual/5-Resultados-Discussoes.tex" 1780861572 13912 5a2275797f8f7118d800112bd3905ba4 ""
   "2-Textual/6-Conclusao.tex" 1780453453 5081 cd29e5eb910dbf79a3fb2481b87ec9bb ""
-  "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1778802196 82686 2381c3433487640bf26aa76a10db7eb2 ""
+  "C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1780862049 82686 2381c3433487640bf26aa76a10db7eb2 ""
   "C:/Users/pablo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1200.pk" 1769204518 24152 958102d012cc0f17842b3b198b51376e ""
   "C:/Users/pablo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1757417260 13257342 f6870a8c7a468d800fc6cf1ee2bcc842 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -162,6 +162,7 @@
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/logreq/logreq.sty" 1280941015 6187 b27afc771af565d3a9ff1ca7d16d0d46 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/multirow/multirow.sty" 1731767677 6696 886c9f3087d0b973ed2c19aa79cb3023 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/newfloat/newfloat.sty" 1696192043 30252 f6e8905c538136e67643aa414a2c9161 ""
+  "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/placeins/placeins.sty" 1113865200 4087 636308456f60d2b31cbf97867db5708d ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/helvet.sty" 1585926771 1558 de0ad166b701b820e03588a29bb30798 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/pifont.sty" 1585926771 2350 62e73848f29fd8cd37fb7974c7cf2221 ""
   "C:/Users/pablo/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/t1phv.fd" 1585253778 1536 47067fbe7c3ffed1ede7aaa7b8549d7a ""
@@ -214,15 +215,15 @@
   "Pacotes/biblatex-abnt/latex/lbx/brazilian-abnt.lbx" 1769203940 16916 77844ace0a4cc28abb22b44920384ebf ""
   "Pacotes/biblatex-abnt/latex/lbx/english-abnt.lbx" 1769203940 6003 7b0b6b4c54006187171c040d00e2752b ""
   "Referencias.bib" 1780631254 15643 a332a932598f1b0543974b03fd144000 ""
-  "c:/Users/pablo/Desktop/TCC/TCC_2/monografia/main.tex" 1780451938 2139 8db3877087f5d90d3f47573dc94c8ec9 ""
-  "main.aux" 1780719364 57207 973bdb8c375511c0f05af8766bdf997c "pdflatex"
+  "c:/Users/pablo/Desktop/TCC/TCC_2/monografia/main.tex" 1780862047 2161 878b218064dec193cc006064947d5759 ""
+  "main.aux" 1780862065 59709 3b6f2b3867bf7d448553a11a0be754db "pdflatex"
   "main.bbl" 1780719276 79713 7540586f95cdba0350619519e267340a "biber main"
-  "main.lof" 1780719364 4383 5fe2795e18c1ddc8959ef3cf68064cb5 "pdflatex"
-  "main.lot" 1780719364 1254 937daaec80e1ba784cdb34f71f4af6e2 "pdflatex"
-  "main.out" 1780719364 19949 c58247f8661f8a91c7e89b24e591f20a "pdflatex"
-  "main.run.xml" 1780719364 2511 a157f2756a3b163f1977b83d30951c40 "pdflatex"
-  "main.tex" 1780451938 2139 8db3877087f5d90d3f47573dc94c8ec9 ""
-  "main.toc" 1780719364 9578 ca31b459022858724acd6652d681863f "pdflatex"
+  "main.lof" 1780862065 4393 4c14d5fcb6eb0463dfb7bc628185ba9a "pdflatex"
+  "main.lot" 1780862065 1254 0cf45e32d33d74b8e4e8cfa57f549eb6 "pdflatex"
+  "main.out" 1780862065 23476 e196d43772bd6a72cf43b7e696876786 "pdflatex"
+  "main.run.xml" 1780862065 2511 a157f2756a3b163f1977b83d30951c40 "pdflatex"
+  "main.tex" 1780862047 2161 878b218064dec193cc006064947d5759 ""
+  "main.toc" 1780862065 11109 ff03c1e549508ba75c1abeafd7aa2482 "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"

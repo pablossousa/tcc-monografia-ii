@@ -50,41 +50,55 @@
 \contentsline {subsection}{\numberline {2.10.3}Algoritmo Fernet}{30}{subsection.2.10.3}%
 \contentsline {chapter}{\numberline {3}Trabalhos Relacionados}{31}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Metodologia}{35}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Experimentação com base de dados sintética}{35}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Construção da base de dados sintética}{35}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Modelagem do cadastro de identidades}{36}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Validação funcional do pipeline com modelo geométrico (Prova de Conceito)}{37}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Geração de variações sintéticas das imagens}{38}{subsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.1.5}Extração de embeddings faciais por modelo pré-treinado}{40}{subsection.4.1.5}%
-\contentsline {subsection}{\numberline {4.1.6}Definição da métrica de similaridade}{41}{subsection.4.1.6}%
-\contentsline {subsection}{\numberline {4.1.7}Protocolo experimental de avaliação}{41}{subsection.4.1.7}%
-\contentsline {section}{\numberline {4.2}Desenvolvimento do protótipo funcional de reconhecimento facial em tempo real}{42}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Evolução da abordagem experimental para o sistema implementado}{43}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Arquitetura geral do sistema}{43}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Tecnologias utilizadas}{45}{subsection.4.2.3}%
-\contentsline {subsubsection}{\numberline {4.2.3.1}OpenCV}{45}{subsubsection.4.2.3.1}%
-\contentsline {subsubsection}{\numberline {4.2.3.2}Tkinter}{45}{subsubsection.4.2.3.2}%
-\contentsline {subsubsection}{\numberline {4.2.3.3}PyTorch e facenet-pytorch}{45}{subsubsection.4.2.3.3}%
-\contentsline {subsubsection}{\numberline {4.2.3.4}NumPy}{46}{subsubsection.4.2.3.4}%
-\contentsline {subsubsection}{\numberline {4.2.3.5}SQLite}{46}{subsubsection.4.2.3.5}%
-\contentsline {subsubsection}{\numberline {4.2.3.6}Cryptography (Fernet)}{46}{subsubsection.4.2.3.6}%
-\contentsline {subsubsection}{\numberline {4.2.3.7}Pillow}{46}{subsubsection.4.2.3.7}%
-\contentsline {subsubsection}{\numberline {4.2.3.8}Pynput}{47}{subsubsection.4.2.3.8}%
-\contentsline {subsection}{\numberline {4.2.4}Cadastro de usuários}{47}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Armazenamento seguro das identidades}{51}{subsection.4.2.5}%
-\contentsline {subsection}{\numberline {4.2.6}Reconhecimento facial em tempo real}{52}{subsection.4.2.6}%
-\contentsline {subsection}{\numberline {4.2.7}Votação temporal}{53}{subsection.4.2.7}%
-\contentsline {subsection}{\numberline {4.2.8}Digitação automática de credenciais}{55}{subsection.4.2.8}%
-\contentsline {subsection}{\numberline {4.2.9}Interface gráfica}{56}{subsection.4.2.9}%
-\contentsline {subsubsection}{\numberline {4.2.9.1}Indicadores exibidos durante a execução}{59}{subsubsection.4.2.9.1}%
-\contentsline {chapter}{\numberline {5}Resultados}{60}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Separabilidade no espaço de embeddings}{60}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Avaliação biométrica por FAR e FRR}{62}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Definição do limiar de decisão (threshold)}{63}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Análise qualitativa dos pares de comparação}{63}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Avaliação do processo de identificação (1:N)}{65}{section.5.5}%
-\contentsline {chapter}{\numberline {6}Conclusão}{67}{chapter.6}%
-\contentsline {chapter}{\numberline {}Refer\^encias}{69}{section*.147}%
+\contentsline {section}{\numberline {4.1}Caracterização da pesquisa}{35}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Experimentação com base de dados sintética}{35}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Construção da base de dados sintética}{36}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Modelagem do cadastro de identidades}{37}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Validação funcional do pipeline com modelo geométrico (Prova de Conceito)}{37}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Geração de variações sintéticas das imagens}{38}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Extração de embeddings faciais por modelo pré-treinado}{40}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}Definição da métrica de similaridade}{41}{subsection.4.2.6}%
+\contentsline {subsection}{\numberline {4.2.7}Protocolo experimental de avaliação}{41}{subsection.4.2.7}%
+\contentsline {section}{\numberline {4.3}Desenvolvimento do protótipo funcional de reconhecimento facial em tempo real}{42}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Evolução da abordagem experimental para o sistema implementado}{43}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Arquitetura geral do sistema}{44}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Tecnologias utilizadas}{45}{subsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3.1}OpenCV}{45}{subsubsection.4.3.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.3.2}Tkinter}{45}{subsubsection.4.3.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3.3}PyTorch e facenet-pytorch}{46}{subsubsection.4.3.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3.4}NumPy}{46}{subsubsection.4.3.3.4}%
+\contentsline {subsubsection}{\numberline {4.3.3.5}SQLite}{46}{subsubsection.4.3.3.5}%
+\contentsline {subsubsection}{\numberline {4.3.3.6}Cryptography (Fernet)}{46}{subsubsection.4.3.3.6}%
+\contentsline {subsubsection}{\numberline {4.3.3.7}Pillow}{47}{subsubsection.4.3.3.7}%
+\contentsline {subsubsection}{\numberline {4.3.3.8}Pynput}{47}{subsubsection.4.3.3.8}%
+\contentsline {subsection}{\numberline {4.3.4}Cadastro de usuários}{47}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Armazenamento seguro das identidades}{51}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Reconhecimento facial em tempo real}{52}{subsection.4.3.6}%
+\contentsline {subsection}{\numberline {4.3.7}Votação temporal}{53}{subsection.4.3.7}%
+\contentsline {subsection}{\numberline {4.3.8}Digitação automática de credenciais}{55}{subsection.4.3.8}%
+\contentsline {subsection}{\numberline {4.3.9}Exclusão de usuários}{56}{subsection.4.3.9}%
+\contentsline {subsection}{\numberline {4.3.10}Interface gráfica}{57}{subsection.4.3.10}%
+\contentsline {subsubsection}{\numberline {4.3.10.1}Indicadores exibidos durante a execução}{59}{subsubsection.4.3.10.1}%
+\contentsline {subsection}{\numberline {4.3.11}Procedimentos de teste do protótipo}{61}{subsection.4.3.11}%
+\contentsline {chapter}{\numberline {5}Resultados}{62}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Resultados experimentais do reconhecimento facial}{62}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Separabilidade no espaço de embeddings}{63}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Avaliação biométrica por FAR e FRR}{64}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Definição do limiar de decisão (threshold)}{66}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Análise qualitativa dos pares de comparação}{66}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}Avaliação do processo de identificação (1:N)}{68}{subsection.5.1.5}%
+\contentsline {section}{\numberline {5.2}Resultados do sistema real desenvolvido}{69}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Validação da interface gráfica}{69}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Validação do cadastro multipose}{69}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Validação do armazenamento das identidades}{69}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Validação do reconhecimento facial em tempo real}{69}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Comportamento da votação temporal}{69}{subsection.5.2.5}%
+\contentsline {subsection}{\numberline {5.2.6}Validação da digitação automática da credencial}{69}{subsection.5.2.6}%
+\contentsline {subsection}{\numberline {5.2.7}Validação da exclusão de usuários}{69}{subsection.5.2.7}%
+\contentsline {subsection}{\numberline {5.2.8}Síntese dos testes funcionais}{69}{subsection.5.2.8}%
+\contentsline {subsection}{\numberline {5.2.9}Limitações observadas}{69}{subsection.5.2.9}%
+\contentsline {chapter}{\numberline {6}Conclusão}{70}{chapter.6}%
+\contentsline {chapter}{\numberline {}Refer\^encias}{72}{section*.148}%
 \babel@toc {brazil}{}\relax 
 \babel@toc {brazil}{}\relax 
 \babel@toc {brazil}{}\relax 
