@@ -125,18 +125,246 @@ Nesta seção são apresentados os resultados da validação do sistema de recon
 
 \subsection{Validação da interface gráfica}
 
+A interface gráfica do protótipo foi avaliada a partir da execução do sistema em ambiente local, verificando-se a organização visual dos componentes, a exibição do vídeo da \textit{webcam}, os controles disponíveis ao operador e os indicadores apresentados durante o cadastro e o reconhecimento facial.
+
+A tela principal foi organizada em três regiões principais. Na parte superior, o cabeçalho apresenta o nome do sistema e o estado atual da aplicação, permitindo ao operador identificar rapidamente se o reconhecimento está em execução.
+
+\begin{figure}[H]
+\centering
+\caption{\label{fig:superior} Cabeçalho da aplicação exibindo o nome do sistema e o status de reconhecimento.}
+\includegraphics[width=0.8\textwidth]{Imagens/superior.png}
+\caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
+\end{figure}
+
+Na região central, foi exibido o fluxo de vídeo capturado pela \textit{webcam}, acompanhado de informações visuais relacionadas ao processo de reconhecimento facial. Essa área constitui o principal elemento de acompanhamento do sistema durante a operação.
+
+\begin{figure}[H]
+\centering
+\caption{\label{fig:area_central} Área central da interface exibindo o vídeo da \textit{webcam} e os indicadores relacionados ao reconhecimento facial.}
+\includegraphics[width=0.75\textwidth]{Imagens/area_central.png}
+\caption*{\footnotesize Fonte: Elaborado pelo autor usando IA, 2026.}
+\end{figure}
+
+Na lateral direita, foram disponibilizados os controles operacionais do sistema, incluindo cadastro de usuários, exclusão de registros, opções relacionadas à digitação automática da credencial e indicadores detalhados de status.
+
+\begin{figure}[H]
+\centering
+\caption{\label{fig:coluna_direita} Coluna lateral direita da interface exibindo os controles operacionais e indicadores de status do sistema.}
+\includegraphics[width=0.3\textwidth]{Imagens/coluna_direita.png}
+\caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
+\end{figure}
+
+Durante os testes, observou-se que os indicadores exibidos na interface auxiliaram o acompanhamento do funcionamento interno do sistema, informando estados como procura por rosto, pose detectada, qualidade da captura, progresso do cadastro, andamento da votação temporal e usuário candidato ao reconhecimento. Esses elementos contribuíram para tornar a operação mais clara e para orientar o usuário em situações de captura inadequada.
+
+\begin{table}[!htbp]
+\centering
+\caption{Principais indicadores exibidos durante a operação do sistema}
+\label{tab:indicadores_interface}
+\begin{tabular}{p{3cm}|p{10cm}}
+\hline
+\textbf{Indicador} & \textbf{Descrição} \\
+\hline
+Mensagem principal & Indica o estado atual do sistema, como procura por rostos, detecção de uma nova face ou reconhecimento confirmado de um usuário cadastrado. \\
+\hline
+Pose detectada & Apresenta a orientação aproximada da face em relação à câmera, podendo assumir valores como frente, esquerda ou direita. \\
+\hline
+Face & Representa o tamanho relativo da face dentro da imagem capturada, auxiliando na verificação do enquadramento. \\
+\hline
+Nitidez & Indica a qualidade visual da captura, permitindo identificar imagens pouco definidas ou inadequadas para processamento. \\
+\hline
+Rosto válido & Informa se o quadro atual atendeu aos critérios mínimos para ser utilizado pelo sistema. \\
+\hline
+Cadastro & Mostra a pose solicitada durante o processo de cadastro multipose. \\
+\hline
+Amostras & Indica a quantidade de amostras válidas já capturadas em relação ao total necessário. \\
+\hline
+Reconhecendo & Apresenta o progresso da janela temporal utilizada no reconhecimento facial. \\
+\hline
+Base vazia & Indica que não existem usuários cadastrados para comparação. \\
+\hline
+Candidato & Apresenta o usuário mais semelhante encontrado, juntamente com informações associadas à comparação. \\
+\hline
+\end{tabular}
+\caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
+\end{table}
+
+De forma geral, a interface se mostrou adequada para a operação do protótipo, pois permitiu acompanhar simultaneamente a imagem da câmera, o estado do reconhecimento e as ações disponíveis ao operador.
+
+\FloatBarrier
+
+
 \subsection{Validação do cadastro multipose}
 
-\subsection{Validação do armazenamento das identidades}
+O processo de cadastro foi validado por meio da execução completa do fluxo de registro de usuários no protótipo desenvolvido. Durante os testes, o operador informou os dados cadastrais e iniciou a captura facial guiada, permitindo verificar o funcionamento das etapas de validação, coleta das amostras e armazenamento das identidades.
+
+A \ref{fig:zerado} apresenta a tela inicial do sistema antes da realização de qualquer cadastro, evidenciando o estado inicial da aplicação.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{1.0\textwidth}
+        \caption{\label{fig:zerado} Tela inicial do sistema quando um usuário ainda não foi cadastrado.}
+        \includegraphics[width=\textwidth]{Imagens/zerado.png}
+        \caption*{\footnotesize Fonte: Elaborado pelo autor usando IA, 2026.}
+    \end{minipage}
+\end{figure}
+
+Após a validação do nome e do código da credencial, o sistema apresentou instruções para orientar o usuário durante a coleta das poses laterais, conforme ilustrado em \ref{fig:esquerda} e \ref{fig:direita}.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Imagens/esquerda.png}
+        \caption{\label{fig:esquerda} Orientações para a captura da pose lateral esquerda.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Imagens/direita.png}
+        \caption{\label{fig:direita} Orientações para a captura da pose lateral direita.}
+    \end{subfigure}
+    \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
+\end{figure}
+
+Durante a coleta das amostras, o sistema monitorou continuamente a qualidade dos quadros capturados e a pose detectada, aceitando apenas amostras compatíveis com os critérios estabelecidos. A \ref{fig:pose_esquerda} e \ref{fig:pose_direita} apresentam exemplos da etapa de captura das poses laterais.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{1.0\textwidth}
+        \caption{\label{fig:pose_esquerda} Tela durante a captura da pose lateral esquerda.}
+        \includegraphics[width=\textwidth]{Imagens/pose_esquerda.png}
+        \caption*{\footnotesize Fonte: Elaborado pelo autor usando IA, 2026.}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{1.0\textwidth}
+        \caption{\label{fig:pose_direita} Tela durante a captura da pose lateral direita.}
+        \includegraphics[width=\textwidth]{Imagens/pose_direita.png}
+        \caption*{\footnotesize Fonte: Elaborado pelo autor usando IA, 2026.}
+    \end{minipage}
+\end{figure}
+
+Após a obtenção das amostras válidas necessárias para cada pose, os \textit{embeddings} foram gerados, agregados e armazenados no banco de dados local. A conclusão bem-sucedida do cadastro foi confirmada por meio da mensagem apresentada na \ref{fig:sucesso}.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.6\textwidth}
+        \caption{\label{fig:sucesso} Mensagem de confirmação de cadastro.}
+        \includegraphics[width=\textwidth]{Imagens/sucesso.png}
+        \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
+    \end{minipage}
+\end{figure}
+
+A \ref{fig:pose_final} apresenta a interface após a conclusão do cadastro, evidenciando que as informações do usuário passaram a estar disponíveis para utilização durante o reconhecimento facial.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{1.0\textwidth}
+        \caption{\label{fig:pose_final} Tela após a conclusão do cadastro com as informações do usuário.}
+        \includegraphics[width=\textwidth]{Imagens/pose_final.png}
+        \caption*{\footnotesize Fonte: Elaborado pelo autor usando IA, 2026.}
+    \end{minipage}
+\end{figure}
+
+Os testes realizados demonstraram que o fluxo de cadastro multipose foi executado corretamente, permitindo registrar usuários, capturar amostras em diferentes orientações faciais e armazenar as representações biométricas necessárias para o reconhecimento em tempo real.
+
+Após a conclusão do cadastro, os embeddings gerados foram armazenados com sucesso no banco de dados local e permaneceram disponíveis para utilização em sessões posteriores do sistema.
 
 \subsection{Validação do reconhecimento facial em tempo real}
 
-\subsection{Comportamento da votação temporal}
+O reconhecimento facial em tempo real foi avaliado utilizando usuários previamente cadastrados na base local do sistema. Durante os testes, foi possível verificar a detecção automática da face, a identificação do usuário e a exibição das informações associadas ao reconhecimento.
+
+Usuários previamente cadastrados foram identificados corretamente em diferentes posições diante da câmera. Também foi observado que o sistema continuou operando mesmo diante de pequenas variações de iluminação, enquadramento e orientação facial, desde que os critérios mínimos de qualidade fossem atendidos.
+
+Os resultados obtidos indicam que o protótipo foi capaz de executar o reconhecimento facial de forma automática e contínua, utilizando apenas os dados armazenados localmente durante o processo de cadastro.
+
+\subsection{Validação da votação temporal}
+
+O mecanismo de votação temporal foi avaliado durante os testes do protótipo com o objetivo de verificar sua contribuição para a estabilidade do reconhecimento facial. Durante a execução do sistema, foi possível acompanhar o acúmulo progressivo de quadros válidos utilizados para a tomada de decisão.
+
+As Figuras \ref{fig:amostra_reconhecendo} e \ref{fig:amostra_cadastro} apresentam exemplos dos indicadores exibidos durante o funcionamento da aplicação. O sistema informa continuamente a quantidade de quadros válidos acumulados em relação ao total necessário para a confirmação do reconhecimento ou para a conclusão de etapas do cadastro.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.41\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Imagens/amostra_reconhecendo.png}
+        \caption{\label{fig:amostra_reconhecendo} Indicador de votação temporal durante o reconhecimento facial.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.55\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Imagens/amostra_cadastro.png}
+        \caption{\label{fig:amostra_cadastro} Indicador de votação temporal durante o processo de cadastro.}
+    \end{subfigure}
+    \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
+\end{figure}
+
+Durante os testes, observou-se que o mecanismo impediu que decisões fossem tomadas com base em capturas isoladas, exigindo a acumulação de múltiplos quadros válidos antes da confirmação da identidade. Essa abordagem reduziu oscilações ocasionais causadas por movimentação do usuário, pequenas variações de iluminação ou quadros momentaneamente inadequados para reconhecimento.
+
+Também foi verificado que, na ausência de consenso suficiente entre os votos acumulados, o sistema permanecia aguardando novas amostras em vez de confirmar uma identificação potencialmente incorreta. Esse comportamento contribuiu para aumentar a estabilidade do reconhecimento facial e reduzir a influência de erros presentes em quadros individuais.
+
+De forma geral, os testes indicaram que a votação temporal atuou como um mecanismo adicional de validação, tornando o processo de reconhecimento mais consistente quando comparado a decisões baseadas exclusivamente em uma única captura.
+
 
 \subsection{Validação da digitação automática da credencial}
 
+A funcionalidade de digitação automática foi avaliada com o objetivo de verificar a capacidade do sistema em inserir a credencial associada ao usuário reconhecido em aplicações externas sem necessidade de integração direta com seus mecanismos internos.
+
+Durante os testes, foram avaliadas as configurações disponibilizadas ao operador para controle do processo de inserção automática da credencial. A \ref{fig:botoes} apresenta os controles utilizados para habilitar a confirmação prévia da operação e o envio automático da tecla \textit{Enter} após a digitação.
+
+\begin{figure}[H]
+\centering
+\caption{\label{fig:botoes} Botões de configuração relacionados à digitação automática de credenciais.}
+\includegraphics[width=0.45\textwidth]{Imagens/botoes.png}
+\caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
+\end{figure}
+
+Quando o modo de confirmação prévia foi habilitado, o sistema apresentou uma janela solicitando autorização antes da realização da operação. Após a confirmação, foi possível selecionar o campo de destino e realizar a inserção automática da credencial. A \ref{fig:confirmar_codigo} apresenta a interface utilizada nesse procedimento.
+
+\begin{figure}[H]
+\centering
+\caption{\label{fig:confirmar_codigo} \textit{Pop up} de confirmação para a digitação automática da credencial.}
+\includegraphics[width=0.7\textwidth]{Imagens/confirmar_codigo.png}
+\caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
+\end{figure}
+
+Os testes realizados demonstraram que o sistema foi capaz de inserir corretamente a credencial associada ao usuário reconhecido, tanto no modo automático quanto no modo com confirmação prévia. Também foi verificado o correto funcionamento do mecanismo de controle de sessão, impedindo repetições sucessivas da mesma credencial enquanto o usuário permanecia continuamente identificado pela câmera.
+
+Esses resultados indicam que a funcionalidade desenvolvida permite utilizar o reconhecimento facial como alternativa ao uso de cartões físicos ou à digitação manual de credenciais, mantendo compatibilidade com diferentes aplicações sem necessidade de adaptações específicas.
+
+
 \subsection{Validação da exclusão de usuários}
+
+A funcionalidade de exclusão de usuários foi avaliada por meio da remoção de registros previamente cadastrados na base local do sistema. Durante os testes, foi possível localizar usuários por meio do mecanismo de busca, selecionar o cadastro desejado e executar a exclusão utilizando o código da credencial associado à identidade. Abaixo estão apresentadas as telas relacionadas ao processo de exclusão, incluindo a lista de cadastros disponíveis e a mensagem de confirmação antes da remoção definitiva.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.75\textwidth}
+        \caption{\label{fig:tela_exclusao} Tela de exclusão de usuários, apresentando o mecanismo de busca e a lista de cadastros disponíveis.}
+        \includegraphics[width=\textwidth]{Imagens/tela_exclusao.png}
+        \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.7\textwidth}
+        \caption{\label{fig:confirmacao_exclusao} Tela de confirmação de exclusão de usuário.}
+        \includegraphics[width=\textwidth]{Imagens/confirmacao_exclusao.png}
+        \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
+    \end{minipage}
+\end{figure}
+
+Antes da remoção definitiva, o sistema apresentou uma mensagem de confirmação contendo as informações do usuário selecionado, reduzindo a possibilidade de exclusões acidentais. Após a confirmação, os dados cadastrais e os respectivos \textit{embeddings} faciais foram removidos do banco de dados SQLite.
+
+Também foi verificado que, após a exclusão, a base carregada em memória foi atualizada automaticamente, impedindo que o usuário removido continuasse participando do processo de reconhecimento facial. Em testes posteriores, identidades excluídas não foram mais encontradas pelo sistema, confirmando o correto funcionamento do mecanismo implementado.
+
 
 \subsection{Síntese dos testes funcionais}
 
-\subsection{Limitações observadas}
+Os testes indicaram que o sistema atende aos principais comportamentos esperados. O cadastro bloqueia campos inválidos, normaliza códigos hexadecimais e impede uso de frames ruins. O reconhecimento não confirma identidades com poucos frames, votos divididos ou distância acima do limite. A qualidade da captura é controlada por confiança, tamanho do rosto, nitidez e alinhamento. A exclusão remove tanto o usuário quanto seus embeddings e atualiza o cache. O banco é criado automaticamente, os embeddings são criptografados e falhas de chave ou dados corrompidos são tratadas sem travar a aplicação. A digitação automática respeita confirmação, Enter opcional, cooldown e limite por pessoa. A interface manteve funcionamento adequado em abertura, redimensionamento, cancelamento de cadastro e fechamento seguro da aplicação.
+
+Além dos testes realizados em ambiente controlado, o protótipo também foi avaliado em conjunto com um sistema institucional já utilizado no contexto de aplicação pretendido. Para essa validação, foram utilizados dados reais associados às credenciais dos usuários cadastrados. Durante os testes, o sistema foi capaz de identificar corretamente os usuários por meio do reconhecimento facial e realizar automaticamente a inserção do número da credencial no campo correspondente da aplicação institucional. Após o preenchimento, o sistema institucional retornou as informações do usuário esperado, demonstrando que a credencial associada à identidade reconhecida foi recuperada e inserida corretamente. Esse resultado fornece uma evidência prática da viabilidade da solução proposta como alternativa ao uso de cartões físicos para identificação e autenticação em aplicações existentes.
