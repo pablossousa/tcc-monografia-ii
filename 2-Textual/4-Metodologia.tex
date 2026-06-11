@@ -107,7 +107,7 @@ A geração dessas variações sintéticas é particularmente relevante no conte
 
 Após a geração das variações sintéticas das imagens faciais, procedeu-se à extração de \textit{embeddings} faciais por meio de um modelo de reconhecimento facial pré-treinado baseado em aprendizado profundo. Essa etapa tem como objetivo representar cada face em um espaço vetorial no qual amostras da mesma identidade apresentem maior proximidade entre si, enquanto identidades distintas sejam mapeadas para regiões mais distantes, característica essencial para sistemas de reconhecimento facial baseados em métricas de similaridade \cite{ge2018hierarchical}.
 
-Para essa finalidade, foi utilizado o pacote InsightFace por meio do módulo \textit{FaceAnalysis} com o conjunto de modelos \texttt{buffalo\_l}. O modelo de reconhecimento empregado gera representações vetoriais discriminativas a partir de redes profundas e foi otimizado com funções de perda do tipo \textit{margin-based}, em particular a \textit{ArcFace} (margem angular aditiva), cujo objetivo é aumentar a separação entre identidades distintas e reduzir a variabilidade intraidentidade no espaço de características \cite{deng2019arcface}. Esse objetivo é coerente com a filosofia de aprendizado em espaço métrico, frequentemente discutida em conjunto com abordagens baseadas em \textit{triplet loss} \cite{ge2018hierarchical}.
+Para essa finalidade, foi utilizado o pacote InsightFace por meio do módulo \textit{FaceAnalysis} com o conjunto de modelos \textit{buffalo\_l}. O modelo de reconhecimento empregado gera representações vetoriais discriminativas a partir de redes profundas e foi otimizado com funções de perda do tipo \textit{margin-based}, em particular a \textit{ArcFace} (margem angular aditiva), cujo objetivo é aumentar a separação entre identidades distintas e reduzir a variabilidade intraidentidade no espaço de características \cite{deng2019arcface}. Esse objetivo é coerente com a filosofia de aprendizado em espaço métrico, frequentemente discutida em conjunto com abordagens baseadas em \textit{triplet loss} \cite{ge2018hierarchical}.
 
 Cada imagem presente no conjunto de dados ampliado foi processada individualmente pelo \textit{pipeline}, realizando-se inicialmente a detecção automática da face e, em seguida, a extração do vetor de características correspondente. O \textit{embedding} resultante consiste em um vetor numérico de dimensão fixa, capaz de capturar características discriminativas da face de forma robusta a variações de iluminação, expressão facial e pequenas alterações de pose \cite{kaya2019deep}.
 
@@ -156,7 +156,7 @@ A etapa experimental apresentada anteriormente teve como objetivo validar a viab
 
 Entretanto, o desenvolvimento do sistema funcional exigiu requisitos adicionais que não estavam presentes na etapa experimental, como captura em tempo real por \textit{webcam}, detecção facial contínua, alinhamento automático das faces, gerenciamento de usuários cadastrados e integração com a interface gráfica da aplicação.
 
-Dessa forma, optou-se pela utilização da biblioteca \texttt{facenet-pytorch}, que disponibiliza de forma integrada os modelos \acs{MTCNN} para detecção e alinhamento facial e FaceNet (\textit{InceptionResnetV1}) para geração dos \textit{embeddings}. Essa escolha simplificou a implementação do sistema em tempo real e permitiu a construção de um \textit{pipeline} único para captura, processamento e reconhecimento facial.
+Dessa forma, optou-se pela utilização da biblioteca \textit{facenet-pytorch}, que disponibiliza de forma integrada os modelos \acs{MTCNN} para detecção e alinhamento facial e FaceNet (\textit{InceptionResnetV1}) para geração dos \textit{embeddings}. Essa escolha simplificou a implementação do sistema em tempo real e permitiu a construção de um \textit{pipeline} único para captura, processamento e reconhecimento facial.
 
 Embora tenha ocorrido a substituição do modelo utilizado na fase experimental, o princípio fundamental da abordagem permaneceu inalterado. Tanto na validação experimental quanto no sistema implementado, o reconhecimento é realizado por meio da geração de \textit{embeddings} faciais e da comparação dessas representações em um espaço vetorial de características. Assim, a mudança realizada representa uma adaptação tecnológica voltada à implementação prática da solução, sem alterar os fundamentos conceituais investigados ao longo da pesquisa.
 
@@ -187,7 +187,7 @@ O protótipo desenvolvido neste trabalho foi implementado integralmente na lingu
 
 \subsubsection{OpenCV}
 
-A biblioteca OpenCV (\texttt{cv2}) foi utilizada para aquisição e processamento das imagens capturadas pela \textit{webcam}. Além da leitura contínua dos quadros, a biblioteca foi empregada na conversão de formatos de imagem, exibição de informações visuais na interface, cálculo de métricas de qualidade da captura e operações de alinhamento facial \cite{opencv_python_docs}.
+A biblioteca OpenCV (\textit{cv2}) foi utilizada para aquisição e processamento das imagens capturadas pela \textit{webcam}. Além da leitura contínua dos quadros, a biblioteca foi empregada na conversão de formatos de imagem, exibição de informações visuais na interface, cálculo de métricas de qualidade da captura e operações de alinhamento facial \cite{opencv_python_docs}.
 
 \subsubsection{Tkinter}
 
@@ -195,7 +195,7 @@ A interface gráfica da aplicação foi desenvolvida utilizando o framework Tkin
 
 \subsubsection{PyTorch e facenet-pytorch}
 
-O processamento dos modelos neurais foi realizado com o auxílio da biblioteca PyTorch. Sobre essa infraestrutura foi utilizada a biblioteca \texttt{facenet-pytorch}, responsável por disponibilizar os modelos \acs{MTCNN} para detecção facial e localização de \textit{landmarks}, bem como o modelo FaceNet (\textit{InceptionResnetV1}) para geração dos \textit{embeddings} faciais. O modelo utilizado foi a versão pré-treinada na base VGGFace2, permitindo a extração de representações faciais discriminativas sem necessidade de treinamento adicional \cite{facenet_pytorch_repo}.
+O processamento dos modelos neurais foi realizado com o auxílio da biblioteca PyTorch. Sobre essa infraestrutura foi utilizada a biblioteca \textit{facenet-pytorch}, responsável por disponibilizar os modelos \acs{MTCNN} para detecção facial e localização de \textit{landmarks}, bem como o modelo FaceNet (\textit{InceptionResnetV1}) para geração dos \textit{embeddings} faciais. O modelo utilizado foi a versão pré-treinada na base \textit{VGGFace2}, permitindo a extração de representações faciais discriminativas sem necessidade de treinamento adicional \cite{facenet_pytorch_repo}.
 
 \subsubsection{NumPy}
 
@@ -203,11 +203,11 @@ A biblioteca NumPy foi utilizada para manipulação dos \textit{embeddings} faci
 
 \subsubsection{SQLite}
 
-O armazenamento local dos dados foi realizado por meio do banco de dados SQLite. Essa tecnologia foi escolhida por dispensar a utilização de servidores externos, permitindo a persistência das informações dos usuários e dos \textit{embeddings} faciais diretamente no computador onde o sistema é executado \cite{sqlite_docs}.
+O armazenamento local dos dados foi realizado por meio do banco de dados \textit{SQLite}. Essa tecnologia foi escolhida por dispensar a utilização de servidores externos, permitindo a persistência das informações dos usuários e dos \textit{embeddings} faciais diretamente no computador onde o sistema é executado \cite{sqlite_docs}.
 
 \subsubsection{Cryptography (Fernet)}
 
-Com o objetivo de aumentar a proteção dos dados biométricos armazenados, os \textit{embeddings} faciais foram criptografados utilizando o algoritmo Fernet, disponibilizado pela biblioteca \texttt{cryptography}. Dessa forma, os vetores faciais permanecem protegidos mesmo em caso de acesso direto ao banco de dados \cite{cryptography_fernet_docs}.
+Com o objetivo de aumentar a proteção dos dados biométricos armazenados, os \textit{embeddings} faciais foram criptografados utilizando o algoritmo Fernet, disponibilizado pela biblioteca \textit{cryptography}. Dessa forma, os vetores faciais permanecem protegidos mesmo em caso de acesso direto ao banco de dados \cite{cryptography_fernet_docs}.
 
 \subsubsection{Pillow}
 
@@ -242,7 +242,7 @@ Diferentemente de abordagens que armazenam imagens faciais completas, a soluçã
 \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
 \end{figure}
 
-Cada registro de usuário contém o nome, o código da credencial e os \textit{embeddings} faciais agregados associados ao cadastro. Para cada usuário, são armazenados os embeddings agregados gerados durante o processo de cadastro, correspondentes às poses facial frontal, lateral esquerda e lateral direita.
+Cada registro de usuário contém o nome, o código da credencial e os \textit{embeddings} faciais agregados associados ao cadastro. Para cada usuário, são armazenados os \text{embeddings} agregados gerados durante o processo de cadastro, correspondentes às poses facial frontal, lateral esquerda e lateral direita.
 
 
 Durante a execução da aplicação, os \textit{embeddings} cadastrados também são mantidos em memória, após o carregamento da base local. Esse mecanismo reduz a necessidade de consultas repetidas ao banco de dados durante o reconhecimento facial e contribui para o desempenho do sistema em tempo real.
@@ -291,7 +291,7 @@ O sistema disponibiliza um mecanismo para remoção de usuários previamente cad
 
 A exclusão é realizada a partir do código da credencial associado ao usuário, evitando ambiguidades decorrentes da utilização exclusiva do nome como identificador. Para auxiliar a operação, a interface disponibiliza mecanismos de busca e seleção dos usuários cadastrados.
 
-Após a confirmação da exclusão, o sistema remove do banco de dados SQLite tanto as informações cadastrais do usuário quanto os \textit{embeddings} faciais associados à identidade. Em seguida, a base de dados carregada em memória é atualizada, garantindo que os registros removidos deixem de participar imediatamente do processo de reconhecimento facial.
+Após a confirmação da exclusão, o sistema remove do banco de dados \textit{SQLite} tanto as informações cadastrais do usuário quanto os \textit{embeddings} faciais associados à identidade. Em seguida, a base de dados carregada em memória é atualizada, garantindo que os registros removidos deixem de participar imediatamente do processo de reconhecimento facial.
 
 
 \subsection{Interface gráfica}
@@ -304,6 +304,12 @@ Durante a execução, a interface apresenta informações como pose detectada, q
 
 A interface também foi projetada para permitir redimensionamento da janela, preservando a área de visualização da câmera como elemento central da aplicação.
 
+\subsection{Aplicação desktop para Windows}
+
+Com o objetivo de facilitar a utilização do sistema por operadores sem necessidade de execução manual por linha de comando, o projeto foi estruturado como uma aplicação desktop para Windows. Dessa forma, o sistema pode ser iniciado por meio de uma interface clicável, mantendo o funcionamento local da câmera, do reconhecimento facial, do banco de dados e da digitação automática do código do cartão.
+
+Essa adaptação contribui para tornar a solução mais próxima de um cenário real de uso, pois permite que o operador interaja com o sistema por meio da interface gráfica, sem depender diretamente do ambiente de desenvolvimento.
+
 \subsection{Procedimentos de teste do protótipo}
 
-Para validar o sistema, foram definidos testes funcionais divididos em sete grupos: cadastro de usuários, reconhecimento facial, qualidade da captura, exclusão de usuários, banco de dados e criptografia, digitação automática e interface gráfica. Os testes combinaram verificação manual da aplicação com simulações controladas no código, utilizando banco de dados temporário e componentes falsos quando necessário, para evitar alterações nos dados reais e impedir ações indesejadas, como digitação automática no sistema operacional. Também foram analisados os fluxos internos do programa, como validação do código do cartão, votação temporal, critérios de qualidade do frame, criptografia dos embeddings, atualização do cache e liberação correta dos recursos da câmera.
+Para validar o sistema, foram definidos testes funcionais divididos em sete grupos: cadastro de usuários, reconhecimento facial, qualidade da captura, exclusão de usuários, banco de dados e criptografia, digitação automática e interface gráfica. Os testes combinaram verificação manual da aplicação com simulações controladas no código, utilizando banco de dados temporário e componentes falsos quando necessário, para evitar alterações nos dados reais e impedir ações indesejadas, como digitação automática no sistema operacional. Também foram analisados os fluxos internos do programa, como validação do código do cartão, votação temporal, critérios de qualidade do frame, criptografia dos \textit{embeddings}, atualização do cache e liberação correta dos recursos da câmera.

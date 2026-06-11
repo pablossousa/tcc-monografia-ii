@@ -63,7 +63,7 @@ A tabela abaixo apresenta o desempenho do sistema para diferentes valores de \te
 
 Os resultados são organizados em termos de quatro categorias: verdadeiros positivos (\acs{TP}), correspondentes a pares da mesma identidade corretamente aceitos; falsos negativos (\acs{FN}), pares da mesma identidade incorretamente rejeitados; falsos positivos (\acs{FP}), pares de identidades diferentes incorretamente aceitos; e verdadeiros negativos (\acs{TN}), pares de identidades diferentes corretamente rejeitados. A partir dessas quantidades, são calculadas as métricas \acs{FAR}, definida como a proporção de falsos positivos em relação ao total de pares impostores, e \acs{FRR}, definida como a proporção de falsos negativos em relação ao total de pares genuínos.
 
-A \ref{tab:table1} apresenta os resultados obtidos para os diferentes valores de threshold avaliados. Verifica-se que, no intervalo de 0,20 a 0,35, o sistema não registrou ocorrências de \acs{FAR} ou \acs{FRR}. A partir de 0,40, observa-se o surgimento de falsas aceitações, evidenciado pelo aumento progressivo da \acs{FAR}, enquanto a \acs{FRR} permaneceu nula em todos os limiares testados.
+A \ref{tab:table1} apresenta os resultados obtidos para os diferentes valores de \textit{threshold} avaliados. Verifica-se que, no intervalo de 0,20 a 0,35, o sistema não registrou ocorrências de \acs{FAR} ou \acs{FRR}. A partir de 0,40, observa-se o surgimento de falsas aceitações, evidenciado pelo aumento progressivo da \acs{FAR}, enquanto a \acs{FRR} permaneceu nula em todos os limiares testados.
 
 Os resultados indicam elevada separabilidade entre as representações faciais, possibilitando a definição de um limiar que preserva a integridade das comparações genuínas e mantém controle rigoroso sobre aceitações indevidas.
 
@@ -73,7 +73,7 @@ Os resultados indicam elevada separabilidade entre as representações faciais, 
 
 Com base na análise quantitativa realizada, definiu-se o limiar de decisão a ser utilizado no sistema. Considerando que, a partir de 0,40, passam a ocorrer falsas aceitações, optou-se por um valor dentro do intervalo que preserva erro zero para ambas as métricas.
 
-Assim, foi adotado o threshold de 0,30 por representar o maior valor testado que mantém \acs{FAR} e \acs{FRR} iguais a zero. Essa escolha maximiza a margem de tolerância do sistema sem comprometer a segurança, sendo, portanto, utilizado como critério nas etapas subsequentes de validação e identificação.
+Assim, foi adotado o \textit{threshold} de 0,30 por representar o maior valor testado que mantém \acs{FAR} e \acs{FRR} iguais a zero. Essa escolha maximiza a margem de tolerância do sistema sem comprometer a segurança, sendo, portanto, utilizado como critério nas etapas subsequentes de validação e identificação.
 
 %---------------------------------------------------------
 
@@ -270,7 +270,7 @@ A \ref{fig:pose_final} apresenta a interface após a conclusão do cadastro, evi
 
 Os testes realizados demonstraram que o fluxo de cadastro multipose foi executado corretamente, permitindo registrar usuários, capturar amostras em diferentes orientações faciais e armazenar as representações biométricas necessárias para o reconhecimento em tempo real.
 
-Após a conclusão do cadastro, os embeddings gerados foram armazenados com sucesso no banco de dados local e permaneceram disponíveis para utilização em sessões posteriores do sistema.
+Após a conclusão do cadastro, os \textit{embeddings} gerados foram armazenados com sucesso no banco de dados local e permaneceram disponíveis para utilização em sessões posteriores do sistema.
 
 \subsection{Validação do reconhecimento facial em tempo real}
 
@@ -358,13 +358,19 @@ A funcionalidade de exclusão de usuários foi avaliada por meio da remoção de
     \end{minipage}
 \end{figure}
 
-Antes da remoção definitiva, o sistema apresentou uma mensagem de confirmação contendo as informações do usuário selecionado, reduzindo a possibilidade de exclusões acidentais. Após a confirmação, os dados cadastrais e os respectivos \textit{embeddings} faciais foram removidos do banco de dados SQLite.
+Antes da remoção definitiva, o sistema apresentou uma mensagem de confirmação contendo as informações do usuário selecionado, reduzindo a possibilidade de exclusões acidentais. Após a confirmação, os dados cadastrais e os respectivos \textit{embeddings} faciais foram removidos do banco de dados \textit{SQLite}.
 
 Também foi verificado que, após a exclusão, a base carregada em memória foi atualizada automaticamente, impedindo que o usuário removido continuasse participando do processo de reconhecimento facial. Em testes posteriores, identidades excluídas não foram mais encontradas pelo sistema, confirmando o correto funcionamento do mecanismo implementado.
+
+\subsection{Geração do Executável Desktop}
+
+Como resultado adicional, o sistema foi empacotado como uma aplicação desktop executável para o ambiente Windows, utilizando a ferramenta PyInstaller. Esse processo permitiu gerar um arquivo \textit{.exe} clicável, acompanhado de uma pasta interna contendo as bibliotecas e dependências necessárias para execução, como \textit{OpenCV}, \textit{PyTorch}, \textit{facenet-pytorch}, \textit{Tkinter}, \textit{SQLite}, Fernet e Pynput. Dessa forma, a aplicação deixa de depender da execução manual por terminal, tornando o uso mais acessível para demonstrações e testes em ambiente acadêmico.
+
+A versão desktop preserva o funcionamento local do sistema, mantendo a \textit{webcam} como entrada principal, o banco \textit{SQLite} para persistência, a criptografia dos \textit{embeddings} faciais e os recursos de cadastro, reconhecimento, exclusão e digitação automática. Além disso, o empacotamento foi configurado para incluir o peso pré-treinado do modelo \textit{InceptionResnetV1} com \textit{VGGFace2}, evitando a necessidade de download do modelo no computador de destino. Assim, a aplicação pode ser distribuída como uma pasta executável para Windows, desde que a pasta completa gerada seja copiada, incluindo o executável e seus arquivos internos.
 
 
 \subsection{Síntese dos testes funcionais}
 
-Os testes indicaram que o sistema atende aos principais comportamentos esperados. O cadastro bloqueia campos inválidos, normaliza códigos hexadecimais e impede uso de frames ruins. O reconhecimento não confirma identidades com poucos frames, votos divididos ou distância acima do limite. A qualidade da captura é controlada por confiança, tamanho do rosto, nitidez e alinhamento. A exclusão remove tanto o usuário quanto seus embeddings e atualiza o cache. O banco é criado automaticamente, os embeddings são criptografados e falhas de chave ou dados corrompidos são tratadas sem travar a aplicação. A digitação automática respeita confirmação, Enter opcional, cooldown e limite por pessoa. A interface manteve funcionamento adequado em abertura, redimensionamento, cancelamento de cadastro e fechamento seguro da aplicação.
+Os testes indicaram que o sistema atende aos principais comportamentos esperados. O cadastro bloqueia campos inválidos, normaliza códigos hexadecimais e impede uso de frames ruins. O reconhecimento não confirma identidades com poucos frames, votos divididos ou distância acima do limite. A qualidade da captura é controlada por confiança, tamanho do rosto, nitidez e alinhamento. A exclusão remove tanto o usuário quanto seus \textit{embeddings} e atualiza o cache. O banco é criado automaticamente, os \textit{embeddings} são criptografados e falhas de chave ou dados corrompidos são tratadas sem travar a aplicação. A digitação automática respeita confirmação, Enter opcional, cooldown e limite por pessoa. A interface manteve funcionamento adequado em abertura, redimensionamento, cancelamento de cadastro e fechamento seguro da aplicação.
 
 Além dos testes realizados em ambiente controlado, o protótipo também foi avaliado em conjunto com um sistema institucional já utilizado no contexto de aplicação pretendido. Para essa validação, foram utilizados dados reais associados às credenciais dos usuários cadastrados. Durante os testes, o sistema foi capaz de identificar corretamente os usuários por meio do reconhecimento facial e realizar automaticamente a inserção do número da credencial no campo correspondente da aplicação institucional. Após o preenchimento, o sistema institucional retornou as informações do usuário esperado, demonstrando que a credencial associada à identidade reconhecida foi recuperada e inserida corretamente. Esse resultado fornece uma evidência prática da viabilidade da solução proposta como alternativa ao uso de cartões físicos para identificação e autenticação em aplicações existentes.
