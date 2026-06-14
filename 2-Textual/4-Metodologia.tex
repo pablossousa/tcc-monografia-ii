@@ -16,13 +16,13 @@ A \ref{fig:diagrama1} apresenta uma visão geral do \textit{pipeline} metodológ
     \end{minipage}
 \end{figure}
 
-Nesse contexto, busca-se verificar se \textit{embeddings} faciais extraídos por modelos de reconhecimento permitem a separação adequada entre diferentes identidades por meio de métricas de similaridade, possibilitando decisões confiáveis de autenticação e identificação \cite{ge2018hierarchical}. Considerando as restrições éticas e de privacidade associadas ao uso de dados biométricos reais \cite{north2020biometric}, a metodologia emprega uma base de dados sintética e segue um conjunto estruturado de etapas, descritas a seguir, de forma a garantir reprodutibilidade e clareza na avaliação da abordagem proposta.
+Nesse contexto, busca-se verificar se \textit{embeddings} faciais extraídos por modelos de reconhecimento permitem a separação adequada entre diferentes identidades por meio de métricas de similaridade, possibilitando decisões confiáveis de autenticação e identificação, conforme discutido por \textcite{ge2018hierarchical}. Considerando as restrições éticas e de privacidade associadas ao uso de dados biométricos reais \cite{north2020biometric}, a metodologia emprega uma base de dados sintética e segue um conjunto estruturado de etapas, descritas a seguir, de forma a garantir reprodutibilidade e clareza na avaliação da abordagem proposta.
 
 %---------------------------------------------------------
 
 \subsection{Construção da base de dados sintética}
 
-A construção da base de dados utilizada neste estudo teve como objetivo viabilizar a realização de experimentos de reconhecimento facial sem a utilização de dados biométricos reais, em conformidade com princípios éticos e com a \acs{LGPD} (Lei nº 13.709/2018) \cite{lgpd2018lei}. Para esse fim, foi empregada uma base de imagens faciais sintéticas geradas artificialmente por meio de redes generativas adversariais (\acs{GANs}), disponibilizadas publicamente pelo projeto \textit{This Person Does Not Exist}, o qual produz imagens fotorrealistas de rostos inexistentes, disponível em \cite{thispersondoesnotexist}.
+A construção da base de dados utilizada neste estudo teve como objetivo viabilizar a realização de experimentos de reconhecimento facial sem a utilização de dados biométricos reais, em conformidade com princípios éticos e com a \acs{LGPD} (Lei nº 13.709/2018), conforme estabelecido por \textcite{lgpd2018lei}. Para esse fim, foi empregada uma base de imagens faciais sintéticas geradas artificialmente por meio de redes generativas adversariais (\acs{GANs}), disponibilizadas publicamente pelo projeto \textit{This Person Does Not Exist}, o qual produz imagens fotorrealistas de rostos inexistentes, disponível em \cite{thispersondoesnotexist}.
 
 Foram coletadas 300 imagens faciais sintéticas, cada uma representando uma identidade distinta. As imagens foram armazenadas em formato digital e organizadas em diretórios específicos do projeto, adotando-se um padrão de nomenclatura que permitisse a associação direta entre cada imagem e seu respectivo identificador de identidade.
 
@@ -99,13 +99,13 @@ Para cada imagem facial original associada a uma identidade, foram aplicadas tra
 
 As imagens geradas por meio desse processo foram armazenadas em um diretório específico, mantendo-se a associação com o identificador da identidade original. Para refletir essa ampliação do conjunto de dados, foi criado um novo arquivo \acs{JSON} contendo múltiplos registros por identidade, cada um referenciando uma variação distinta da imagem facial, preservando-se o mesmo identificador único (id). Dessa forma, todas as variações de uma mesma identidade são tratadas como amostras positivas associadas a um único indivíduo \cite{ge2018hierarchical}.
 
-A geração dessas variações sintéticas é particularmente relevante no contexto de abordagens baseadas em aprendizado de representações em espaço métrico, nas quais se busca reduzir a distância entre diferentes amostras da mesma identidade e aumentar a separação em relação a amostras de identidades distintas \cite{ge2018hierarchical}. Embora nesta etapa não seja realizado treinamento de redes neurais, o conjunto de imagens gerado fornece subsídios adequados para avaliar o comportamento de \textit{embeddings} faciais frente a variações de uma mesma identidade, conceito central em estratégias inspiradas em funções de perda do tipo \textit{triplet loss} \cite{kaya2019deep}.
+A geração dessas variações sintéticas é particularmente relevante no contexto de abordagens baseadas em aprendizado de representações em espaço métrico, nas quais se busca reduzir a distância entre diferentes amostras da mesma identidade e aumentar a separação em relação a amostras de identidades distintas, conforme discutido por \textcite{ge2018hierarchical}. Embora nesta etapa não seja realizado treinamento de redes neurais, o conjunto de imagens gerado fornece subsídios adequados para avaliar o comportamento de \textit{embeddings} faciais frente a variações de uma mesma identidade, conceito central em estratégias inspiradas em funções de perda do tipo \textit{triplet loss} \cite{kaya2019deep}.
 
 %---------------------------------------------------------
 
 \subsection{Extração de embeddings faciais por modelo pré-treinado}
 
-Após a geração das variações sintéticas das imagens faciais, procedeu-se à extração de \textit{embeddings} faciais por meio de um modelo de reconhecimento facial pré-treinado baseado em aprendizado profundo. Essa etapa tem como objetivo representar cada face em um espaço vetorial no qual amostras da mesma identidade apresentem maior proximidade entre si, enquanto identidades distintas sejam mapeadas para regiões mais distantes, característica essencial para sistemas de reconhecimento facial baseados em métricas de similaridade \cite{ge2018hierarchical}.
+Após a geração das variações sintéticas das imagens faciais, procedeu-se à extração de \textit{embeddings} faciais por meio de um modelo de reconhecimento facial pré-treinado baseado em aprendizado profundo. Essa etapa tem como objetivo representar cada face em um espaço vetorial no qual amostras da mesma identidade apresentem maior proximidade entre si, enquanto identidades distintas sejam mapeadas para regiões mais distantes, característica essencial para sistemas de reconhecimento facial baseados em métricas de similaridade, conforme discutido por \textcite{ge2018hierarchical}.
 
 Para essa finalidade, foi utilizado o pacote InsightFace por meio do módulo \textit{FaceAnalysis} com o conjunto de modelos \textit{buffalo\_l}. O modelo de reconhecimento empregado gera representações vetoriais discriminativas a partir de redes profundas e foi otimizado com funções de perda do tipo \textit{margin-based}, em particular a \textit{ArcFace} (margem angular aditiva), cujo objetivo é aumentar a separação entre identidades distintas e reduzir a variabilidade intraidentidade no espaço de características \cite{deng2019arcface}. Esse objetivo é coerente com a filosofia de aprendizado em espaço métrico, frequentemente discutida em conjunto com abordagens baseadas em \textit{triplet loss} \cite{ge2018hierarchical}.
 
@@ -132,23 +132,21 @@ O protocolo experimental adotado neste trabalho tem como finalidade avaliar o co
 
 As comparações foram organizadas a partir da definição de dois tipos de pares. Os pares genuínos correspondem a comparações entre amostras pertencentes à mesma identidade, incluindo imagens originais e variações sintéticas associadas a um mesmo identificador. Já os pares impostores correspondem a comparações entre amostras de identidades distintas. Essa distinção permite analisar o comportamento das distâncias de similaridade tanto em situações de correspondência legítima quanto em tentativas de correspondência indevida.
 
-Para cada par de amostras, foi calculada a distância entre os \textit{embeddings} faciais utilizando a métrica definida na etapa anterior. A partir dessas distâncias, avaliou-se o impacto de diferentes valores do limiar de decisão (\textit{threshold}) na classificação das comparações como correspondências positivas ou negativas. Esse procedimento possibilita observar como variações no limiar influenciam o comportamento do sistema frente a pares genuínos e impostores \cite{jain2004biometric}.
+Para cada par de amostras, foi calculada a distância entre os \textit{embeddings} faciais utilizando a métrica definida na etapa anterior. A partir dessas distâncias, avaliou-se o impacto de diferentes valores do limiar de decisão (\textit{threshold}) na classificação das comparações como correspondências positivas ou negativas. Esse procedimento possibilita observar como variações no limiar influenciam o comportamento do sistema frente a pares genuínos e impostores, conforme discutido por \textcite{jain2004biometric}.
 
 Como métricas de avaliação, foram consideradas a taxa de falsa aceitação (\textit{False Acceptance Rate} - \acs{FAR}) e a taxa de falsa rejeição (\textit{False Rejection Rate} - \acs{FRR}). Essas métricas são amplamente utilizadas em sistemas biométricos e permitem caracterizar o compromisso entre segurança e usabilidade, aspecto fundamental em aplicações de controle de acesso \cite{jain2004biometric}. A análise conjunta dessas métricas fornece subsídios para a avaliação da separabilidade das identidades no espaço de \textit{embeddings} e para a definição de critérios de viabilidade da abordagem estudada.
 
 Esse protocolo experimental foi aplicado tanto à abordagem inicial baseada em características geométricas quanto à abordagem baseada em \textit{embeddings} extraídos por modelo pré-treinado, permitindo uma avaliação consistente do comportamento das diferentes representações faciais consideradas neste estudo.
 
-A metodologia apresentada definiu o conjunto de procedimentos adotados para a construção da base de dados, a implementação do \textit{pipeline} de reconhecimento facial e o protocolo experimental de avaliação. A partir dessa configuração experimental, o capítulo a seguir apresenta os resultados obtidos e discute o comportamento do sistema proposto diante das métricas e cenários avaliados.
+A metodologia apresentada definiu o conjunto de procedimentos adotados para a construção da base de dados, a implementação do \textit{pipeline} de reconhecimento facial e o protocolo experimental de avaliação. Encerrada a definição do protocolo experimental, a seção seguinte descreve o desenvolvimento do protótipo funcional em tempo real, responsável por materializar a abordagem avaliada em uma aplicação prática.
+
+
+
+
 
 \section{Desenvolvimento do protótipo funcional de reconhecimento facial em tempo real}
 
 Após a validação experimental da abordagem baseada em \textit{embeddings}, foi desenvolvido um protótipo funcional capaz de realizar o reconhecimento facial em tempo real. Diferentemente dos experimentos apresentados nas seções anteriores, cujo foco esteve na avaliação do comportamento dos \textit{embeddings} e na calibração dos parâmetros biométricos, esta etapa concentrou-se na implementação de uma aplicação completa, integrando captura por \textit{webcam}, cadastro de usuários, reconhecimento facial, armazenamento seguro das identidades e automação da inserção de credenciais. As subseções seguintes descrevem a arquitetura da solução desenvolvida e os principais componentes que compõem o sistema.
-
-
-
-%----------------------
-
-
 
 \subsection{Evolução da abordagem experimental para o sistema implementado}
 
@@ -312,4 +310,4 @@ Essa adaptação contribui para tornar a solução mais próxima de um cenário 
 
 \subsection{Procedimentos de teste do protótipo}
 
-Para validar o sistema, foram definidos testes funcionais divididos em sete grupos: cadastro de usuários, reconhecimento facial, qualidade da captura, exclusão de usuários, banco de dados e criptografia, digitação automática e interface gráfica. Os testes combinaram verificação manual da aplicação com simulações controladas no código, utilizando banco de dados temporário e componentes falsos quando necessário, para evitar alterações nos dados reais e impedir ações indesejadas, como digitação automática no sistema operacional. Também foram analisados os fluxos internos do programa, como validação do código do cartão, votação temporal, critérios de qualidade do frame, criptografia dos \textit{embeddings}, atualização do cache e liberação correta dos recursos da câmera.
+Para validar o sistema, foram definidos testes funcionais divididos em sete grupos: cadastro de usuários, reconhecimento facial, qualidade da captura, exclusão de usuários, banco de dados e criptografia, digitação automática e interface gráfica. Os testes combinaram verificação manual da aplicação com simulações controladas utilizando banco de dados temporário e componentes falsos, evitando alterações nos dados reais e ações indesejadas, como a digitação automática no sistema operacional. Também foram analisados fluxos internos do programa, como validação do código do cartão, votação temporal, critérios de qualidade do frame, criptografia dos \textit{embeddings}, atualização do cache e liberação correta dos recursos da câmera.

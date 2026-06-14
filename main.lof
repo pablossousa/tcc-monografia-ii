@@ -1,30 +1,30 @@
 \babel@toc {brazil}{}\relax 
 \babel@toc {english}{}\relax 
 \babel@toc {brazil}{}\relax 
-\contentsline {figure}{\numberline {Figura\hfill 1 -- }{\ignorespaces Modos de operação do NFC}}{8}{figure.caption.48}%
-\contentsline {figure}{\numberline {Figura\hfill 2 -- }{\ignorespaces Similaridade entre dois vetores com base no modelo de espaço vetorial.}}{15}{figure.caption.54}%
-\contentsline {figure}{\numberline {Figura\hfill 3 -- }{\ignorespaces Espaço de \textit {embeddings} antes e após o aprendizado.}}{20}{figure.caption.55}%
-\contentsline {figure}{\numberline {Figura\hfill 4 -- }{\ignorespaces Etapas do MTCNN para detecção facial e localização de pontos de referência.}}{23}{figure.caption.62}%
-\contentsline {figure}{\numberline {Figura\hfill 5 -- }{\ignorespaces \textit {Pipeline} típico de reconhecimento facial}}{25}{figure.caption.63}%
-\contentsline {figure}{\numberline {Figura\hfill 6 -- }{\ignorespaces \textit {Pipeline} metodológico adotado para a experimentação com base de dados sintética.}}{35}{figure.caption.84}%
-\contentsline {figure}{\numberline {Figura\hfill 7 -- }{\ignorespaces Variações sintéticas de uma identidade facial.}}{39}{figure.caption.91}%
-\contentsline {figure}{\numberline {Figura\hfill 8 -- }{\ignorespaces \textit {Pipeline} metodológico adotado para o sistema funcional de reconhecimento facial.}}{44}{figure.caption.97}%
-\contentsline {figure}{\numberline {Figura\hfill 9 -- }{\ignorespaces Processo de armazenamento das identidades cadastradas.}}{48}{figure.caption.99}%
-\contentsline {figure}{\numberline {Figura\hfill 10 -- }{\ignorespaces Distribuição das distâncias cosseno no espaço de \textit {embeddings}}}{56}{figure.caption.105}%
-\contentsline {figure}{\numberline {Figura\hfill 11 -- }{\ignorespaces Exemplo de par da mesma identidade corretamente aceitos}}{59}{figure.caption.123}%
-\contentsline {figure}{\numberline {Figura\hfill 12 -- }{\ignorespaces Exemplo de par de identidades diferentes corretamente rejeitados}}{59}{figure.caption.124}%
-\contentsline {figure}{\numberline {Figura\hfill 13 -- }{\ignorespaces Cabeçalho da aplicação exibindo o nome do sistema e o status de reconhecimento.}}{61}{figure.caption.127}%
-\contentsline {figure}{\numberline {Figura\hfill 14 -- }{\ignorespaces Área central da interface exibindo o vídeo da \textit {webcam} e os indicadores relacionados ao reconhecimento facial.}}{62}{figure.caption.128}%
-\contentsline {figure}{\numberline {Figura\hfill 15 -- }{\ignorespaces Coluna lateral direita da interface exibindo os controles operacionais e indicadores de status do sistema.}}{62}{figure.caption.129}%
-\contentsline {figure}{\numberline {Figura\hfill 16 -- }{\ignorespaces Tela inicial do sistema quando um usuário ainda não foi cadastrado.}}{64}{figure.caption.131}%
-\contentsline {figure}{\numberline {Figura\hfill 18 -- }{\ignorespaces Tela durante a captura da pose lateral esquerda.}}{65}{figure.caption.133}%
-\contentsline {figure}{\numberline {Figura\hfill 19 -- }{\ignorespaces Tela durante a captura da pose lateral direita.}}{66}{figure.caption.134}%
-\contentsline {figure}{\numberline {Figura\hfill 20 -- }{\ignorespaces Mensagem de confirmação de cadastro.}}{66}{figure.caption.135}%
-\contentsline {figure}{\numberline {Figura\hfill 21 -- }{\ignorespaces Tela após a conclusão do cadastro com as informações do usuário.}}{67}{figure.caption.136}%
-\contentsline {figure}{\numberline {Figura\hfill 23 -- }{\ignorespaces Botões de configuração relacionados à digitação automática de credenciais.}}{69}{figure.caption.138}%
-\contentsline {figure}{\numberline {Figura\hfill 24 -- }{\ignorespaces \textit {Pop up} de confirmação para a digitação automática da credencial.}}{70}{figure.caption.139}%
-\contentsline {figure}{\numberline {Figura\hfill 25 -- }{\ignorespaces Tela de exclusão de usuários, apresentando o mecanismo de busca e a lista de cadastros disponíveis.}}{71}{figure.caption.140}%
-\contentsline {figure}{\numberline {Figura\hfill 26 -- }{\ignorespaces Tela de confirmação de exclusão de usuário.}}{71}{figure.caption.141}%
+\contentsline {figure}{\numberline {Figura\hfill 1 -- }{\ignorespaces Modos de operação do NFC}}{7}{figure.caption.46}%
+\contentsline {figure}{\numberline {Figura\hfill 2 -- }{\ignorespaces Similaridade entre dois vetores com base no modelo de espaço vetorial.}}{14}{figure.caption.52}%
+\contentsline {figure}{\numberline {Figura\hfill 3 -- }{\ignorespaces Espaço de \textit {embeddings} antes e após o aprendizado.}}{19}{figure.caption.53}%
+\contentsline {figure}{\numberline {Figura\hfill 4 -- }{\ignorespaces Etapas do MTCNN para detecção facial e localização de pontos de referência.}}{22}{figure.caption.60}%
+\contentsline {figure}{\numberline {Figura\hfill 5 -- }{\ignorespaces \textit {Pipeline} típico de reconhecimento facial}}{24}{figure.caption.61}%
+\contentsline {figure}{\numberline {Figura\hfill 6 -- }{\ignorespaces \textit {Pipeline} metodológico adotado para a experimentação com base de dados sintética.}}{33}{figure.caption.84}%
+\contentsline {figure}{\numberline {Figura\hfill 7 -- }{\ignorespaces Variações sintéticas de uma identidade facial.}}{37}{figure.caption.91}%
+\contentsline {figure}{\numberline {Figura\hfill 8 -- }{\ignorespaces \textit {Pipeline} metodológico adotado para o sistema funcional de reconhecimento facial.}}{42}{figure.caption.97}%
+\contentsline {figure}{\numberline {Figura\hfill 9 -- }{\ignorespaces Processo de armazenamento das identidades cadastradas.}}{46}{figure.caption.99}%
+\contentsline {figure}{\numberline {Figura\hfill 10 -- }{\ignorespaces Distribuição das distâncias cosseno no espaço de \textit {embeddings}}}{52}{figure.caption.105}%
+\contentsline {figure}{\numberline {Figura\hfill 11 -- }{\ignorespaces Exemplo de par da mesma identidade corretamente aceitos}}{55}{figure.caption.123}%
+\contentsline {figure}{\numberline {Figura\hfill 12 -- }{\ignorespaces Exemplo de par de identidades diferentes corretamente rejeitados}}{56}{figure.caption.124}%
+\contentsline {figure}{\numberline {Figura\hfill 13 -- }{\ignorespaces Cabeçalho da aplicação exibindo o nome do sistema e o status de reconhecimento.}}{58}{figure.caption.127}%
+\contentsline {figure}{\numberline {Figura\hfill 14 -- }{\ignorespaces Área central da interface exibindo o vídeo da \textit {webcam} e os indicadores relacionados ao reconhecimento facial.}}{58}{figure.caption.128}%
+\contentsline {figure}{\numberline {Figura\hfill 15 -- }{\ignorespaces Coluna lateral direita da interface exibindo os controles operacionais e indicadores de status do sistema.}}{59}{figure.caption.129}%
+\contentsline {figure}{\numberline {Figura\hfill 16 -- }{\ignorespaces Tela inicial do sistema quando um usuário ainda não foi cadastrado.}}{61}{figure.caption.131}%
+\contentsline {figure}{\numberline {Figura\hfill 18 -- }{\ignorespaces Tela durante a captura da pose lateral esquerda.}}{62}{figure.caption.133}%
+\contentsline {figure}{\numberline {Figura\hfill 19 -- }{\ignorespaces Tela durante a captura da pose lateral direita.}}{62}{figure.caption.134}%
+\contentsline {figure}{\numberline {Figura\hfill 20 -- }{\ignorespaces Mensagem de confirmação de cadastro.}}{63}{figure.caption.135}%
+\contentsline {figure}{\numberline {Figura\hfill 21 -- }{\ignorespaces Tela após a conclusão do cadastro com as informações do usuário.}}{63}{figure.caption.136}%
+\contentsline {figure}{\numberline {Figura\hfill 23 -- }{\ignorespaces Botões de configuração relacionados à digitação automática de credenciais.}}{66}{figure.caption.138}%
+\contentsline {figure}{\numberline {Figura\hfill 24 -- }{\ignorespaces \textit {Pop up} de confirmação para a digitação automática da credencial.}}{66}{figure.caption.139}%
+\contentsline {figure}{\numberline {Figura\hfill 25 -- }{\ignorespaces Tela de exclusão de usuários, apresentando o mecanismo de busca e a lista de cadastros disponíveis.}}{67}{figure.caption.140}%
+\contentsline {figure}{\numberline {Figura\hfill 26 -- }{\ignorespaces Tela de confirmação de exclusão de usuário.}}{68}{figure.caption.141}%
 \babel@toc {brazil}{}\relax 
 \babel@toc {brazil}{}\relax 
 \babel@toc {brazil}{}\relax 

@@ -5,6 +5,7 @@
 \usepackage{float}
 \usepackage{placeins}
 \usepackage{amsmath}
+\usepackage{geometry}
 \usepackage{amssymb}
 \usepackage{pifont}
 \newcommand{\xmark}{\ding{55}}
@@ -32,11 +33,25 @@
 % \input{1-Pre-Textual/Epigrafe.tex}%       (opcional)
 \input{1-Pre-Textual/Resumo.tex} %        (obrigatório)
 \input{1-Pre-Textual/Abstract.tex} %      (obrigatório)
+% reduzir espaçamento e fonte para caber a lista em uma página
+\begingroup
+\small
+\setlength{\parskip}{10pt}
+\setlength{\baselineskip}{15pt}
 \listoffigures %                          (opcional)
+\endgroup
 \listoftables  %                          (opcional)
 \input{1-Pre-Textual/Siglas.tex} %        (opcional)
 % \input{1-Pre-Textual/Simbolos.tex} %      (opcional)
-\tableofcontents %                        (obrigatório)
+
+\newgeometry{
+    left=2cm,
+    right=2cm,
+    top=2cm,
+    bottom=2cm
+}
+\tableofcontents
+\restoregeometry
 
 \textual
 \input{2-Textual/1-Introducao.tex}

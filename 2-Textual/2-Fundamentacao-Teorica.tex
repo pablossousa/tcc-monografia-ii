@@ -11,7 +11,7 @@ Sistemas de controle de acesso são amplamente utilizados em ambientes acadêmic
 
 Em muitos desses cenários, o controle de acesso é realizado por meio de cartões de proximidade, como cartões baseados em \acs{NFC}. Essa abordagem é amplamente adotada por sua simplicidade operacional e facilidade de integração com sistemas computacionais. No entanto, o mecanismo de autenticação baseado em cartões está associado à verificação da posse de um objeto físico, e não diretamente à identidade do usuário, o que pode abrir espaço para usos indevidos, como empréstimos, perdas ou extravios do cartão \cite{masyuk2019rfid}.
 
-Como alternativa, sistemas biométricos buscam associar o processo de autenticação a características inerentes ao próprio indivíduo. Entre as diferentes modalidades biométricas, o reconhecimento facial destaca-se por permitir a autenticação sem contato físico e por utilizar dispositivos de captura amplamente disponíveis, como câmeras. Em sistemas desse tipo, a decisão de acesso é tomada com base na comparação entre representações faciais extraídas de imagens e armazenadas previamente, permitindo tanto cenários de verificação quanto de identificação automática \cite{parmar2013face}.
+Como alternativa, sistemas biométricos buscam associar o processo de autenticação a características inerentes ao próprio indivíduo. Entre as diferentes modalidades biométricas, o reconhecimento facial destaca-se por permitir a autenticação sem contato físico e por utilizar dispositivos de captura amplamente disponíveis, como câmeras. Em sistemas desse tipo, a decisão de acesso é tomada com base na comparação entre representações faciais extraídas de imagens e armazenadas previamente, permitindo tanto cenários de verificação quanto de identificação automática, conforme descrito por \textcite{parmar2013face}.
 
 Apesar de seu potencial, o reconhecimento facial impõe desafios técnicos relevantes, especialmente no que se refere à confiabilidade das comparações em condições variadas de captura e à definição de critérios objetivos para decisão de correspondência entre identidades. Dessa forma, torna-se necessário compreender os fundamentos que permitem representar faces de forma vetorial, comparar essas representações por métricas de similaridade e estabelecer limiares de decisão adequados, aspectos que são discutidos nas seções subsequentes desta fundamentação teórica \cite{hassaballah2015face}.
 
@@ -25,7 +25,7 @@ O uso de cartões de identificação baseados em tecnologias de radiofrequência
 
 \acs{RFID} (\textit{Radio-Frequency Identification}) é uma tecnologia que permite a identificação automática de objetos ou pessoas por meio da comunicação sem fio entre um leitor e uma etiqueta eletrônica, denominada \textit{tag}. Essa comunicação ocorre por radiofrequência e dispensa contato físico direto entre o cartão e o leitor, o que torna o processo rápido e conveniente \cite{chatmon2006secure}.
 
-Uma \textit{tag} \acs{RFID} é composta, de forma simplificada, por um chip eletrônico e uma antena. O chip armazena um identificador único (\acs{UID}), enquanto a antena permite a comunicação com o leitor. O leitor, por sua vez, emite um campo eletromagnético que energiza a \textit{tag} (no caso de etiquetas passivas) e recebe as informações transmitidas por ela. Em sistemas com múltiplas \textit{tag}s presentes simultaneamente, são utilizados mecanismos de \textit{anticollision} para evitar conflitos na comunicação e permitir a leitura individual de cada identificador \cite{finkenzeller2010rfid}.
+Uma \textit{tag} \acs{RFID} é composta, de forma simplificada, por um chip eletrônico e uma antena. O chip armazena um identificador único (\acs{UID}), enquanto a antena permite a comunicação com o leitor. O leitor, por sua vez, emite um campo eletromagnético que energiza a \textit{tag} (no caso de etiquetas passivas) e recebe as informações transmitidas por ela. Em sistemas com múltiplas \textit{tag}s presentes simultaneamente, são utilizados mecanismos de \textit{anticollision} para evitar conflitos na comunicação e permitir a leitura individual de cada identificador, conforme descrito por \textcite{finkenzeller2010rfid}.
 
 O alcance da comunicação \acs{RFID} depende do tipo de \textit{tag} e da frequência utilizada, podendo variar de poucos centímetros a vários metros. Em sistemas de controle de acesso, utiliza-se geralmente um alcance reduzido, adequado para identificar um único cartão por vez, associado a uma pessoa específica \cite{finkenzeller2010rfid}.
 
@@ -64,11 +64,11 @@ Além das limitações operacionais, sistemas baseados em cartões apresentam vu
 
 Existem ainda riscos técnicos associados à cópia do identificador do cartão. Em termos simples, isso significa que o código armazenado na \textit{tag} pode ser lido e replicado em outro dispositivo, permitindo a criação de um cartão clonado. Esse tipo de ataque explora o fato de que o sistema confia exclusivamente no identificador transmitido, sem verificar características adicionais do usuário \cite{masyuk2019rfid}.
 
-Esses aspectos evidenciam uma limitação fundamental desse modelo de autenticação: o cartão comprova apenas a posse de um objeto, e não a identidade da pessoa que o utiliza \cite{masyuk2019rfid}. Essa distinção é central para a motivação deste trabalho, uma vez que sistemas biométricos buscam verificar diretamente a identidade do indivíduo, reduzindo riscos associados à perda, empréstimo ou clonagem de credenciais físicas \cite{parmar2013face}.
+Esses aspectos evidenciam uma limitação fundamental desse modelo de autenticação: o cartão comprova apenas a posse de um objeto, e não a identidade da pessoa que o utiliza \cite{masyuk2019rfid}. Essa distinção é central para a motivação deste trabalho, uma vez que sistemas biométricos buscam verificar diretamente a identidade do indivíduo, reduzindo riscos associados à perda, empréstimo ou clonagem de credenciais físicas, conforme discutido por \textcite{parmar2013face}.
 
 \subsection{Interfaces de entrada e teclados virtuais}
 
-Em sistemas computacionais, a interação do usuário frequentemente ocorre por meio de dispositivos de entrada, como teclados físicos e apontadores. Entretanto, em determinados cenários, pode ser desejável substituir ou complementar esses dispositivos por interfaces virtuais capazes de gerar entradas de forma automática ou assistida. Entre essas soluções destacam-se os teclados virtuais, que reproduzem digitalmente as funções de um teclado convencional e permitem o envio de caracteres para aplicações externas
+Em sistemas computacionais, a interação do usuário frequentemente ocorre por meio de dispositivos de entrada, como teclados físicos e apontadores. Entretanto, em determinados cenários, pode ser desejável substituir ou complementar esses dispositivos por interfaces virtuais capazes de gerar entradas de forma automática ou assistida. Entre essas soluções destacam-se os teclados virtuais, que reproduzem digitalmente as funções de um teclado convencional e permitem o envio de caracteres para aplicações externas.
 
 Além de aplicações voltadas à acessibilidade, teclados virtuais podem ser utilizados como mecanismo de integração entre sistemas independentes. Nesses casos, informações obtidas por outros módulos, como sistemas biométricos de identificação, podem ser convertidas automaticamente em entradas de texto reconhecidas pelo sistema operacional ou por aplicações já existentes, sem a necessidade de modificações diretas nesses sistemas. Essa abordagem favorece a interoperabilidade e reduz a necessidade de integrações específicas entre diferentes aplicações.
 
@@ -81,29 +81,29 @@ A biometria refere-se ao conjunto de técnicas que utilizam características fí
 
 \subsection{Conceito de biometria e principais modalidades}
 
-Sistemas biométricos baseiam-se na medição e análise de características inerentes aos indivíduos, que apresentam, em geral, elevado grau de distinção entre pessoas. Entre as modalidades mais conhecidas estão a biometria facial, a biometria por impressão digital e a biometria por íris. Cada uma dessas técnicas explora diferentes tipos de informações fisiológicas, como a geometria do rosto, os padrões das digitais ou as texturas da íris \cite{bolle2013guide}.
+Sistemas biométricos baseiam-se na medição e análise de características inerentes aos indivíduos, que apresentam, em geral, elevado grau de distinção entre pessoas. Entre as modalidades mais conhecidas estão a biometria facial, a biometria por impressão digital e a biometria por íris. Cada uma dessas técnicas explora diferentes tipos de informações fisiológicas, como a geometria do rosto, os padrões das digitais ou as texturas da íris, conforme apresentado por \textcite{bolle2013guide}.
 
 Do ponto de vista prático, a escolha da modalidade biométrica envolve compromissos entre fatores como facilidade de captura, custo dos sensores, aceitação pelos usuários e robustez frente a tentativas de fraude. No contexto deste trabalho, o foco recai sobre a biometria facial, por permitir a aquisição das amostras por meio de câmeras comuns e por ser compatível com cenários de uso rápido e sem contato físico \cite{jain2004biometric}.
 
 \subsection{Verificação biométrica (1:1) e identificação biométrica (1:N)}
 
-Em sistemas biométricos, é fundamental distinguir entre dois modos de operação: verificação e identificação. A verificação, também conhecida como comparação 1:1, ocorre quando o sistema recebe uma amostra biométrica e a compara com uma única referência previamente associada a um usuário específico. Nesse caso, a pergunta que o sistema busca responder é: “essa pessoa é quem ela afirma ser?”. Esse modo de operação é típico de cenários de autenticação, nos quais o usuário declara sua identidade e o sistema apenas confirma ou rejeita essa afirmação \cite{jain2004biometric}.
+Em sistemas biométricos, é fundamental distinguir entre dois modos de operação: verificação e identificação. A verificação, também conhecida como comparação 1:1, ocorre quando o sistema recebe uma amostra biométrica e a compara com uma única referência previamente associada a um usuário específico. Nesse caso, a pergunta que o sistema busca responder é: “essa pessoa é quem ela afirma ser?”. Esse modo de operação é típico de cenários de autenticação, nos quais o usuário declara sua identidade e o sistema apenas confirma ou rejeita essa afirmação, conforme descrito por \textcite{jain2004biometric}.
 
 A identificação, por sua vez, corresponde à comparação 1:N, em que a amostra biométrica é comparada com todas as referências disponíveis em uma base de dados. Nesse caso, o objetivo é responder à pergunta: “quem é essa pessoa dentre os usuários cadastrados?”. Esse modo de operação é comum em sistemas nos quais o usuário não informa previamente sua identidade, e o sistema precisa determinar automaticamente a correspondência mais provável. Essa distinção é diretamente relacionada aos experimentos deste trabalho, que incluem tanto análises de comparação entre pares quanto um teste funcional de identificação no cenário 1:N \cite{jain2004biometric}.
 
 \subsection{Critérios de qualidade em sistemas biométricos}
 
-A avaliação de sistemas biométricos envolve, em geral, um compromisso entre dois aspectos principais: segurança e usabilidade. Do ponto de vista da segurança, deseja-se minimizar a probabilidade de que um indivíduo não autorizado seja aceito pelo sistema. Do ponto de vista da usabilidade, busca-se reduzir a ocorrência de rejeições indevidas de usuários legítimos, que podem causar frustração, atrasos e problemas operacionais \cite{jain2004biometric}.
+A avaliação de sistemas biométricos envolve, em geral, um compromisso entre dois aspectos principais: segurança e usabilidade. Do ponto de vista da segurança, deseja-se minimizar a probabilidade de que um indivíduo não autorizado seja aceito pelo sistema. Do ponto de vista da usabilidade, busca-se reduzir a ocorrência de rejeições indevidas de usuários legítimos, que podem causar frustração, atrasos e problemas operacionais, conforme discutido por \textcite{jain2004biometric}.
 
 Esse compromisso é normalmente analisado por meio de métricas específicas, como a \acs{FAR} (\textit{False Acceptance Rate}) e a \acs{FRR} (\textit{False Rejection Rate}), que quantificam, respectivamente, a taxa de aceitações indevidas e a taxa de rejeições indevidas. A escolha de parâmetros de decisão em um sistema biométrico, como o limiar de aceitação em comparações por similaridade, influencia diretamente essas métricas, tornando necessário um equilíbrio entre maior rigor de segurança e maior conveniência para o usuário \cite{jain2004biometric}.
 
 \subsection{Robustez em sistemas de reconhecimento facial}
 
-O desempenho de sistemas de reconhecimento facial pode ser afetado por fatores como variações de pose, iluminação, distância da câmera e qualidade da imagem capturada. Em aplicações reais, essas condições nem sempre são controladas, o que pode dificultar a geração de representações consistentes para uma mesma pessoa e aumentar a ocorrência de erros de reconhecimento \cite{zhao2003face}.
+O desempenho de sistemas de reconhecimento facial pode ser afetado por fatores como variações de pose, iluminação, distância da câmera e qualidade da imagem capturada. Em aplicações reais, essas condições nem sempre são controladas, o que pode dificultar a geração de representações consistentes para uma mesma pessoa e aumentar a ocorrência de erros de reconhecimento, conforme discutido por \textcite{zhao2003face}.
 
 Entre esses fatores, as variações de pose merecem destaque, pois imagens de uma mesma pessoa capturadas sob diferentes ângulos podem apresentar diferenças significativas. Para reduzir esse problema, é comum utilizar múltiplas amostras durante o cadastro, contemplando diferentes orientações faciais e ampliando a capacidade do sistema de reconhecer o usuário em situações variadas \cite{hassaballah2015face}.
 
-Outro aspecto importante é a qualidade das capturas. Imagens com baixa nitidez, iluminação inadequada ou oclusões podem comprometer a detecção facial e a extração de características, tornando recomendável a utilização de mecanismos de avaliação da qualidade das imagens antes do reconhecimento \cite{schlett2022facequality}.
+Outro aspecto importante é a qualidade das capturas. Imagens com baixa nitidez, iluminação inadequada ou oclusões podem comprometer a detecção facial e a extração de características, tornando recomendável a utilização de mecanismos de avaliação da qualidade das imagens antes do reconhecimento, conforme proposto por \textcite{schlett2022facequality}.
 
 Além disso, a confiabilidade do sistema pode ser aumentada por meio da agregação temporal de decisões, na qual múltiplas observações consecutivas são consideradas antes da confirmação de uma identidade. Essa estratégia reduz a influência de erros ocasionais e contribui para tornar o reconhecimento mais estável em ambientes reais \cite{meng2019fan}.
 
@@ -115,13 +115,13 @@ Para que sistemas computacionais possam analisar imagens faciais de forma autom�
 
 \subsection{Imagem digital: definição e características}
 
-Uma imagem digital pode ser compreendida como uma matriz de valores numéricos, na qual cada posição corresponde a um elemento chamado pixel. Cada pixel armazena informações sobre a cor e a intensidade luminosa em um ponto específico da imagem. Em imagens coloridas, é comum utilizar o modelo \acs{RGB}, no qual cada pixel é representado por três componentes: vermelho (\textit{red}), verde (\textit{green}) e azul (\textit{blue}). A combinação desses três valores determina a cor final exibida em cada ponto da imagem \cite{gonzalez2018dip}.
+Uma imagem digital pode ser compreendida como uma matriz de valores numéricos, na qual cada posição corresponde a um elemento chamado pixel. Cada pixel armazena informações sobre a cor e a intensidade luminosa em um ponto específico da imagem. Em imagens coloridas, é comum utilizar o modelo \acs{RGB}, no qual cada pixel é representado por três componentes: vermelho (\textit{red}), verde (\textit{green}) e azul (\textit{blue}). A combinação desses três valores determina a cor final exibida em cada ponto da imagem, conforme descrito por \textcite{gonzalez2018dip}.
 
 A resolução de uma imagem está relacionada ao número de pixels que a compõem, geralmente expressa em termos de largura e altura. Imagens com maior resolução possuem mais detalhes, mas também exigem maior capacidade de armazenamento e processamento. Além disso, os valores dos pixels podem ser normalizados, isto é, ajustados para uma faixa numérica padronizada, de modo a facilitar o processamento por algoritmos e modelos computacionais que operam de forma mais estável quando os dados seguem escalas bem definidas \cite{gonzalez2018dip}.
 
 \subsection{Etapas de pré-processamento em imagens faciais}
 
-Antes que uma imagem facial seja utilizada em um sistema de reconhecimento automático, é comum aplicar uma série de etapas de pré-processamento. Entre as mais importantes estão o recorte da região do rosto, o redimensionamento da imagem e a padronização de seus valores. O recorte do rosto tem como objetivo eliminar partes irrelevantes da imagem, como fundo e outros objetos, concentrando a análise apenas na região de interesse. O redimensionamento garante que todas as imagens tenham o mesmo tamanho, o que é necessário para que possam ser processadas de forma consistente por algoritmos e modelos que esperam entradas com dimensões fixas \cite{zhao2003face}.
+Antes que uma imagem facial seja utilizada em um sistema de reconhecimento automático, é comum aplicar uma série de etapas de pré-processamento. Entre as mais importantes estão o recorte da região do rosto, o redimensionamento da imagem e a padronização de seus valores. O recorte do rosto tem como objetivo eliminar partes irrelevantes da imagem, como fundo e outros objetos, concentrando a análise apenas na região de interesse. O redimensionamento garante que todas as imagens tenham o mesmo tamanho, o que é necessário para que possam ser processadas de forma consistente por algoritmos e modelos que esperam entradas com dimensões fixas, conforme descrito por \textcite{zhao2003face}.
 
 A padronização, por sua vez, inclui operações como normalização dos valores dos pixels e ajustes básicos de formato, garantindo que diferentes imagens, possivelmente capturadas em condições distintas, sejam apresentadas ao sistema de forma mais uniforme. Essas etapas são essenciais em sistemas automáticos porque reduzem variações indesejadas que não estão relacionadas à identidade da pessoa, como diferenças de escala ou enquadramento, e tornam o processamento mais robusto e previsível\cite{zhao2003face}.
 
@@ -133,7 +133,7 @@ Para que um sistema computacional possa comparar automaticamente informações c
 
 \subsection{Conceito de vetor e interpretação geométrica}
 
-De forma intuitiva, um vetor pode ser entendido como um conjunto ordenado de números que representa um ponto em um espaço de múltiplas dimensões. Em duas dimensões, por exemplo, um vetor pode ser representado por um par de valores e visualizado como um ponto em um plano. Em três dimensões, ele pode ser visto como um ponto no espaço tridimensional. De maneira geral, quanto maior o número de valores que compõem o vetor, maior é a dimensão do espaço em que esse ponto está inserido \cite{bishop2006prml}.
+De forma intuitiva, um vetor pode ser entendido como um conjunto ordenado de números que representa um ponto em um espaço de múltiplas dimensões. Em duas dimensões, por exemplo, um vetor pode ser representado por um par de valores e visualizado como um ponto em um plano. Em três dimensões, ele pode ser visto como um ponto no espaço tridimensional. De maneira geral, quanto maior o número de valores que compõem o vetor, maior é a dimensão do espaço em que esse ponto está inserido, conforme descrito por \textcite{bishop2006prml}.
 
 Essa interpretação geométrica é útil porque permite comparar vetores por meio de distâncias ou ângulos entre eles. Se dois vetores estão próximos no espaço, diz-se que eles são semelhantes segundo o critério adotado; se estão distantes, considera-se que representam coisas diferentes. Em sistemas de reconhecimento, cada objeto de interesse, como uma imagem facial, pode ser representado por um vetor, e a comparação entre objetos passa a ser feita pela análise da posição relativa desses pontos no espaço vetorial \cite{bishop2006prml}.
 
@@ -142,7 +142,7 @@ A ~\ref{fig:vectors} ilustra a interpretação geométrica de vetores em um espa
 
 \begin{figure}[H]
     \centering
-    \begin{minipage}{0.9\textwidth}
+    \begin{minipage}{0.8\textwidth}
         \caption{\label{fig:vectors} Similaridade entre dois vetores com base no modelo de espaço vetorial.}
         \includegraphics[width=\textwidth]{Imagens/vectors.png}
         \caption*{\footnotesize Fonte: \cite{Hadi2022TWRM}}
@@ -151,7 +151,7 @@ A ~\ref{fig:vectors} ilustra a interpretação geométrica de vetores em um espa
 
 \subsection{Embeddings como representação de características}
 
-Um \textit{embedding} pode ser entendido como um “resumo numérico” de características relevantes extraídas de um dado complexo, como uma imagem, um som ou um texto. No caso do reconhecimento facial, o \textit{embedding} é um vetor que busca concentrar, em um conjunto de números, as informações mais discriminativas da face, de modo que diferentes imagens da mesma pessoa resultem em vetores próximos entre si, enquanto imagens de pessoas diferentes resultem em vetores mais distantes \cite{schroff2015facenet}.
+Um \textit{embedding} pode ser entendido como um “resumo numérico” de características relevantes extraídas de um dado complexo, como uma imagem, um som ou um texto. No caso do reconhecimento facial, o \textit{embedding} é um vetor que busca concentrar, em um conjunto de números, as informações mais discriminativas da face, de modo que diferentes imagens da mesma pessoa resultem em vetores próximos entre si, enquanto imagens de pessoas diferentes resultem em vetores mais distantes, conforme proposto por \textcite{schroff2015facenet}.
 
 A principal vantagem desse tipo de representação é que ela permite comparar objetos complexos de forma simples e eficiente, utilizando apenas operações matemáticas entre vetores. Assim, em vez de comparar diretamente imagens pixel a pixel, o sistema compara seus \textit{embeddings}, que são muito mais compactos e adequados para medir similaridade. Essa abordagem torna viável a construção de sistemas de reconhecimento baseados em métricas de distância no espaço vetorial \cite{schroff2015facenet}.
 
@@ -182,7 +182,7 @@ Por essa razão, a distância cosseno é frequentemente adotada em aplicações 
 
 \subsection{Limiar de decisão em sistemas de reconhecimento}
 
-A partir da definição de uma métrica de similaridade ou distância, é possível transformar o valor numérico obtido na comparação entre dois \textit{embeddings} em uma decisão prática. Para isso, define-se um limiar de decisão, ou \textit{threshold}, que separa os casos considerados semelhantes dos casos considerados diferentes. Em termos simples, se a distância entre dois vetores for menor que esse limiar, as amostras são interpretadas como pertencentes à mesma identidade; caso contrário, são tratadas como identidades distintas\cite{jain2004biometric}. Essa regra de decisão pode ser formalizada da seguinte forma:
+A partir da definição de uma métrica de similaridade ou distância, é possível transformar o valor numérico obtido na comparação entre dois \textit{embeddings} em uma decisão prática. Para isso, define-se um limiar de decisão, ou \textit{threshold}, que separa os casos considerados semelhantes dos casos considerados diferentes. Em termos simples, se a distância entre dois vetores for menor que esse limiar, as amostras são interpretadas como pertencentes à mesma identidade; caso contrário, são tratadas como identidades distintas \cite{jain2004biometric}. Essa regra de decisão pode ser formalizada da seguinte forma:
 
 \begin{equation}
 \text{decisão} =
@@ -205,17 +205,17 @@ Os conceitos de \textit{embeddings} e de medidas de distância explicam como com
 
 Em abordagens tradicionais de classificação, o modelo é treinado para associar cada entrada a um rótulo específico, como, por exemplo, identificar a qual classe uma imagem pertence. Nesse caso, o foco está em produzir uma decisão direta do tipo “esta imagem pertence à classe A ou à classe B”, sem que haja, necessariamente, uma preocupação explícita com a organização geométrica das representações internas do modelo \cite{bishop2006prml}.
 
-No aprendizado métrico, a ideia é diferente. Em vez de aprender apenas a prever rótulos, o modelo é treinado para construir um espaço de representação no qual amostras semelhantes fiquem próximas entre si e amostras diferentes fiquem afastadas. Assim, o resultado principal do modelo é um \textit{embedding} que pode ser comparado com outros por meio de uma métrica de distância. Essa abordagem é particularmente adequada para problemas de reconhecimento, nos quais o interesse está em medir similaridade entre amostras, e não apenas em atribuir uma classe fixa \cite{bellet2015survey}.
+No aprendizado métrico, a ideia é diferente. Em vez de aprender apenas a prever rótulos, o modelo é treinado para construir um espaço de representação no qual amostras semelhantes fiquem próximas entre si e amostras diferentes fiquem afastadas. Assim, o resultado principal do modelo é um \textit{embedding} que pode ser comparado com outros por meio de uma métrica de distância. Essa abordagem é particularmente adequada para problemas de reconhecimento, nos quais o interesse está em medir similaridade entre amostras, e não apenas em atribuir uma classe fixa, conforme discutido por \textcite{bellet2015survey}.
 
 \subsection{Redes siamesas}
 
-As redes siamesas, ou \textit{Siamese Networks}, são uma arquitetura clássica utilizada em aprendizado métrico. Elas consistem em duas redes neurais idênticas, que compartilham os mesmos pesos e processam duas entradas diferentes em paralelo. Cada uma das entradas é transformada em um \textit{embedding}, e a saída do sistema é obtida a partir da comparação entre esses dois vetores, geralmente por meio de uma medida de distância ou similaridade \cite{koch2015siamese}.
+As redes siamesas, ou \textit{Siamese Networks}, são uma arquitetura clássica utilizada em aprendizado métrico. Elas consistem em duas redes neurais idênticas, que compartilham os mesmos pesos e processam duas entradas diferentes em paralelo. Cada uma das entradas é transformada em um \textit{embedding}, e a saída do sistema é obtida a partir da comparação entre esses dois vetores, geralmente por meio de uma medida de distância ou similaridade, conforme descrito por \textcite{koch2015siamese}.
 
 Esse tipo de arquitetura é naturalmente adequado para tarefas de verificação no formato 1:1, pois permite responder à pergunta: “essas duas amostras representam a mesma entidade?”. Em vez de classificar cada entrada isoladamente, a rede aprende a produzir representações que podem ser comparadas diretamente, tornando a decisão dependente da proximidade entre os \textit{embeddings} gerados \cite{koch2015siamese}.
 
 \subsection{Função de perda Triplet Loss}
 
-Uma extensão importante dessa ideia é o uso da função de perda conhecida como \textit{Triplet Loss}. Nessa abordagem, o treinamento é feito a partir de trios de amostras: uma amostra âncora, uma amostra positiva (da mesma identidade da âncora) e uma amostra negativa (de identidade diferente). O objetivo da função de perda é garantir que a distância entre a âncora e a amostra positiva seja menor do que a distância entre a âncora e a amostra negativa por, pelo menos, uma certa margem \cite{schroff2015facenet}.
+Uma extensão importante dessa ideia é o uso da função de perda conhecida como \textit{Triplet Loss}. Nessa abordagem, o treinamento é feito a partir de trios de amostras: uma amostra âncora, uma amostra positiva (da mesma identidade da âncora) e uma amostra negativa (de identidade diferente). O objetivo da função de perda é garantir que a distância entre a âncora e a amostra positiva seja menor do que a distância entre a âncora e a amostra negativa por, pelo menos, uma certa margem, conforme proposto por \textcite{schroff2015facenet}.
 
 Em termos geométricos, isso significa forçar o modelo a organizar o espaço de \textit{embeddings} de modo que pontos correspondentes à mesma identidade fiquem agrupados, enquanto pontos de identidades diferentes sejam empurrados para regiões mais distantes. Essa interpretação visual é frequentemente utilizada para ilustrar o funcionamento do aprendizado métrico e está diretamente relacionada à ideia de estruturar o espaço vetorial para tornar a separação entre classes mais clara e consistente.  A ~\ref{fig:triplet} ilustra, de forma conceitual, a organização do espaço de \textit{embeddings} em abordagens baseadas em aprendizado métrico \cite{schroff2015facenet}.
 
@@ -224,7 +224,7 @@ A ~\ref{fig:triplet} ilustra o efeito do aprendizado métrico no espaço de \tex
 
 \begin{figure}[H]
     \centering
-    \begin{minipage}{1.0\textwidth}
+    \begin{minipage}{0.9\textwidth}
         \caption{\label{fig:triplet} Espaço de \textit{embeddings} antes e após o aprendizado.}
         \includegraphics[width=\textwidth]{Imagens/triplet.png}
         \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
@@ -235,7 +235,7 @@ A ~\ref{fig:triplet} ilustra o efeito do aprendizado métrico no espaço de \tex
 
 No contexto do reconhecimento facial, o aprendizado métrico é especialmente relevante porque as imagens de uma mesma pessoa podem apresentar variações significativas, como mudanças de iluminação, pequenas diferenças de pose, expressões faciais ou ruído na captura. Um bom espaço de \textit{embeddings} deve ser capaz de absorver essas variações, mantendo as representações da mesma identidade próximas entre si, ao mesmo tempo em que preserva a separação em relação a outras identidades \cite{schroff2015facenet}.
 
-A filosofia apresentada por autores como Andrew Ng, ao discutir redes siamesas e \textit{Triplet Loss}, fundamenta justamente essa organização do espaço de representação. Na prática, a qualidade desse espaço pode ser avaliada observando-se a separabilidade entre pares da mesma identidade e de identidades diferentes, como realizado nos experimentos deste trabalho. Dessa forma, os resultados obtidos empiricamente refletem diretamente os princípios teóricos do aprendizado métrico, confirmando a importância desse paradigma para sistemas modernos de reconhecimento facial baseados em \textit{embeddings} \cite{schroff2015facenet}.
+A filosofia apresentada por autores como Andrew Ng, ao discutir redes siamesas e \textit{Triplet Loss}, fundamenta justamente essa organização do espaço de representação. Na prática, a qualidade desse espaço pode ser avaliada observando-se a separabilidade entre pares da mesma identidade e de identidades diferentes, como realizado nos experimentos deste trabalho. Dessa forma, os resultados obtidos empiricamente refletem diretamente os princípios teóricos do aprendizado métrico, confirmando a importância desse paradigma para sistemas modernos de reconhecimento facial baseados em \textit{embeddings}, conforme demonstrado por \textcite{schroff2015facenet}.
 
 %------------------------------------------------
 
@@ -245,13 +245,13 @@ O treinamento de modelos de aprendizado profundo para reconhecimento facial a pa
 
 \subsection{Aprendizado por transferência e modelos pré-treinados}
 
-O \textit{transfer learning}, ou aprendizado por transferência, é uma estratégia na qual o conhecimento adquirido por um modelo em uma tarefa ou conjunto de dados é reaproveitado em outra aplicação relacionada. Em vez de treinar uma rede neural do zero, utiliza-se um modelo que já aprendeu a extrair características relevantes a partir de um grande conjunto de exemplos, adaptando-o ou simplesmente reutilizando suas saídas para uma nova finalidade \cite{pan2010survey}.
+O \textit{transfer learning}, ou aprendizado por transferência, é uma estratégia na qual o conhecimento adquirido por um modelo em uma tarefa ou conjunto de dados é reaproveitado em outra aplicação relacionada. Em vez de treinar uma rede neural do zero, utiliza-se um modelo que já aprendeu a extrair características relevantes a partir de um grande conjunto de exemplos, adaptando-o ou simplesmente reutilizando suas saídas para uma nova finalidade, conforme definido por \textcite{pan2010survey}.
 
 No contexto do reconhecimento facial, modelos pré-treinados são ajustados previamente em bases de dados extensas e diversificadas, contendo milhões de imagens de diferentes pessoas. Como resultado, esses modelos aprendem a extrair características faciais robustas e discriminativas, que podem ser utilizadas diretamente como \textit{embeddings}. Essa abordagem permite obter bons resultados mesmo em cenários com conjuntos de dados menores, além de reduzir significativamente o custo computacional e a complexidade do desenvolvimento \cite{schroff2015facenet}.
 
 \subsection{MTCNN para detecção facial}
 
-O \textit{Multi-task Cascaded Convolutional Neural Network} (\acs{MTCNN}) é um método amplamente utilizado para detecção facial e localização de pontos de referência faciais (\textit{facial landmarks}) em imagens. Diferentemente de abordagens que apenas identificam a presença de uma face, o \acs{MTCNN} também estima a posição de características importantes do rosto, como olhos, nariz e cantos da boca, fornecendo informações adicionais úteis para etapas posteriores do reconhecimento facial \cite{zhang2016mtcnn}.
+O \textit{Multi-task Cascaded Convolutional Neural Network} (\acs{MTCNN}) é um método amplamente utilizado para detecção facial e localização de pontos de referência faciais (\textit{facial landmarks}) em imagens. Diferentemente de abordagens que apenas identificam a presença de uma face, o \acs{MTCNN} também estima a posição de características importantes do rosto, como olhos, nariz e cantos da boca, fornecendo informações adicionais úteis para etapas posteriores do reconhecimento facial, conforme proposto por \textcite{zhang2016mtcnn}.
 
 A arquitetura do \acs{MTCNN} é composta por uma cascata de três redes neurais convolucionais, organizadas de forma sequencial. A primeira rede realiza uma detecção inicial de regiões candidatas a conter faces. Em seguida, as regiões identificadas são refinadas por uma segunda rede, que elimina detecções incorretas e ajusta as localizações estimadas. Por fim, uma terceira rede realiza um refinamento mais preciso das regiões faciais e calcula os pontos de referência utilizados para alinhamento facial \cite{zhang2016mtcnn}.
 
@@ -263,7 +263,7 @@ A ~\ref{fig:mtcnn} ilustra, de forma conceitual, as etapas executadas pelo \acs{
 
 \begin{figure}[H]
     \centering
-    \begin{minipage}{0.7\textwidth}
+    \begin{minipage}{0.6\textwidth}
         \caption{\label{fig:mtcnn} Etapas do MTCNN para detecção facial e localização de pontos de referência.}
         \includegraphics[width=\textwidth]{Imagens/mtcnn.png}
         \caption*{\footnotesize Fonte: \cite{yuan2020minor}}
@@ -272,14 +272,13 @@ A ~\ref{fig:mtcnn} ilustra, de forma conceitual, as etapas executadas pelo \acs{
 
 \subsection{Embeddings discriminativos para reconhecimento facial}
 
-Modelos modernos de reconhecimento facial, como aqueles inspirados em abordagens do tipo FaceNet ou ArcFace, são treinados com o objetivo de produzir \textit{embeddings} que maximizem a separação entre identidades diferentes e minimizem a distância entre amostras da mesma identidade. Em nível conceitual, isso significa que a rede aprende a transformar uma imagem facial em um vetor que captura características essenciais da estrutura do rosto, descartando variações irrelevantes, como pequenas mudanças de iluminação ou expressão
-\cite{schroff2015facenet} e \cite{deng2019arcface}.
+Modelos modernos de reconhecimento facial, como aqueles inspirados em abordagens do tipo FaceNet ou ArcFace, são treinados com o objetivo de produzir \textit{embeddings} que maximizem a separação entre identidades diferentes e minimizem a distância entre amostras da mesma identidade. Em nível conceitual, isso significa que a rede aprende a transformar uma imagem facial em um vetor que captura características essenciais da estrutura do rosto, descartando variações irrelevantes, como pequenas mudanças de iluminação ou expressão, conforme proposto por \textcite{schroff2015facenet} e \textcite{deng2019arcface}.
 
 Embora o processo interno de aprendizado envolva operações matemáticas complexas, a ideia fundamental pode ser entendida de forma simples: o modelo aprende a destacar aquilo que torna um rosto diferente de outros rostos, e a representar essas diferenças em forma de números organizados em um vetor. Dessa forma, duas imagens da mesma pessoa tendem a gerar \textit{embeddings} semelhantes, enquanto imagens de pessoas diferentes tendem a gerar \textit{embeddings} mais distantes no espaço vetorial \cite{schroff2015facenet, deng2019arcface}.
 
 \subsection{Detecção facial e reconhecimento facial}
 
-É importante distinguir duas etapas conceitualmente diferentes em sistemas de reconhecimento facial: a detecção da face e o reconhecimento da identidade. A detecção facial tem como objetivo localizar “onde está a face” em uma imagem, isto é, identificar a região que contém um rosto, separando-a do fundo e de outros elementos da cena. Essa etapa responde apenas à pergunta “existe um rosto aqui e onde ele está?” \cite{zhao2003face}.
+É importante distinguir duas etapas conceitualmente diferentes em sistemas de reconhecimento facial: a detecção da face e o reconhecimento da identidade. A detecção facial tem como objetivo localizar “onde está a face” em uma imagem, isto é, identificar a região que contém um rosto, separando-a do fundo e de outros elementos da cena. Essa etapa responde apenas à pergunta “existe um rosto aqui e onde ele está?”, conforme descrito por \textcite{zhao2003face}.
 
 O reconhecimento facial, por sua vez, ocorre após a face já ter sido detectada e recortada. Nessa etapa, o sistema busca responder à pergunta “quem é essa pessoa?”, extraindo um \textit{embedding} da região facial e comparando-o com representações previamente armazenadas. Separar essas duas etapas é fundamental para compreender o funcionamento do \textit{pipeline} de reconhecimento, pois a qualidade da detecção influencia diretamente a qualidade das representações utilizadas na comparação, mas os objetivos de cada processo são distintos \cite{zhao2003face}.
 
@@ -287,7 +286,7 @@ A ~\ref{fig:face_recognition} apresenta um \textit{pipeline} típico de reconhec
 
 \begin{figure}[H]
     \centering
-    \begin{minipage}{0.9\textwidth}
+    \begin{minipage}{0.8\textwidth}
         \caption{\label{fig:face_recognition} \textit{Pipeline} típico de reconhecimento facial}
         \includegraphics[width=\textwidth]{Imagens/face_recognition.jpg}
         \caption*{\footnotesize Fonte: \cite{openface}}
@@ -302,7 +301,7 @@ A avaliação de sistemas biométricos não se limita a verificar se o sistema �
 
 \subsection{Matriz de confusão}
 
-A análise de desempenho de um sistema de decisão binária costuma ser organizada por meio da chamada matriz de confusão, que categoriza os resultados das comparações em quatro grupos. Os verdadeiros positivos (\acs{TP}) correspondem aos casos em que o sistema aceita corretamente uma comparação que realmente pertence à mesma identidade. Os verdadeiros negativos (\acs{TN}) correspondem aos casos em que o sistema rejeita corretamente uma comparação entre identidades diferentes \cite{bishop2006prml}.
+A análise de desempenho de um sistema de decisão binária costuma ser organizada por meio da chamada matriz de confusão, que categoriza os resultados das comparações em quatro grupos. Os verdadeiros positivos (\acs{TP}) correspondem aos casos em que o sistema aceita corretamente uma comparação que realmente pertence à mesma identidade. Os verdadeiros negativos (\acs{TN}) correspondem aos casos em que o sistema rejeita corretamente uma comparação entre identidades diferentes, conforme descrito por \textcite{bishop2006prml}.
 
 Por outro lado, os falsos positivos (\acs{FP}) representam situações em que o sistema aceita indevidamente uma comparação entre identidades diferentes, caracterizando um erro de segurança. Já os falsos negativos (\acs{FN}) correspondem aos casos em que o sistema rejeita indevidamente uma comparação que deveria ser aceita, caracterizando um erro que afeta a experiência do usuário. Essas quatro categorias formam a base para o cálculo das métricas biométricas mais utilizadas \cite{jain2004biometric}.
 
@@ -333,7 +332,7 @@ O uso de sistemas biométricos levanta questões importantes relacionadas à pri
 
 \subsection{Dados biométricos e sua sensibilidade}
 
-Dados biométricos correspondem a informações obtidas a partir de características físicas ou comportamentais de uma pessoa, como rosto, impressões digitais ou íris. Essas informações permitem identificar ou autenticar indivíduos de forma relativamente precisa, o que as torna particularmente valiosas em sistemas de controle de acesso e segurança \cite{jain2004biometric}.
+Dados biométricos correspondem a informações obtidas a partir de características físicas ou comportamentais de uma pessoa, como rosto, impressões digitais ou íris. Essas informações permitem identificar ou autenticar indivíduos de forma relativamente precisa, o que as torna particularmente valiosas em sistemas de controle de acesso e segurança, conforme descrito por \textcite{jain2004biometric}.
 
 Ao mesmo tempo, essa capacidade de identificação torna os dados biométricos sensíveis. Caso sejam utilizados de forma indevida ou sofram vazamentos, podem expor os indivíduos a riscos que não podem ser facilmente revertidos, já que não é possível “trocar” o rosto ou a impressão digital como se troca uma senha. Por essa razão, o tratamento desse tipo de dado exige medidas rigorosas de proteção e justificativas claras para sua coleta e uso \cite{ratha2001enhancing}.
 
@@ -345,7 +344,7 @@ No caso de dados biométricos, esses cuidados tornam-se ainda mais relevantes, p
 
 \subsection{Uso de imagens faciais sintéticas em experimentos}
 
-Diante dessas preocupações, uma estratégia adotada neste trabalho foi o uso de imagens faciais sintéticas, geradas por modelos baseados em \textit{GANs} (\textit{Generative Adversarial Networks}). Essas imagens representam rostos inexistentes e não estão associadas a pessoas reais, o que elimina riscos de identificação indevida e problemas relacionados à exposição de dados biométricos reais \cite{goodfellow2020gan}.
+Diante dessas preocupações, uma estratégia adotada neste trabalho foi o uso de imagens faciais sintéticas, geradas por modelos baseados em \textit{GANs} (\textit{Generative Adversarial Networks}). Essas imagens representam rostos inexistentes e não estão associadas a pessoas reais, o que elimina riscos de identificação indevida e problemas relacionados à exposição de dados biométricos reais, conforme proposto por \textcite{goodfellow2020gan}.
 
 Além de reduzir significativamente os riscos éticos e legais, o uso de dados sintéticos facilita a condução de experimentos e a reprodutibilidade dos resultados, pois a base de dados pode ser compartilhada e reutilizada sem violar a privacidade de indivíduos. Dessa forma, é possível avaliar o comportamento do \textit{pipeline} de reconhecimento facial de maneira controlada, mantendo o foco nos aspectos técnicos do método proposto, sem comprometer princípios de proteção de dados \cite{edps_synthetic_data}.
 
@@ -357,13 +356,13 @@ O uso de sistemas biométricos exige cuidados específicos relacionados à segur
 
 \subsection{Proteção de dados biométricos}
 
-Em sistemas de reconhecimento facial, os dados utilizados para identificação podem assumir diferentes formas. Uma abordagem consiste em armazenar imagens faciais completas, enquanto outra utiliza representações vetoriais conhecidas como \textit{embeddings}. Os \textit{embeddings} correspondem a vetores numéricos gerados por modelos de aprendizado profundo e têm como objetivo representar características discriminativas da face de maneira compacta \cite{schroff2015facenet}.
+Em sistemas de reconhecimento facial, os dados utilizados para identificação podem assumir diferentes formas. Uma abordagem consiste em armazenar imagens faciais completas, enquanto outra utiliza representações vetoriais conhecidas como \textit{embeddings}. Os \textit{embeddings} correspondem a vetores numéricos gerados por modelos de aprendizado profundo e têm como objetivo representar características discriminativas da face de maneira compacta, conforme proposto por \textcite{schroff2015facenet}.
 
 Embora não correspondam diretamente à imagem original, os \textit{embeddings} continuam sendo informações biométricas associadas a indivíduos específicos e, portanto, devem receber proteção adequada. O acesso indevido a esses dados pode comprometer a privacidade dos usuários e expor informações sensíveis relacionadas à sua identidade. Por esse motivo, recomenda-se a adoção de mecanismos de proteção tanto para os dados armazenados quanto para os processos de autenticação que os utilizam \cite{ratha2001enhancing}.
 
 \subsection{Criptografia simétrica}
 
-A criptografia é uma das principais ferramentas utilizadas para proteger informações armazenadas digitalmente. Em sistemas de criptografia simétrica, o mesmo segredo, denominado chave criptográfica, é utilizado tanto para transformar os dados em uma forma ilegível quanto para restaurá-los ao seu formato original \cite{stallings2017cns}.
+A criptografia é uma das principais ferramentas utilizadas para proteger informações armazenadas digitalmente. Em sistemas de criptografia simétrica, o mesmo segredo, denominado chave criptográfica, é utilizado tanto para transformar os dados em uma forma ilegível quanto para restaurá-los ao seu formato original, conforme descrito por \textcite{stallings2017cns}.
 
 Quando aplicada ao armazenamento local, a criptografia simétrica impede que usuários não autorizados obtenham acesso direto ao conteúdo das informações protegidas, mesmo que consigam acessar os arquivos em que elas estão armazenadas. Dessa forma, a proteção dos dados passa a depender não apenas do controle de acesso ao sistema, mas também da posse da chave criptográfica utilizada no processo de cifragem e decifragem \cite{stallings2017cns}.
 

@@ -13,11 +13,11 @@ Os resultados apresentados a seguir concentram-se na análise da separabilidade 
 
 \subsection{Separabilidade no espaço de embeddings}
 
-Esta seção analisa a separabilidade das representações faciais no espaço de \textit{embeddings} a partir da distribuição das distâncias cosseno calculadas entre pares de imagens. O objetivo é verificar se amostras da mesma identidade apresentam maior similaridade entre si do que amostras pertencentes a identidades distintas.
+Esta seção analisa a separabilidade das representações faciais no espaço de \textit{embeddings} a partir da distribuição das distâncias cosseno calculadas entre pares de imagens. O objetivo é verificar se amostras da mesma identidade apresentam maior similaridade entre si do que amostras de identidades distintas.
 
-Para isso, todas as combinações possíveis de pares foram comparadas e classificadas em dois grupos: pares da mesma identidade, formados por imagens diferentes associadas ao mesmo identificador, e pares de identidades diferentes, formados por imagens pertencentes a indivíduos distintos. No experimento realizado, foram obtidos 1.800 pares da mesma identidade e 717.600 pares de identidades diferentes. Essa diferença numérica é esperada, uma vez que o número de pares impostores cresce de forma combinatória quando se consideram todas as combinações entre identidades distintas, enquanto os pares genuínos dependem apenas do número de variações disponíveis por identidade.
+Para isso, todas as combinações possíveis de pares foram comparadas e classificadas em dois grupos: pares da mesma identidade, formados por imagens associadas ao mesmo identificador, e pares de identidades diferentes, compostos por imagens de indivíduos distintos. No experimento, foram obtidos 1.800 pares da mesma identidade e 717.600 pares de identidades diferentes. Essa diferença é esperada, pois o número de pares impostores cresce de forma combinatória entre identidades distintas, enquanto os pares genuínos dependem apenas das variações disponíveis por identidade.
 
-A ~\ref{fig:result1} apresenta a distribuição das distâncias cosseno para ambos os grupos. Observa-se que os pares da mesma identidade concentram-se em valores menores de distância, enquanto os pares de identidades diferentes apresentam distâncias predominantemente maiores, indicando separação entre os grupos no espaço de \textit{embeddings}. O limiar de referência de 0,3 é exibido apenas como apoio visual, ilustrando a região em que ocorreria a decisão de correspondência, sem ser utilizado nesta etapa para classificação.
+A ~\ref{fig:result1} apresenta a distribuição das distâncias cosseno para ambos os grupos. Observa-se que os pares da mesma identidade concentram-se em valores menores de distância, enquanto os pares de identidades diferentes apresentam distâncias predominantemente maiores, indicando separação entre os grupos no espaço de \textit{embeddings}. O limiar de referência de 0,3 é exibido apenas como apoio visual, ilustrando a região em que ocorreria a decisão de correspondência.
 
 \begin{figure}[H]
     \centering
@@ -79,13 +79,14 @@ Assim, foi adotado o \textit{threshold} de 0,30 por representar o maior valor te
 
 \subsection{Análise qualitativa dos pares de comparação}
 
-Esta seção apresenta uma análise qualitativa dos resultados obtidos, com o objetivo de complementar as métricas quantitativas discutidas anteriormente por meio da inspeção visual de pares de imagens faciais. Essa análise busca verificar se o comportamento observado nas distâncias entre \textit{embeddings} é consistente com a percepção visual das imagens comparadas, contribuindo para a validação empírica do sistema.
+Esta seção apresenta uma análise qualitativa dos resultados obtidos, com o objetivo de complementar as métricas quantitativas discutidas anteriormente por meio da inspeção visual de pares de imagens faciais. Essa análise busca verificar se o comportamento observado nas distâncias entre \textit{embeddings} é consistente com a percepção visual das imagens comparadas, contribuindo para a validação do sistema.
 
-Foram selecionados exemplos representativos de pares da mesma identidade e de pares de identidades diferentes, considerando o limiar de decisão definido na seção anterior (distância cosseno inferior a 0,30 para correspondência positiva). Nos pares da mesma identidade, são comparadas imagens distintas associadas a um mesmo identificador, incluindo variações sintéticas decorrentes de transformações aplicadas às imagens originais. Nos pares de identidades diferentes, são comparadas imagens pertencentes a indivíduos distintos corretamente rejeitados pelo sistema.
+Foram selecionados exemplos representativos de pares da mesma identidade e de identidades diferentes, considerando o limiar de decisão definido na seção anterior (distância cosseno inferior a 0,30 para correspondência positiva). Nos pares da mesma identidade, são comparadas imagens distintas associadas a um mesmo identificador, incluindo variações sintéticas decorrentes de transformações aplicadas às imagens originais. Nos pares de identidades diferentes, são comparadas imagens pertencentes a indivíduos distintos corretamente rejeitados pelo sistema.
+
 
 \begin{figure}[H]
     \centering
-    \begin{minipage}{1.0\textwidth}
+    \begin{minipage}{0.90\textwidth}
         \caption{\label{fig:pessoas_iguais} Exemplo de par da mesma identidade corretamente aceitos}
         \includegraphics[width=\textwidth]{Imagens/pessoas_iguais.png}
         \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
@@ -94,7 +95,7 @@ Foram selecionados exemplos representativos de pares da mesma identidade e de pa
 
 \begin{figure}[H]
     \centering
-    \begin{minipage}{1.0\textwidth}
+    \begin{minipage}{0.90\textwidth}
         \caption{\label{fig:pessoas_diferentes} Exemplo de par de identidades diferentes corretamente rejeitados}
         \includegraphics[width=\textwidth]{Imagens/pessoas_diferentes.png}
         \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
@@ -132,7 +133,7 @@ A tela principal foi organizada em três regiões principais. Na parte superior,
 \begin{figure}[H]
 \centering
 \caption{\label{fig:superior} Cabeçalho da aplicação exibindo o nome do sistema e o status de reconhecimento.}
-\includegraphics[width=0.8\textwidth]{Imagens/superior.png}
+\includegraphics[width=1.0\textwidth]{Imagens/superior.png}
 \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
 \end{figure}
 
@@ -141,7 +142,7 @@ Na região central, foi exibido o fluxo de vídeo capturado pela \textit{webcam}
 \begin{figure}[H]
 \centering
 \caption{\label{fig:area_central} Área central da interface exibindo o vídeo da \textit{webcam} e os indicadores relacionados ao reconhecimento facial.}
-\includegraphics[width=0.75\textwidth]{Imagens/area_central.png}
+\includegraphics[width=0.76\textwidth]{Imagens/area_central.png}
 \caption*{\footnotesize Fonte: Elaborado pelo autor usando IA, 2026.}
 \end{figure}
 
@@ -201,7 +202,7 @@ A \ref{fig:zerado} apresenta a tela inicial do sistema antes da realização de 
 
 \begin{figure}[H]
     \centering
-    \begin{minipage}{1.0\textwidth}
+    \begin{minipage}{0.9\textwidth}
         \caption{\label{fig:zerado} Tela inicial do sistema quando um usuário ainda não foi cadastrado.}
         \includegraphics[width=\textwidth]{Imagens/zerado.png}
         \caption*{\footnotesize Fonte: Elaborado pelo autor usando IA, 2026.}
