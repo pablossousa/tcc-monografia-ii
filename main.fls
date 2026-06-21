@@ -366,6 +366,9 @@ INPUT 1-Pre-Textual\Siglas.tex
 INPUT .\main.toc
 INPUT .\main.toc
 INPUT main.toc
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvbo8t.tfm
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvbo8t.vf
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvbo8r.tfm
 OUTPUT main.toc
 INPUT .\2-Textual\1-Introducao.tex
 INPUT .\2-Textual\1-Introducao.tex
@@ -407,16 +410,6 @@ INPUT .\Imagens\triplet.png
 INPUT .\Imagens\triplet.png
 INPUT .\Imagens\triplet.png
 INPUT .\Imagens\triplet.png
-INPUT .\Imagens\mtcnn.png
-INPUT .\Imagens\mtcnn.png
-INPUT .\Imagens\mtcnn.png
-INPUT .\Imagens\mtcnn.png
-INPUT .\Imagens\mtcnn.png
-INPUT .\Imagens\mtcnn.png
-INPUT .\Imagens\mtcnn.png
-INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvro8t.tfm
-INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvro8t.vf
-INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvro8r.tfm
 INPUT .\Imagens\face_recognition.jpg
 INPUT .\Imagens\face_recognition.jpg
 INPUT .\Imagens\face_recognition.jpg
@@ -465,6 +458,9 @@ INPUT .\Imagens\face4.jpg
 INPUT .\Imagens\face4.jpg
 INPUT .\Imagens\face4.jpg
 INPUT .\Imagens\face4.jpg
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvro8t.tfm
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvro8t.vf
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvro8r.tfm
 INPUT .\Imagens\diagrama2.png
 INPUT .\Imagens\diagrama2.png
 INPUT .\Imagens\diagrama2.png
@@ -645,6 +641,8 @@ INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\s
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvb8a.pfb
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvb8a.pfb
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvbo8a.pfb
+INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvbo8a.pfb
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvr8a.pfb
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvr8a.pfb
 INPUT C:\Users\pablo\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvro8a.pfb

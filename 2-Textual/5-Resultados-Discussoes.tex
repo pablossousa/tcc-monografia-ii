@@ -73,7 +73,7 @@ Os resultados indicam elevada separabilidade entre as representações faciais, 
 
 Com base na análise quantitativa realizada, definiu-se o limiar de decisão a ser utilizado no sistema. Considerando que, a partir de 0,40, passam a ocorrer falsas aceitações, optou-se por um valor dentro do intervalo que preserva erro zero para ambas as métricas.
 
-Assim, foi adotado o \textit{threshold} de 0,30 por representar o maior valor testado que mantém \acs{FAR} e \acs{FRR} iguais a zero. Essa escolha maximiza a margem de tolerância do sistema sem comprometer a segurança, sendo, portanto, utilizado como critério nas etapas subsequentes de validação e identificação.
+Assim, foi adotado o \textit{threshold} de 0,30 por representar um valor conservador dentro do intervalo em que \acs{FAR} e \acs{FRR} permaneceram iguais a zero nos testes realizados. Essa escolha mantém uma margem de segurança adicional em relação ao limite superior observado, reduzindo o risco de falsas aceitações em cenários não contemplados pela base experimental.
 
 %---------------------------------------------------------
 
@@ -114,7 +114,7 @@ Nesta seção avalia-se o funcionamento do processo de identificação facial no
 
 Para o teste, utilizou-se o subconjunto contendo 1200 amostras com \textit{embeddings} válidos. Uma amostra foi selecionada como consulta e seu \textit{embedding} foi comparado, por distância cosseno, com todas as demais amostras da base. Para evitar auto-comparação, removeu-se apenas a própria amostra de consulta do conjunto de referência, mantendo-se outras amostras da mesma identidade quando disponíveis. O resultado da identificação foi definido pela menor distância observada, e a correspondência foi aceita quando $d_{\cos}(x,y)\leq\tau$.
 
-Como resultado, a busca recuperou uma amostra da mesma identidade como candidata mais próxima, com distância cosseno significativamente inferior a $\tau$, caracterizando uma correspondência genuína e coerente com o comportamento observado nas métricas \acs{FAR}/\acs{FRR}. Ressalta-se que este experimento não constitui uma avaliação estatística completa de desempenho 1:N (por exemplo, com múltiplas consultas e métricas de \textit{rank-1 accuracy}), mas serve como validação funcional do \textit{pipeline} de identificação em um cenário compatível com aplicações de controle de acesso.
+Como resultado, a busca recuperou uma amostra da mesma identidade como candidata mais próxima, com distância cosseno inferior a $\tau$, caracterizando uma correspondência genuína e coerente com o comportamento observado nas métricas \acs{FAR}/\acs{FRR}. Ressalta-se que este experimento não constitui uma avaliação estatística completa de desempenho 1:N (por exemplo, com múltiplas consultas e métricas de \textit{rank-1 accuracy}), mas serve como validação funcional do \textit{pipeline} de identificação em um cenário compatível com aplicações de controle de acesso.
 
 
 %-------------------------------------------------
@@ -143,7 +143,7 @@ Na região central, foi exibido o fluxo de vídeo capturado pela \textit{webcam}
 \centering
 \caption{\label{fig:area_central} Área central da interface exibindo o vídeo da \textit{webcam} e os indicadores relacionados ao reconhecimento facial.}
 \includegraphics[width=0.76\textwidth]{Imagens/area_central.png}
-\caption*{\footnotesize Fonte: Elaborado pelo autor usando IA, 2026.}
+\caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
 \end{figure}
 
 Na lateral direita, foram disponibilizados os controles operacionais do sistema, incluindo cadastro de usuários, exclusão de registros, opções relacionadas à digitação automática da credencial e indicadores detalhados de status.
@@ -205,7 +205,7 @@ A \ref{fig:zerado} apresenta a tela inicial do sistema antes da realização de 
     \begin{minipage}{0.9\textwidth}
         \caption{\label{fig:zerado} Tela inicial do sistema quando um usuário ainda não foi cadastrado.}
         \includegraphics[width=\textwidth]{Imagens/zerado.png}
-        \caption*{\footnotesize Fonte: Elaborado pelo autor usando IA, 2026.}
+        \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
     \end{minipage}
 \end{figure}
 
@@ -234,7 +234,7 @@ Durante a coleta das amostras, o sistema monitorou continuamente a qualidade dos
     \begin{minipage}{1.0\textwidth}
         \caption{\label{fig:pose_esquerda} Tela durante a captura da pose lateral esquerda.}
         \includegraphics[width=\textwidth]{Imagens/pose_esquerda.png}
-        \caption*{\footnotesize Fonte: Elaborado pelo autor usando IA, 2026.}
+        \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
     \end{minipage}
 \end{figure}
 
@@ -243,7 +243,7 @@ Durante a coleta das amostras, o sistema monitorou continuamente a qualidade dos
     \begin{minipage}{1.0\textwidth}
         \caption{\label{fig:pose_direita} Tela durante a captura da pose lateral direita.}
         \includegraphics[width=\textwidth]{Imagens/pose_direita.png}
-        \caption*{\footnotesize Fonte: Elaborado pelo autor usando IA, 2026.}
+        \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
     \end{minipage}
 \end{figure}
 
@@ -265,7 +265,7 @@ A \ref{fig:pose_final} apresenta a interface após a conclusão do cadastro, evi
     \begin{minipage}{1.0\textwidth}
         \caption{\label{fig:pose_final} Tela após a conclusão do cadastro com as informações do usuário.}
         \includegraphics[width=\textwidth]{Imagens/pose_final.png}
-        \caption*{\footnotesize Fonte: Elaborado pelo autor usando IA, 2026.}
+        \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
     \end{minipage}
 \end{figure}
 
@@ -365,10 +365,9 @@ Também foi verificado que, após a exclusão, a base carregada em memória foi 
 
 \subsection{Geração do Executável Desktop}
 
-Como resultado adicional, o sistema foi empacotado como uma aplicação desktop executável para o ambiente Windows, utilizando a ferramenta PyInstaller. Esse processo permitiu gerar um arquivo \textit{.exe} clicável, acompanhado de uma pasta interna contendo as bibliotecas e dependências necessárias para execução, como \textit{OpenCV}, \textit{PyTorch}, \textit{facenet-pytorch}, \textit{Tkinter}, \textit{SQLite}, Fernet e Pynput. Dessa forma, a aplicação deixa de depender da execução manual por terminal, tornando o uso mais acessível para demonstrações e testes em ambiente acadêmico.
+Como resultado adicional, o sistema foi empacotado como uma aplicação \textit{desktop} executável para o ambiente Windows, utilizando a ferramenta PyInstaller. Esse processo permitiu gerar um arquivo \textit{.exe} clicável, acompanhado de uma pasta interna contendo as bibliotecas, modelos e dependências necessárias para execução, como \textit{OpenCV}, InsightFace, ONNX Runtime, \textit{Tkinter}, \textit{SQLite}, Fernet e Pynput. Dessa forma, a aplicação deixa de depender da execução manual por terminal, tornando o uso mais acessível para demonstrações e testes em ambiente acadêmico.
 
-A versão desktop preserva o funcionamento local do sistema, mantendo a \textit{webcam} como entrada principal, o banco \textit{SQLite} para persistência, a criptografia dos \textit{embeddings} faciais e os recursos de cadastro, reconhecimento, exclusão e digitação automática. Além disso, o empacotamento foi configurado para incluir o peso pré-treinado do modelo \textit{InceptionResnetV1} com \textit{VGGFace2}, evitando a necessidade de download do modelo no computador de destino. Assim, a aplicação pode ser distribuída como uma pasta executável para Windows, desde que a pasta completa gerada seja copiada, incluindo o executável e seus arquivos internos.
-
+A versão \textit{desktop} preserva o funcionamento local do sistema, mantendo a \textit{webcam} como entrada principal, o banco \textit{SQLite} para persistência, a criptografia dos \textit{embeddings} faciais e os recursos de cadastro, reconhecimento, exclusão e digitação automática. Além disso, o empacotamento foi configurado para incluir os modelos pré-treinados do conjunto \textit{buffalo\_l}, utilizados pelo InsightFace para detecção facial, localização de \textit{landmarks} e extração dos \textit{embeddings} ArcFace. Assim, a aplicação pode ser distribuída como uma pasta executável para Windows, desde que a estrutura de diretórios gerada pelo empacotamento seja preservada, incluindo os modelos, bibliotecas e arquivos internos necessários à execução do sistema.
 
 \subsection{Síntese dos testes funcionais}
 

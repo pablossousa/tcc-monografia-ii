@@ -123,7 +123,7 @@ A resolução de uma imagem está relacionada ao número de pixels que a compõe
 
 Antes que uma imagem facial seja utilizada em um sistema de reconhecimento automático, é comum aplicar uma série de etapas de pré-processamento. Entre as mais importantes estão o recorte da região do rosto, o redimensionamento da imagem e a padronização de seus valores. O recorte do rosto tem como objetivo eliminar partes irrelevantes da imagem, como fundo e outros objetos, concentrando a análise apenas na região de interesse. O redimensionamento garante que todas as imagens tenham o mesmo tamanho, o que é necessário para que possam ser processadas de forma consistente por algoritmos e modelos que esperam entradas com dimensões fixas, conforme descrito por \textcite{zhao2003face}.
 
-A padronização, por sua vez, inclui operações como normalização dos valores dos pixels e ajustes básicos de formato, garantindo que diferentes imagens, possivelmente capturadas em condições distintas, sejam apresentadas ao sistema de forma mais uniforme. Essas etapas são essenciais em sistemas automáticos porque reduzem variações indesejadas que não estão relacionadas à identidade da pessoa, como diferenças de escala ou enquadramento, e tornam o processamento mais robusto e previsível\cite{zhao2003face}.
+A padronização, por sua vez, inclui operações como normalização dos valores dos pixels e ajustes básicos de formato, garantindo que diferentes imagens, possivelmente capturadas em condições distintas, sejam apresentadas ao sistema de forma mais uniforme. Essas etapas são essenciais em sistemas automáticos porque reduzem variações indesejadas que não estão relacionadas à identidade da pessoa, como diferenças de escala ou enquadramento, e tornam o processamento mais robusto e previsível \cite{zhao2003face}.
 
 %------------------------------------------------
 
@@ -199,7 +199,7 @@ Esse mecanismo permite converter uma medida contínua de similaridade em uma dec
 
 \section{Aprendizado métrico: redes siamesas e Triplet Loss}
 
-Os conceitos de \textit{embeddings} e de medidas de distância explicam como comparar representações vetoriais, mas não descrevem, por si só, como obter um espaço vetorial no qual identidades diferentes fiquem bem separadas e amostras da mesma identidade fiquem próximas. Essa organização do espaço é resultado de um paradigma conhecido como aprendizado métrico, amplamente discutido na literatura de aprendizado profundo e popularizado em cursos e materiais didáticos de autores como Andrew Ng. Nesse paradigma, o objetivo principal não é apenas classificar amostras em categorias, mas aprender uma representação em que a noção de similaridade tenha significado geométrico \cite{bellet2015survey}.
+Os conceitos de \textit{embeddings} e medidas de distância explicam como comparar vetores, mas não como construir um espaço em que identidades diferentes fiquem separadas e amostras da mesma identidade permaneçam próximas. Essa organização é obtida pelo aprendizado métrico, cujo objetivo é aprender representações nas quais a similaridade tenha significado geométrico, e não apenas classificar amostras em categorias fixas \cite{bellet2015survey}.
 
 \subsection{Classificação tradicional e aprendizado métrico}
 
@@ -213,23 +213,25 @@ As redes siamesas, ou \textit{Siamese Networks}, são uma arquitetura clássica 
 
 Esse tipo de arquitetura é naturalmente adequado para tarefas de verificação no formato 1:1, pois permite responder à pergunta: “essas duas amostras representam a mesma entidade?”. Em vez de classificar cada entrada isoladamente, a rede aprende a produzir representações que podem ser comparadas diretamente, tornando a decisão dependente da proximidade entre os \textit{embeddings} gerados \cite{koch2015siamese}.
 
-\subsection{Função de perda Triplet Loss}
+\subsection{Funções de perda em modelos de reconhecimento facial}
 
-Uma extensão importante dessa ideia é o uso da função de perda conhecida como \textit{Triplet Loss}. Nessa abordagem, o treinamento é feito a partir de trios de amostras: uma amostra âncora, uma amostra positiva (da mesma identidade da âncora) e uma amostra negativa (de identidade diferente). O objetivo da função de perda é garantir que a distância entre a âncora e a amostra positiva seja menor do que a distância entre a âncora e a amostra negativa por, pelo menos, uma certa margem, conforme proposto por \textcite{schroff2015facenet}.
+O treinamento de modelos de reconhecimento facial baseados em \textit{embeddings} depende de funções de perda capazes de organizar o espaço vetorial de modo que amostras da mesma identidade fiquem próximas, enquanto amostras de identidades diferentes sejam posicionadas em regiões mais distantes. Uma das abordagens clássicas para esse objetivo é a \textit{Triplet Loss}, utilizada no FaceNet. Nessa estratégia, o treinamento ocorre a partir de trios de amostras compostos por uma âncora, uma amostra positiva, pertencente à mesma identidade da âncora, e uma amostra negativa, pertencente a uma identidade diferente. O objetivo é fazer com que a distância entre a âncora e a amostra positiva seja menor do que a distância entre a âncora e a amostra negativa por pelo menos uma margem definida \cite{schroff2015facenet}.
 
-Em termos geométricos, isso significa forçar o modelo a organizar o espaço de \textit{embeddings} de modo que pontos correspondentes à mesma identidade fiquem agrupados, enquanto pontos de identidades diferentes sejam empurrados para regiões mais distantes. Essa interpretação visual é frequentemente utilizada para ilustrar o funcionamento do aprendizado métrico e está diretamente relacionada à ideia de estruturar o espaço vetorial para tornar a separação entre classes mais clara e consistente.  A ~\ref{fig:triplet} ilustra, de forma conceitual, a organização do espaço de \textit{embeddings} em abordagens baseadas em aprendizado métrico \cite{schroff2015facenet}.
+Essa lógica está diretamente relacionada ao aprendizado métrico, pois busca estruturar o espaço de \textit{embeddings} de forma discriminativa. Em termos geométricos, o modelo aprende a aproximar representações vetoriais de uma mesma identidade e a afastar representações de identidades distintas, tornando a separação entre classes mais clara. A ~\ref{fig:triplet} ilustra, de forma conceitual, esse processo de organização do espaço de \textit{embeddings}.
 
-A ~\ref{fig:triplet} ilustra o efeito do aprendizado métrico no espaço de \textit{embeddings}, onde, após o treinamento, a distância entre a âncora e o exemplo positivo é reduzida, enquanto a distância em relação ao exemplo negativo é aumentada.
+Além da \textit{Triplet Loss}, abordagens mais recentes passaram a explorar perdas baseadas em margem angular, como ocorre no ArcFace. Nesse método, os \textit{embeddings} e os pesos da camada de classificação são normalizados, fazendo com que a comparação entre identidades seja interpretada em termos angulares em uma hiperesfera. A função \textit{Additive Angular Margin Loss} introduz uma margem angular adicional entre as classes, aumentando a separabilidade das identidades no espaço vetorial e favorecendo a geração de representações faciais mais discriminativas \cite{deng2019arcface}.
 
+Essa formulação é especialmente relevante para este trabalho, pois o protótipo desenvolvido utiliza \textit{embeddings} ArcFace gerados por modelos pré treinados da biblioteca InsightFace. Assim, embora a \textit{Triplet Loss} seja importante para compreender a evolução do aprendizado métrico em reconhecimento facial, o ArcFace se aproxima mais diretamente da abordagem empregada na solução implementada, por estruturar os \textit{embeddings} normalizados em um espaço angular adequado para comparação por similaridade ou distância.
 
 \begin{figure}[H]
-    \centering
-    \begin{minipage}{0.9\textwidth}
-        \caption{\label{fig:triplet} Espaço de \textit{embeddings} antes e após o aprendizado.}
-        \includegraphics[width=\textwidth]{Imagens/triplet.png}
-        \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
-    \end{minipage}
+\centering
+\begin{minipage}{0.9\textwidth}
+\caption{\label{fig:triplet} Espaço de \textit{embeddings} antes e após o aprendizado métrico.}
+\includegraphics[width=\textwidth]{Imagens/triplet.png}
+\caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
+\end{minipage}
 \end{figure}
+
 
 \subsection{Aplicação do aprendizado métrico ao reconhecimento facial}
 
@@ -249,26 +251,13 @@ O \textit{transfer learning}, ou aprendizado por transferência, é uma estraté
 
 No contexto do reconhecimento facial, modelos pré-treinados são ajustados previamente em bases de dados extensas e diversificadas, contendo milhões de imagens de diferentes pessoas. Como resultado, esses modelos aprendem a extrair características faciais robustas e discriminativas, que podem ser utilizadas diretamente como \textit{embeddings}. Essa abordagem permite obter bons resultados mesmo em cenários com conjuntos de dados menores, além de reduzir significativamente o custo computacional e a complexidade do desenvolvimento \cite{schroff2015facenet}.
 
-\subsection{MTCNN para detecção facial}
+\subsection{Detecção facial, \textit{landmarks} e alinhamento}
 
-O \textit{Multi-task Cascaded Convolutional Neural Network} (\acs{MTCNN}) é um método amplamente utilizado para detecção facial e localização de pontos de referência faciais (\textit{facial landmarks}) em imagens. Diferentemente de abordagens que apenas identificam a presença de uma face, o \acs{MTCNN} também estima a posição de características importantes do rosto, como olhos, nariz e cantos da boca, fornecendo informações adicionais úteis para etapas posteriores do reconhecimento facial, conforme proposto por \textcite{zhang2016mtcnn}.
+A detecção facial é uma etapa essencial em sistemas de reconhecimento facial, pois permite localizar a região correspondente ao rosto em uma imagem antes da extração das características biométricas. Conforme discutido por \textcite{zhao2003face}, sistemas de reconhecimento facial geralmente dependem de etapas preliminares de localização e preparação da face antes da identificação propriamente dita. Além da localização da face, muitos sistemas também identificam pontos de referência faciais, conhecidos como \textit{landmarks}, associados a regiões como olhos, nariz e boca. Esses pontos auxiliam no alinhamento da face, reduzindo variações causadas por inclinação, rotação e enquadramento inadequado \cite{hassaballah2015face}.
 
-A arquitetura do \acs{MTCNN} é composta por uma cascata de três redes neurais convolucionais, organizadas de forma sequencial. A primeira rede realiza uma detecção inicial de regiões candidatas a conter faces. Em seguida, as regiões identificadas são refinadas por uma segunda rede, que elimina detecções incorretas e ajusta as localizações estimadas. Por fim, uma terceira rede realiza um refinamento mais preciso das regiões faciais e calcula os pontos de referência utilizados para alinhamento facial \cite{zhang2016mtcnn}.
+No contexto de sistemas baseados em \textit{embeddings}, essa etapa de pré-processamento contribui para que a imagem facial seja apresentada ao modelo de reconhecimento em uma configuração mais padronizada. \textcite{schroff2015facenet} demonstram que a representação de faces em espaços vetoriais permite comparar amostras faciais por meio da proximidade entre seus \textit{embeddings}. De forma complementar, \textcite{deng2019arcface} propõem o ArcFace com o objetivo de aumentar a separabilidade entre identidades distintas no espaço de representação. Assim, variações de pose, escala e posição tendem a exercer menor influência sobre a geração das representações vetoriais, favorecendo comparações mais consistentes entre amostras faciais.
 
-Uma das principais vantagens do \acs{MTCNN} é a realização simultânea de múltiplas tarefas, incluindo detecção facial, refinamento das regiões detectadas e localização dos \textit{landmarks}. Essa estratégia permite obter resultados robustos mesmo em condições de variação moderada de pose, escala e iluminação, tornando o método adequado para aplicações de reconhecimento facial em tempo real \cite{zhang2016mtcnn}.
-
-No contexto de sistemas de reconhecimento facial baseados em \textit{embeddings}, o \acs{MTCNN} desempenha um papel fundamental na etapa de pré-processamento. Inicialmente, o modelo localiza a face na imagem e determina seus principais pontos de referência. Em seguida, essas informações podem ser utilizadas para alinhar a face, reduzindo variações relacionadas à inclinação ou ao posicionamento do indivíduo. O resultado é uma imagem facial mais padronizada, que tende a produzir \textit{embeddings} mais consistentes quando processada pelos modelos responsáveis pelo reconhecimento da identidade \cite{zhang2016mtcnn}.
-
-A ~\ref{fig:mtcnn} ilustra, de forma conceitual, as etapas executadas pelo \acs{MTCNN}, desde a detecção inicial da face até a localização dos principais pontos de referência faciais utilizados no alinhamento e no reconhecimento facial.
-
-\begin{figure}[H]
-    \centering
-    \begin{minipage}{0.6\textwidth}
-        \caption{\label{fig:mtcnn} Etapas do MTCNN para detecção facial e localização de pontos de referência.}
-        \includegraphics[width=\textwidth]{Imagens/mtcnn.png}
-        \caption*{\footnotesize Fonte: \cite{yuan2020minor}}
-    \end{minipage}
-\end{figure}
+Neste trabalho, essas etapas são realizadas por meio da biblioteca InsightFace, que integra detecção facial, localização de \textit{landmarks}, alinhamento interno da face e extração dos \textit{embeddings} utilizados no reconhecimento \cite{insightface_repo}. A geração das representações faciais segue a abordagem ArcFace, proposta por \textcite{deng2019arcface}, baseada em \textit{embeddings} discriminativos para reconhecimento facial.
 
 \subsection{Embeddings discriminativos para reconhecimento facial}
 
@@ -297,7 +286,7 @@ A ~\ref{fig:face_recognition} apresenta um \textit{pipeline} típico de reconhec
 
 \section{Avaliação biométrica: FAR, FRR e trade-off entre segurança e usabilidade}
 
-A avaliação de sistemas biométricos não se limita a verificar se o sistema “funciona” em alguns exemplos, mas exige a análise sistemática de como ele se comporta diante de diferentes tipos de erros. Em aplicações de controle de acesso, esses erros têm impactos distintos: aceitar indevidamente um usuário não autorizado compromete a segurança, enquanto rejeitar indevidamente um usuário legítimo compromete a usabilidade. Por esse motivo, métricas específicas são utilizadas para quantificar esses comportamentos e orientar a escolha de parâmetros de decisão, como o \textit{threshold} adotado na comparação entre \textit{embeddings} \cite{jain2004biometric}.
+A avaliação de sistemas biométricos exige analisar como o sistema se comporta diante de diferentes tipos de erro. Em controle de acesso, aceitar indevidamente um usuário não autorizado compromete a segurança, enquanto rejeitar um usuário legítimo afeta a usabilidade. Por isso, métricas específicas orientam a escolha de parâmetros de decisão, como o \textit{threshold} usado na comparação entre \textit{embeddings} \cite{jain2004biometric}.
 
 \subsection{Matriz de confusão}
 
@@ -328,7 +317,7 @@ Em aplicações de controle de acesso, esse compromisso costuma ser resolvido co
 
 \section{Privacidade, LGPD e uso de dados sintéticos}
 
-O uso de sistemas biométricos levanta questões importantes relacionadas à privacidade e à proteção de dados pessoais, uma vez que características biométricas estão diretamente ligadas à identidade dos indivíduos. Diferentemente de senhas ou cartões, dados biométricos não podem ser simplesmente substituídos em caso de vazamento ou uso indevido, o que torna necessário um cuidado especial tanto no desenvolvimento quanto na avaliação de soluções baseadas nesse tipo de informação \cite{ratha2001enhancing}. Por esse motivo, aspectos éticos e legais são parte fundamental da discussão sobre a viabilidade de sistemas de reconhecimento facial.
+O uso de sistemas biométricos envolve questões de privacidade e proteção de dados, pois características biométricas estão diretamente ligadas à identidade dos indivíduos. Diferentemente de senhas ou cartões, esses dados não podem ser facilmente substituídos em caso de vazamento, exigindo cuidados éticos e legais no desenvolvimento e na avaliação de soluções de reconhecimento facial \cite{ratha2001enhancing}.
 
 \subsection{Dados biométricos e sua sensibilidade}
 

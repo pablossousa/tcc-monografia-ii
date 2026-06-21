@@ -7,7 +7,7 @@ Os experimentos realizados permitiram analisar o comportamento dos \textit{embed
 
 Os experimentos de identificação no cenário 1:N também demonstraram que o sistema é capaz de recuperar corretamente a identidade mais provável a partir da base de usuários cadastrados.
 
-A solução desenvolvida utilizou o detector facial \acs{MTCNN} para localização e alinhamento das faces e o modelo \textit{FaceNet} (\textit{InceptionResnetV1}) para geração dos \textit{embeddings}. Para aumentar a confiabilidade do reconhecimento, foram incorporados mecanismos de avaliação da qualidade das imagens, cadastro multipose e votação temporal baseada em múltiplos quadros consecutivos. Além disso, os \textit{embeddings} foram armazenados localmente em banco de dados \textit{SQLite} com criptografia.
+A solução desenvolvida utilizou a biblioteca InsightFace, por meio do módulo \textit{FaceAnalysis} e de modelos pré-treinados, para detecção facial, localização de \textit{landmarks}, alinhamento interno da face e geração de \textit{embeddings} ArcFace. Para aumentar a confiabilidade do reconhecimento, foram incorporados mecanismos de avaliação da qualidade das imagens, cadastro multipose e votação temporal baseada em múltiplos quadros consecutivos. Além disso, os \textit{embeddings} foram armazenados localmente em banco de dados \textit{SQLite} com criptografia.
 
 O sistema também foi testado em um ambiente institucional real para validação de credenciais de acesso. Durante os testes, a solução identificou corretamente os usuários cadastrados e realizou o preenchimento automático das informações associadas às suas credenciais, demonstrando a viabilidade prática da proposta em aplicações acadêmicas e institucionais.
 

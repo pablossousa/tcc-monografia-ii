@@ -240,6 +240,31 @@
       \field{title}{Secure Anonymous RFID Authentication Protocols}
       \field{year}{2006}
     \endentry
+    \entry{insightface_repo}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f79e34b93ee08f437e99ece28fea7433}{%
+           family={{DeepInsight}},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{f79e34b93ee08f437e99ece28fea7433}
+      \strng{fullhash}{f79e34b93ee08f437e99ece28fea7433}
+      \strng{fullhashraw}{f79e34b93ee08f437e99ece28fea7433}
+      \strng{bibnamehash}{f79e34b93ee08f437e99ece28fea7433}
+      \strng{authorbibnamehash}{f79e34b93ee08f437e99ece28fea7433}
+      \strng{authornamehash}{f79e34b93ee08f437e99ece28fea7433}
+      \strng{authorfullhash}{f79e34b93ee08f437e99ece28fea7433}
+      \strng{authorfullhashraw}{f79e34b93ee08f437e99ece28fea7433}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://github.com/deepinsight/insightface}}
+      \field{note}{Acesso em: 14 jun. 2026}
+      \field{title}{{InsightFace: 2D and 3D Face Analysis Project}}
+      \field{year}{2026}
+    \endentry
     \entry{deng2019arcface}{inproceedings}{}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=6ead2c77e3080af378f5abe533067479}{%
@@ -865,6 +890,31 @@
       \field{journaltitle}{arXiv preprint arXiv:1907.00193}
       \field{title}{Frame Attention Networks for Facial Expression Recognition in Videos}
       \field{year}{2019}
+    \endentry
+    \entry{onnxruntime_docs}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={{Microsoft}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://onnxruntime.ai/docs/}}
+      \field{note}{Acesso em: 14 jun. 2026}
+      \field{title}{{ONNX Runtime Documentation}}
+      \field{year}{2026}
     \endentry
     \entry{ng2021deeplearning}{misc}{}{}
       \name{author}{1}{}{%
@@ -1639,156 +1689,6 @@
       \field{howpublished}{\url{https://thispersondoesnotexist.com/}}
       \field{note}{Gerador de faces humanas sintéticas com redes neurais (acesso em: 30 jan. 2026)}
       \field{title}{{ThisPersonDoesNotExist.com – AI Generated Human Faces}}
-    \endentry
-    \entry{facenet_pytorch_repo}{misc}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=3b51c23626bc15b79536de5c6b54d443}{%
-           family={{Timesler}},
-           familyi={T\bibinitperiod}}}%
-      }
-      \list{organization}{1}{%
-        {GitHub}%
-      }
-      \strng{namehash}{3b51c23626bc15b79536de5c6b54d443}
-      \strng{fullhash}{3b51c23626bc15b79536de5c6b54d443}
-      \strng{fullhashraw}{3b51c23626bc15b79536de5c6b54d443}
-      \strng{bibnamehash}{3b51c23626bc15b79536de5c6b54d443}
-      \strng{authorbibnamehash}{3b51c23626bc15b79536de5c6b54d443}
-      \strng{authornamehash}{3b51c23626bc15b79536de5c6b54d443}
-      \strng{authorfullhash}{3b51c23626bc15b79536de5c6b54d443}
-      \strng{authorfullhashraw}{3b51c23626bc15b79536de5c6b54d443}
-      \field{sortinit}{T}
-      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{facenet-pytorch: Pretrained Pytorch face detection and recognition models}}
-      \field{year}{2026}
-      \verb{urlraw}
-      \verb https://github.com/timesler/facenet-pytorch
-      \endverb
-      \verb{url}
-      \verb https://github.com/timesler/facenet-pytorch
-      \endverb
-      \warn{\item misc entry 'facenet_pytorch_repo' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring}
-    \endentry
-    \entry{yuan2020minor}{inproceedings}{}{}
-      \name{author}{5}{}{%
-        {{un=0,uniquepart=base,hash=49052fbd02964f21e7d1300d2b4a40a0}{%
-           family={Yuan},
-           familyi={Y\bibinitperiod},
-           given={Meng},
-           giveni={M\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=dc37be45250babbe9631db590e46ed99}{%
-           family={Nikouei},
-           familyi={N\bibinitperiod},
-           given={Seyed\bibnamedelima Yahya},
-           giveni={S\bibinitperiod\bibinitdelim Y\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=7f59904c9deda7f6b0ac2a828b99a318}{%
-           family={Fitwi},
-           familyi={F\bibinitperiod},
-           given={Alem},
-           giveni={A\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=5ffb5aba0d9858b862639d446d48f8eb}{%
-           family={Chen},
-           familyi={C\bibinitperiod},
-           given={Yu},
-           giveni={Y\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=1eaf38505d32c8a83570013a4dd4894f}{%
-           family={Dong},
-           familyi={D\bibinitperiod},
-           given={Yunxi},
-           giveni={Y\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{a3c32b56770fe2b9445af14268510b73}
-      \strng{fullhash}{4db4a2176fdbb57dcb1eb6bfbac3c6e1}
-      \strng{fullhashraw}{4db4a2176fdbb57dcb1eb6bfbac3c6e1}
-      \strng{bibnamehash}{a3c32b56770fe2b9445af14268510b73}
-      \strng{authorbibnamehash}{a3c32b56770fe2b9445af14268510b73}
-      \strng{authornamehash}{a3c32b56770fe2b9445af14268510b73}
-      \strng{authorfullhash}{4db4a2176fdbb57dcb1eb6bfbac3c6e1}
-      \strng{authorfullhashraw}{4db4a2176fdbb57dcb1eb6bfbac3c6e1}
-      \field{sortinit}{Y}
-      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{2020 29th International Conference on Computer Communications and Networks (ICCCN)}
-      \field{title}{Minor Privacy Protection Through Real-time Video Processing at the Edge}
-      \field{year}{2020}
-      \field{pages}{1\bibrangedash 9}
-      \range{pages}{9}
-      \verb{doi}
-      \verb 10.1109/ICCCN49398.2020.9209632
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1109/ICCCN49398.2020.9209632
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1109/ICCCN49398.2020.9209632
-      \endverb
-    \endentry
-    \entry{zhang2016mtcnn}{article}{}{}
-      \name{author}{4}{}{%
-        {{un=0,uniquepart=base,hash=8d2b1627b2e3b6cff1b1ed025022d0df}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Kaipeng},
-           giveni={K\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=038d1a58d8d49317592eda66c39ac456}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Zhanpeng},
-           giveni={Z\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=828a5b63771fe4db7767e6bd65ec78ce}{%
-           family={Li},
-           familyi={L\bibinitperiod},
-           given={Zhifeng},
-           giveni={Z\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=2addc56ce0ea3a8fc05ff9b0995f74f4}{%
-           family={Qiao},
-           familyi={Q\bibinitperiod},
-           given={Yu},
-           giveni={Y\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{0ca2f38f79c3c5d127a13a17d7b27590}
-      \strng{fullhash}{7cf250efdbc56a875fede85b42f8b85e}
-      \strng{fullhashraw}{7cf250efdbc56a875fede85b42f8b85e}
-      \strng{bibnamehash}{0ca2f38f79c3c5d127a13a17d7b27590}
-      \strng{authorbibnamehash}{0ca2f38f79c3c5d127a13a17d7b27590}
-      \strng{authornamehash}{0ca2f38f79c3c5d127a13a17d7b27590}
-      \strng{authorfullhash}{7cf250efdbc56a875fede85b42f8b85e}
-      \strng{authorfullhashraw}{7cf250efdbc56a875fede85b42f8b85e}
-      \field{sortinit}{Z}
-      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Signal Processing Letters}
-      \field{number}{10}
-      \field{title}{Joint Face Detection and Alignment Using Multitask Cascaded Convolutional Networks}
-      \field{volume}{23}
-      \field{year}{2016}
-      \field{pages}{1499\bibrangedash 1503}
-      \range{pages}{5}
-      \verb{doi}
-      \verb 10.1109/LSP.2016.2603342
-      \endverb
     \endentry
     \entry{zhao2003face}{article}{}{}
       \name{author}{4}{}{%

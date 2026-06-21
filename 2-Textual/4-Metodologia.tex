@@ -26,8 +26,6 @@ A construção da base de dados utilizada neste estudo teve como objetivo viabil
 
 Foram coletadas 300 imagens faciais sintéticas, cada uma representando uma identidade distinta. As imagens foram armazenadas em formato digital e organizadas em diretórios específicos do projeto, adotando-se um padrão de nomenclatura que permitisse a associação direta entre cada imagem e seu respectivo identificador de identidade.
 
-A utilização de dados sintéticos assegura que não exista qualquer vínculo com indivíduos reais, eliminando riscos de identificação pessoal e atendendo às diretrizes de privacidade estabelecidas pela \acs{LGPD} \cite{lgpd2018lei}.
-
 Como os modelos de extração de características adotados neste trabalho já são pré-treinados, não houve etapa de treinamento ou atualização de pesos da rede neural. Por essa razão, dispensou-se a divisão tradicional da base em subconjuntos de treino, validação e teste. Em vez disso, as 300 identidades foram utilizadas de forma unificada para a avaliação do espaço métrico, a construção da base de referência e a calibração experimental do limiar de decisão operacional ($\tau$). 
 
 Essa organização possibilita a realização de experimentos de reconhecimento facial de forma reprodutível e controlada, simulando um cenário de cadastramento e validação de usuários em sistemas de controle de acesso. A base de dados sintética construída nesta etapa constitui o insumo fundamental para as etapas subsequentes da metodologia, incluindo a extração de características faciais, a geração de \textit{embeddings} e a avaliação da separabilidade entre identidades no espaço métrico \cite{ge2018hierarchical}.
@@ -93,7 +91,7 @@ Para cada imagem facial original associada a uma identidade, foram aplicadas tra
 \end{subfigure}
 \end{tabular}
 
-\caption*{\footnotesize Fonte: Elaborado pelo autor a partir de imagens sintéticas do projeto \textit{This Person Does Not Exist}, 2026}
+\caption*{\footnotesize Fonte: Elaborado pelo autor a partir de imagens sintéticas do projeto \textit{This Person Does Not Exist}, 2026}.
 \end{figure}
 
 
@@ -146,17 +144,17 @@ A metodologia apresentada definiu o conjunto de procedimentos adotados para a co
 
 \section{Desenvolvimento do protótipo funcional de reconhecimento facial em tempo real}
 
-Após a validação experimental da abordagem baseada em \textit{embeddings}, foi desenvolvido um protótipo funcional capaz de realizar o reconhecimento facial em tempo real. Diferentemente dos experimentos apresentados nas seções anteriores, cujo foco esteve na avaliação do comportamento dos \textit{embeddings} e na calibração dos parâmetros biométricos, esta etapa concentrou-se na implementação de uma aplicação completa, integrando captura por \textit{webcam}, cadastro de usuários, reconhecimento facial, armazenamento seguro das identidades e automação da inserção de credenciais. As subseções seguintes descrevem a arquitetura da solução desenvolvida e os principais componentes que compõem o sistema.
+Após a validação experimental da abordagem baseada em \textit{embeddings}, foi desenvolvido um protótipo funcional capaz de realizar o reconhecimento facial em tempo real. Diferentemente dos experimentos anteriores, esta etapa teve foco na implementação de uma aplicação funcional. O protótipo integra captura por webcam, cadastro de usuários, reconhecimento facial, armazenamento seguro das identidades e automação da inserção de credenciais. As subseções seguintes descrevem a arquitetura da solução desenvolvida e os principais componentes que compõem o sistema.
 
 \subsection{Evolução da abordagem experimental para o sistema implementado}
 
-A etapa experimental apresentada anteriormente teve como objetivo validar a viabilidade do reconhecimento facial baseado em \textit{embeddings}, avaliando a separabilidade entre identidades e o comportamento de diferentes limiares de decisão por meio de métricas biométricas. Para essa finalidade, foi utilizado o pacote InsightFace, que oferece modelos otimizados para extração de características faciais e análise de desempenho em cenários de identificação.
+A etapa experimental teve como objetivo validar a viabilidade do reconhecimento facial baseado em \textit{embeddings}, avaliando a separabilidade entre identidades e o comportamento dos limiares de decisão. Para isso, foi utilizado o pacote InsightFace, adequado para extração de características faciais e análise biométrica.
 
-Entretanto, o desenvolvimento do sistema funcional exigiu requisitos adicionais que não estavam presentes na etapa experimental, como captura em tempo real por \textit{webcam}, detecção facial contínua, alinhamento automático das faces, gerenciamento de usuários cadastrados e integração com a interface gráfica da aplicação.
+Na implementação final, manteve-se a mesma abordagem técnica, utilizando o módulo \textit{FaceAnalysis} da biblioteca InsightFace com o conjunto de modelos \textit{buffalo\_l}. Esse conjunto integra detecção facial, localização de \textit{landmarks}, alinhamento interno da face e extração de \textit{embeddings} por meio de ArcFace.
 
-Dessa forma, optou-se pela utilização da biblioteca \textit{facenet-pytorch}, que disponibiliza de forma integrada os modelos \acs{MTCNN} para detecção e alinhamento facial e FaceNet (\textit{InceptionResnetV1}) para geração dos \textit{embeddings}. Essa escolha simplificou a implementação do sistema em tempo real e permitiu a construção de um \textit{pipeline} único para captura, processamento e reconhecimento facial.
+No sistema implementado, os quadros capturados pela \textit{webcam} são processados em tempo real. Para cada face detectada, é gerado um \textit{embedding} normalizado de 512 dimensões, que é comparado aos vetores previamente cadastrados no banco local. Assim, o reconhecimento não depende do treinamento de um classificador específico, mas da comparação entre representações vetoriais das faces.
 
-Embora tenha ocorrido a substituição do modelo utilizado na fase experimental, o princípio fundamental da abordagem permaneceu inalterado. Tanto na validação experimental quanto no sistema implementado, o reconhecimento é realizado por meio da geração de \textit{embeddings} faciais e da comparação dessas representações em um espaço vetorial de características. Assim, a mudança realizada representa uma adaptação tecnológica voltada à implementação prática da solução, sem alterar os fundamentos conceituais investigados ao longo da pesquisa.
+Além disso, a aplicação incorpora verificações de qualidade da imagem e uma janela temporal de votação, aumentando a estabilidade do reconhecimento em condições reais de uso. Dessa forma, a etapa experimental e o sistema final permanecem fundamentados no mesmo princípio: identificação facial por \textit{embeddings}, comparação vetorial e limiares de decisão.
 
 \subsection{Arquitetura geral do sistema}
 
@@ -185,15 +183,17 @@ O protótipo desenvolvido neste trabalho foi implementado integralmente na lingu
 
 \subsubsection{OpenCV}
 
-A biblioteca OpenCV (\textit{cv2}) foi utilizada para aquisição e processamento das imagens capturadas pela \textit{webcam}. Além da leitura contínua dos quadros, a biblioteca foi empregada na conversão de formatos de imagem, exibição de informações visuais na interface, cálculo de métricas de qualidade da captura e operações de alinhamento facial \cite{opencv_python_docs}.
+A biblioteca OpenCV (\textit{cv2}) foi utilizada para aquisição e processamento das imagens capturadas pela \textit{webcam}. Além da leitura contínua dos quadros, a biblioteca foi empregada na exibição de informações visuais na interface, no desenho de caixas e textos sobre o vídeo e no cálculo de métricas de qualidade da captura, como a nitidez da região facial \cite{opencv_python_docs}.
 
 \subsubsection{Tkinter}
 
 A interface gráfica da aplicação foi desenvolvida utilizando o framework Tkinter, nativo da linguagem Python. Por meio dessa biblioteca foram implementadas as telas de cadastro e exclusão de usuários, a visualização em tempo real da \textit{webcam}, os painéis de status do sistema e os mecanismos de interação com o operador \cite{tkinter_docs}.
 
-\subsubsection{PyTorch e facenet-pytorch}
+\subsubsection{InsightFace e ONNX Runtime}
 
-O processamento dos modelos neurais foi realizado com o auxílio da biblioteca PyTorch. Sobre essa infraestrutura foi utilizada a biblioteca \textit{facenet-pytorch}, responsável por disponibilizar os modelos \acs{MTCNN} para detecção facial e localização de \textit{landmarks}, bem como o modelo FaceNet (\textit{InceptionResnetV1}) para geração dos \textit{embeddings} faciais. O modelo utilizado foi a versão pré-treinada na base \textit{VGGFace2}, permitindo a extração de representações faciais discriminativas sem necessidade de treinamento adicional \cite{facenet_pytorch_repo}.
+O motor de reconhecimento facial foi implementado com a biblioteca InsightFace, por meio do módulo \textit{FaceAnalysis}. Foi utilizado o conjunto de modelos \textit{buffalo\_l}, que integra detecção facial, localização de \textit{landmarks}, alinhamento interno da face e extração de \textit{embeddings} faciais.
+
+A etapa de reconhecimento utiliza embeddings ArcFace normalizados de 512 dimensões, permitindo representar cada face como um vetor numérico discriminativo. A execução dos modelos é realizada com o ONNX Runtime, que permite processar os modelos pré-treinados utilizados pelo InsightFace sem a necessidade de treinamento adicional no sistema implementado \cite{insightface_repo, onnxruntime_docs}.
 
 \subsubsection{NumPy}
 
@@ -223,7 +223,7 @@ O processo é iniciado pelo operador por meio da interface gráfica da aplicaç�
 
 Após a validação dos dados, o sistema inicia a captura facial guiada. Nessa etapa, são coletadas amostras do rosto em três poses distintas: frontal, lateral esquerda e lateral direita. Durante a captura, os quadros obtidos pela \textit{webcam} são continuamente analisados quanto à presença de uma face válida, enquadramento adequado, nitidez da imagem e compatibilidade entre a pose detectada e a pose solicitada.
 
-Para cada pose são coletadas 20 amostras válidas. Para cada frame válido, é gerado um \textit{embedding} facial por meio do modelo FaceNet. Ao final da captura de cada pose, os \textit{embeddings} obtidos naquela etapa são normalizados e agregados por média, produzindo um único \textit{embedding} representativo da pose correspondente.
+Para cada pose são coletadas 20 amostras válidas. Para cada frame válido, é gerado um \textit{embedding} facial. Ao final da captura de cada pose, os \textit{embeddings} obtidos naquela etapa são normalizados e agregados por média, produzindo um único \textit{embedding} representativo da pose correspondente.
 
 Dessa forma, para cada usuário cadastrado, o sistema mantém um \textit{embedding} agregado para a pose frontal, um para a pose lateral esquerda e um para a pose lateral direita. As múltiplas amostras capturadas durante o cadastro não são armazenadas individualmente; elas são utilizadas apenas para calcular uma representação média mais estável de cada pose. Após essa etapa, os \textit{embeddings} agregados são encaminhados ao módulo de armazenamento seguro, a base carregada em memória é atualizada e o sistema retorna automaticamente ao modo de reconhecimento facial.
 
@@ -240,7 +240,7 @@ Diferentemente de abordagens que armazenam imagens faciais completas, a soluçã
 \caption*{\footnotesize Fonte: Elaborado pelo autor, 2026.}
 \end{figure}
 
-Cada registro de usuário contém o nome, o código da credencial e os \textit{embeddings} faciais agregados associados ao cadastro. Para cada usuário, são armazenados os \text{embeddings} agregados gerados durante o processo de cadastro, correspondentes às poses facial frontal, lateral esquerda e lateral direita.
+Cada registro de usuário contém o nome, o código da credencial e os \textit{embeddings} faciais agregados associados ao cadastro. Para cada usuário, são armazenados os \textit{embeddings} agregados gerados durante o processo de cadastro, correspondentes às poses facial frontal, lateral esquerda e lateral direita.
 
 
 Durante a execução da aplicação, os \textit{embeddings} cadastrados também são mantidos em memória, após o carregamento da base local. Esse mecanismo reduz a necessidade de consultas repetidas ao banco de dados durante o reconhecimento facial e contribui para o desempenho do sistema em tempo real.
@@ -251,11 +251,11 @@ Assim, o armazenamento das identidades combina persistência local, criptografia
 
 Após o cadastro das identidades, o sistema passa a operar em modo de reconhecimento facial contínuo. Os quadros capturados pela \textit{webcam} são processados em tempo real, permitindo a identificação automática dos usuários previamente cadastrados.
 
-Inicialmente, cada quadro é submetido ao detector facial \acs{MTCNN}, responsável pela localização da face e extração dos \textit{landmarks} faciais. Em seguida, são avaliados critérios relacionados à qualidade da captura, como enquadramento, tamanho da face e nitidez da imagem.
+Inicialmente, cada quadro é processado pelo módulo \textit{FaceAnalysis}. Essa etapa realiza a detecção facial, a localização dos \textit{landmarks} e o processamento necessário para extração das características faciais.
 
-Quando os critérios mínimos são atendidos, a face detectada é alinhada utilizando os \textit{landmarks} obtidos. A imagem resultante é então processada pelo modelo FaceNet (\textit{InceptionResnetV1}), responsável pela geração do \textit{embedding} facial.
+Em seguida, são avaliados critérios relacionados à qualidade da captura, como confiança da detecção, enquadramento, tamanho da face e nitidez da imagem. Quando os critérios mínimos são atendidos, o sistema utiliza o \textit{embedding} ArcFace normalizado gerado pelo InsightFace, com 512 dimensões, para representar a face detectada.
 
-O vetor gerado é comparado com os \textit{embeddings} armazenados na base local por meio da distância euclidiana entre as representações vetoriais. Quando existem \textit{embeddings} cadastrados para diferentes poses faciais, o sistema considera também a orientação facial associada a cada representação durante o processo de comparação.
+O vetor gerado é comparado com os \textit{embeddings} armazenados na base local por meio da distância cosseno entre as representações vetoriais normalizadas. A decisão de reconhecimento é realizada a partir de um limiar de similaridade previamente definido, de modo que apenas comparações abaixo desse valor sejam consideradas correspondências válidas. Quando existem \textit{embeddings} cadastrados para diferentes poses faciais, o sistema considera também a orientação facial associada a cada representação durante o processo de comparação.
 
 Os resultados produzidos em cada quadro são encaminhados para o mecanismo de votação temporal, responsável pela confirmação da identidade reconhecida. Esse processo é executado continuamente enquanto a aplicação permanece em funcionamento.
 
@@ -272,15 +272,15 @@ Essa estratégia reduz a influência de erros ocasionais decorrentes de variaç�
 
 \subsection{Digitação automática da credencial}
 
-Com o objetivo de permitir a utilização do reconhecimento facial em aplicações externas sem necessidade de integração direta com seus mecanismos internos, foi implementado um mecanismo de digitação automática da credencial associada ao usuário reconhecido.
+Com o objetivo de permitir o uso do reconhecimento facial em aplicações externas sem integração direta com seus mecanismos internos, foi implementada a digitação automática da credencial associada ao usuário reconhecido.
 
-A funcionalidade foi desenvolvida por meio da simulação de eventos de teclado no sistema operacional, permitindo que o código da credencial seja inserido automaticamente no campo selecionado pelo operador. O sistema disponibiliza modos de operação com confirmação prévia ou execução automática após a confirmação do reconhecimento facial.
+A funcionalidade simula eventos de teclado no sistema operacional, inserindo automaticamente o código da credencial no campo selecionado pelo operador. O sistema oferece modos com confirmação prévia ou execução automática após a confirmação do reconhecimento facial.
 
-Além da inserção da credencial, o mecanismo permite o envio opcional da tecla \textit{Enter}, possibilitando a submissão automática em aplicações que utilizam essa tecla para validação ou autenticação.
+Também é possível enviar a tecla \textit{Enter} após a digitação, permitindo a submissão automática em aplicações que utilizam essa tecla para validação ou autenticação.
 
-Para evitar repetições indevidas, foi implementado um controle de sessão baseado na identidade reconhecida. Dessa forma, a credencial é inserida apenas uma vez enquanto o usuário permanece continuamente identificado pela câmera. Caso o reconhecimento seja interrompido ou o sistema retorne ao estado de espera, o controle é reinicializado, permitindo uma nova inserção em futuras identificações.
+Para evitar repetições indevidas, foi implementado um controle de sessão baseado na identidade reconhecida. Assim, a credencial é inserida apenas uma vez enquanto o usuário permanece identificado pela câmera. Caso o reconhecimento seja interrompido ou o sistema retorne ao estado de espera, o controle é reinicializado.
 
-Essa abordagem possibilita a utilização do reconhecimento facial como mecanismo alternativo de autenticação em diferentes aplicações, preservando a independência em relação aos sistemas de destino.
+Essa abordagem permite utilizar o reconhecimento facial como mecanismo alternativo de autenticação em diferentes aplicações, preservando a independência em relação aos sistemas de destino.
 
 
 \subsection{Exclusão de usuários}
@@ -304,10 +304,10 @@ A interface também foi projetada para permitir redimensionamento da janela, pre
 
 \subsection{Aplicação desktop para Windows}
 
-Com o objetivo de facilitar a utilização do sistema por operadores sem necessidade de execução manual por linha de comando, o projeto foi estruturado como uma aplicação desktop para Windows. Dessa forma, o sistema pode ser iniciado por meio de uma interface clicável, mantendo o funcionamento local da câmera, do reconhecimento facial, do banco de dados e da digitação automática do código do cartão.
+Com o objetivo de facilitar a utilização do sistema por operadores sem necessidade de execução manual por linha de comando, o projeto foi estruturado como uma aplicação \textit{desktop} para Windows. Dessa forma, o sistema pode ser iniciado por meio de uma interface clicável, mantendo o funcionamento local da câmera, do reconhecimento facial, do banco de dados e da digitação automática do código do cartão.
 
 Essa adaptação contribui para tornar a solução mais próxima de um cenário real de uso, pois permite que o operador interaja com o sistema por meio da interface gráfica, sem depender diretamente do ambiente de desenvolvimento.
 
 \subsection{Procedimentos de teste do protótipo}
 
-Para validar o sistema, foram definidos testes funcionais divididos em sete grupos: cadastro de usuários, reconhecimento facial, qualidade da captura, exclusão de usuários, banco de dados e criptografia, digitação automática e interface gráfica. Os testes combinaram verificação manual da aplicação com simulações controladas utilizando banco de dados temporário e componentes falsos, evitando alterações nos dados reais e ações indesejadas, como a digitação automática no sistema operacional. Também foram analisados fluxos internos do programa, como validação do código do cartão, votação temporal, critérios de qualidade do frame, criptografia dos \textit{embeddings}, atualização do cache e liberação correta dos recursos da câmera.
+    Foram definidos testes funcionais divididos em sete grupos: cadastro de usuários, reconhecimento facial, qualidade da captura, exclusão de usuários, banco de dados e criptografia, digitação automática e interface gráfica. Os testes combinaram verificação manual da aplicação com simulações controladas utilizando banco de dados temporário e componentes falsos, evitando alterações nos dados reais e ações indesejadas no sistema operacional. Também foram analisados fluxos internos, como validação do código do cartão, votação temporal, critérios de qualidade do frame, criptografia dos \textit{embeddings} e liberação dos recursos da câmera. Para cada grupo, foram definidos cenários de sucesso e falha, contemplando entradas válidas e inválidas, ausência de face, baixa qualidade de captura, divergência de votos, exclusão de registros e persistência dos dados. Os testes foram considerados aprovados quando o sistema executou o fluxo esperado sem travamentos e sem reconhecimentos fora dos critérios estabelecidos.
