@@ -240,6 +240,41 @@
       \field{title}{Secure Anonymous RFID Authentication Protocols}
       \field{year}{2006}
     \endentry
+    \entry{conectas2025ninadahora}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=d9cdadc19681db44d38b92331764ad7d}{%
+           family={{da Hora}},
+           familyi={d\bibinitperiod},
+           given={Nina},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d9cdadc19681db44d38b92331764ad7d}
+      \strng{fullhash}{d9cdadc19681db44d38b92331764ad7d}
+      \strng{fullhashraw}{d9cdadc19681db44d38b92331764ad7d}
+      \strng{bibnamehash}{d9cdadc19681db44d38b92331764ad7d}
+      \strng{authorbibnamehash}{d9cdadc19681db44d38b92331764ad7d}
+      \strng{authornamehash}{d9cdadc19681db44d38b92331764ad7d}
+      \strng{authorfullhash}{d9cdadc19681db44d38b92331764ad7d}
+      \strng{authorfullhashraw}{d9cdadc19681db44d38b92331764ad7d}
+      \field{sortinit}{d}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Conectas Direitos Humanos}
+      \field{month}{10}
+      \field{note}{Entrevista concedida à Conectas. Acesso em: 22 jul. 2026}
+      \field{title}{Falta de regulação e desigualdade agravam falhas no reconhecimento facial no Brasil}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.conectas.org/noticias/falta-de-regulacao-e-desigualdade-agravam-falhas-no-reconhecimento-facial-no-brasil-diz-nina-da-hora/
+      \endverb
+      \verb{url}
+      \verb https://www.conectas.org/noticias/falta-de-regulacao-e-desigualdade-agravam-falhas-no-reconhecimento-facial-no-brasil-diz-nina-da-hora/
+      \endverb
+    \endentry
     \entry{insightface_repo}{misc}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=f79e34b93ee08f437e99ece28fea7433}{%

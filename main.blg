@@ -1,25 +1,25 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'main.blg'
-[189] biber-MSWIN64:342> INFO - === 
-[267] Biber.pm:421> INFO - Reading 'main.bcf'
-[401] Biber.pm:1002> INFO - Found 47 citekeys in bib section 0
-[415] Biber.pm:4487> INFO - Processing section 0
-[435] Biber.pm:4678> INFO - Looking for bibtex file 'Referencias.bib' for section 0
-[494] bibtex.pm:1713> INFO - LaTeX decoding ...
-[554] bibtex.pm:1519> INFO - Found BibTeX data source 'Referencias.bib'
-[854] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[854] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[854] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'pt-BR'
-[854] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
-[940] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[965] bbl.pm:779> INFO - Output to main.bbl
-[965] Biber.pm:132> WARN - ISBN '9780123695312' in entry 'theodoridis2009pattern' is invalid - run biber with '--validate_datamodel' for details.
-[965] Biber.pm:132> WARN - misc entry 'python_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring
-[965] Biber.pm:132> WARN - misc entry 'opencv_python_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring
-[965] Biber.pm:132> WARN - misc entry 'tkinter_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring
-[965] Biber.pm:132> WARN - misc entry 'numpy_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring
-[965] Biber.pm:132> WARN - misc entry 'sqlite_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring
-[965] Biber.pm:132> WARN - misc entry 'cryptography_fernet_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring
-[965] Biber.pm:132> WARN - misc entry 'pillow_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring
-[965] Biber.pm:132> WARN - misc entry 'pynput_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring
-[965] Biber.pm:134> INFO - WARNINGS: 9
+[86] biber:342> INFO - === Wed Jul 22, 2026, 13:45:22
+[108] Biber.pm:421> INFO - Reading 'main.bcf'
+[237] Biber.pm:1002> INFO - Found 48 citekeys in bib section 0
+[258] Biber.pm:4487> INFO - Processing section 0
+[269] Biber.pm:4678> INFO - Looking for bibtex file 'Referencias.bib' for section 0
+[273] bibtex.pm:1713> INFO - LaTeX decoding ...
+[331] bibtex.pm:1519> INFO - Found BibTeX data source 'Referencias.bib'
+[828] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[829] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[829] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'pt-BR'
+[830] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
+[898] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[944] bbl.pm:779> INFO - Output to main.bbl
+[944] Biber.pm:132> WARN - ISBN '9780123695312' in entry 'theodoridis2009pattern' is invalid - run biber with '--validate_datamodel' for details.
+[944] Biber.pm:132> WARN - misc entry 'python_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring
+[944] Biber.pm:132> WARN - misc entry 'opencv_python_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring
+[945] Biber.pm:132> WARN - misc entry 'tkinter_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring
+[945] Biber.pm:132> WARN - misc entry 'numpy_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring
+[945] Biber.pm:132> WARN - misc entry 'sqlite_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring
+[945] Biber.pm:132> WARN - misc entry 'cryptography_fernet_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring
+[945] Biber.pm:132> WARN - misc entry 'pillow_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring
+[945] Biber.pm:132> WARN - misc entry 'pynput_docs' (Referencias.bib): Invalid format '5 jun. 2026' of date field 'urldate' - ignoring
+[946] Biber.pm:134> INFO - WARNINGS: 9
