@@ -1,80 +1,80 @@
-# Reconhecimento Facial no Controle de Acesso do CEFET-MG
+# Facial Recognition in CEFET-MG Access Control
 
-![Capa do trabalho](./Imagens/Capa.png)
+![Cover of the work](./Imagens/Capa.png)
 
-Este repositório contém o material de Trabalho de Conclusão de Curso intitulado: "Reconhecimento Facial no Controle de Acesso do CEFET-MG: Modernização Tecnológica em Relação ao Cartão RFID".
+This repository contains the final project materials for the undergraduate thesis titled: "Facial Recognition in CEFET-MG Access Control: Technological Modernization Compared to RFID Cards".
 
-O projeto investiga a viabilidade de substituir cartões físicos de acesso, como RFID/NFC, por um sistema de autenticação baseado em reconhecimento facial, utilizando representações vetoriais de características faciais conhecidas como embeddings. A proposta combina validação experimental com o desenvolvimento de um protótipo funcional em tempo real para autenticação em ambientes institucionais.
+The project investigates the feasibility of replacing physical access cards, such as RFID/NFC, with a facial recognition-based authentication system using vector representations of facial features known as embeddings. The proposal combines experimental validation with the development of a functional real-time prototype for authentication in institutional environments.
 
-## Sobre o trabalho
+## About the project
 
-O estudo foi desenvolvido no contexto do CEFET-MG e analisa a possibilidade de modernizar o controle de acesso acadêmico e institucional, reduzindo dependência de dispositivos físicos e melhorando aspectos de segurança, praticidade e experiência do usuário.
+The study was conducted in the context of CEFET-MG and analyzes the possibility of modernizing academic and institutional access control, reducing dependence on physical devices and improving security, practicality, and user experience.
 
-Entre os principais objetivos do trabalho, destacam-se:
+The main objectives of the work include:
 
-- avaliar a viabilidade técnica do uso de reconhecimento facial como alternativa aos cartões RFID/NFC;
-- validar o uso de embeddings faciais e métricas de similaridade para diferenciação de identidades;
-- desenvolver um protótipo funcional capaz de realizar cadastro, gerenciamento e identificação em tempo real;
-- considerar aspectos éticos, de privacidade e conformidade com a LGPD;
-- analisar a robustez do sistema por meio de métricas como FAR e FRR.
+- evaluating the technical feasibility of using facial recognition as an alternative to RFID/NFC cards;
+- validating the use of facial embeddings and similarity metrics to distinguish identities;
+- developing a functional prototype capable of registration, management, and real-time identification;
+- considering ethical and privacy aspects in accordance with the LGPD;
+- analyzing system robustness using metrics such as FAR and FRR.
 
-## Tecnologias e abordagem
+## Technologies and approach
 
-A solução proposta utiliza técnicas de visão computacional e aprendizado profundo, com foco em modelos pré-treinados para extração de embeddings faciais. O protótipo implementa:
+The proposed solution uses computer vision and deep learning techniques, with a focus on pretrained models for extracting facial embeddings. The prototype implements:
 
-- detecção facial e alinhamento de landmarks;
-- geração de embeddings por meio do modelo ArcFace;
-- comparação entre vetores faciais por métricas de similaridade;
-- armazenamento local de dados biométricos;
-- cadastro multi-pose e avaliação de qualidade das capturas;
-- votação temporal para aumentar a robustez das decisões de autenticação;
-- interface gráfica para cadastro e identificação de usuários.
+- face detection and landmark alignment;
+- embedding generation using the ArcFace model;
+- comparison of face vectors using similarity metrics;
+- local storage of biometric data;
+- multi-pose enrollment and capture quality assessment;
+- temporal voting to improve recognition robustness;
+- a graphical interface for user registration and identification.
 
-## Estrutura do repositório
+## Repository structure
 
-- `main.tex` — arquivo principal do documento LaTeX;
-- `Dados.tex` — dados do trabalho, autor, orientador, instituição e pré-textuais;
-- `1-Pre-Textual/` — abstract, resumo e elementos pré-textuais;
-- `2-Textual/` — capítulos do trabalho;
-- `3-Pos-Textual/` — anexos, apêndices e glossário;
-- `Imagens/` — arquivos gráficos, capturas e capa do projeto;
-- `Pacotes/` — estilos e configurações do template LaTeX.
+- `main.tex` — main LaTeX document;
+- `Dados.tex` — project metadata, author, advisor, institution, and pre-textual elements;
+- `1-Pre-Textual/` — abstract, summary, and pre-textual sections;
+- `2-Textual/` — chapters of the thesis;
+- `3-Pos-Textual/` — appendices, annexes, and glossary;
+- `Imagens/` — project images, screenshots, and cover artwork;
+- `Pacotes/` — package and template configuration files.
 
-## Requisitos
+## Requirements
 
-Para compilar o documento localmente, é necessário ter instalado:
+To compile the document locally, the following tools are required:
 
-- LaTeX (preferencialmente com `texlive-full` ou equivalente);
-- `latexmk` para geração automática do PDF;
-- editor de preferência, como VS Code com a extensão LaTeX Workshop.
+- LaTeX, preferably with `texlive-full` or equivalent;
+- `latexmk` for automatic PDF generation;
+- a preferred editor such as VS Code with the LaTeX Workshop extension.
 
-## Execução local
+## Local execution
 
-No terminal, na pasta do projeto, execute:
+Open a terminal in the project folder and run:
 
 ```bash
 latexmk -pdf -output-directory=out main.tex
 ```
 
-Esse comando gera o PDF final do trabalho em uma pasta de saída separada para manter a raiz do projeto organizada.
+This command generates the final PDF in a separate output directory, keeping the project root clean.
 
-## Execução no Overleaf
+## Overleaf execution
 
-Também é possível importar o projeto para o Overleaf e compilar diretamente no ambiente online.
+It is also possible to upload the project to Overleaf and compile it directly in the online environment.
 
-## Autor
+## Author
 
 - Pablo Sousa da Silva
 
-## Orientação
+## Supervision
 
-- Orientador: Prof. Me. Diego Ascânio Santos
-- Coorientador(a): Prof. Dra. Thabatta Moreira Alves de Araújo
+- Advisor: Prof. Me. Diego Ascânio Santos
+- Co-advisor: Prof. Dra. Thabatta Moreira Alves de Araújo
 
-## Observações
+## Notes
 
-Este repositório reúne tanto a parte documental do TCC quanto os elementos necessários para a compilação da monografia acadêmica, incluindo a estrutura do texto, os capítulos e os materiais visuais do projeto.
+This repository contains both the academic document of the thesis and the materials required for compiling the monograph, including the text structure, chapters, and visual resources of the project.
 
 ---
 
-Se quiser, posso também criar uma versão mais enxuta do README para GitHub, ou uma versão mais formal, com resumo acadêmico em inglês e em português.
+If you want, I can also create a shorter GitHub-oriented version or a more formal academic version in English.
