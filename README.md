@@ -1,40 +1,80 @@
-# CEFET-MG Template
+# Reconhecimento Facial no Controle de Acesso do CEFET-MG
 
-![Cover](./Imagens/Capa.png)
+![Capa do trabalho](./Imagens/Capa.png)
 
-This repository contains the LaTeX template that follows the official standards of the [University Library](https://www.bu.cefetmg.br/wp-content-uploads-sites-181-2023-04-manual-de-normalizacao-do-cefet-mg-pdf/) of CEFET.
+Este repositório contém o material de Trabalho de Conclusão de Curso intitulado: "Reconhecimento Facial no Controle de Acesso do CEFET-MG: Modernização Tecnológica em Relação ao Cartão RFID".
 
-## Execution
+O projeto investiga a viabilidade de substituir cartões físicos de acesso, como RFID/NFC, por um sistema de autenticação baseado em reconhecimento facial, utilizando representações vetoriais de características faciais conhecidas como embeddings. A proposta combina validação experimental com o desenvolvimento de um protótipo funcional em tempo real para autenticação em ambientes institucionais.
 
-### Overleaf
-Simply duplicate the project using this [link](https://www.overleaf.com/read/dtjckhkgjtqk) or download the repository ZIP and upload it to Overleaf.
+## Sobre o trabalho
 
-### Local
-To use it locally, make sure you have the `texlive-full` package installed on your Debian-based system or the equivalent for other operating systems.
+O estudo foi desenvolvido no contexto do CEFET-MG e analisa a possibilidade de modernizar o controle de acesso acadêmico e institucional, reduzindo dependência de dispositivos físicos e melhorando aspectos de segurança, praticidade e experiência do usuário.
 
-#### Visual Studio Code
-It is recommended to install the [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension together with [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-portuguese-brazilian) for [Visual Studio Code](https://code.visualstudio.com/) with the following configuration.
+Entre os principais objetivos do trabalho, destacam-se:
 
-```
-"latex-workshop.latex.outDir": "./.out/",
-```
-This keeps the project root directory clean.
+- avaliar a viabilidade técnica do uso de reconhecimento facial como alternativa aos cartões RFID/NFC;
+- validar o uso de embeddings faciais e métricas de similaridade para diferenciação de identidades;
+- desenvolver um protótipo funcional capaz de realizar cadastro, gerenciamento e identificação em tempo real;
+- considerar aspectos éticos, de privacidade e conformidade com a LGPD;
+- analisar a robustez do sistema por meio de métricas como FAR e FRR.
 
-#### Manually
-Since this project was configured with [latexmk](https://ctan.org/pkg/latexmk?lang%253En) to maintain full compatibility with Overleaf, simply run the following command in the terminal:
+## Tecnologias e abordagem
 
-```
+A solução proposta utiliza técnicas de visão computacional e aprendizado profundo, com foco em modelos pré-treinados para extração de embeddings faciais. O protótipo implementa:
+
+- detecção facial e alinhamento de landmarks;
+- geração de embeddings por meio do modelo ArcFace;
+- comparação entre vetores faciais por métricas de similaridade;
+- armazenamento local de dados biométricos;
+- cadastro multi-pose e avaliação de qualidade das capturas;
+- votação temporal para aumentar a robustez das decisões de autenticação;
+- interface gráfica para cadastro e identificação de usuários.
+
+## Estrutura do repositório
+
+- `main.tex` — arquivo principal do documento LaTeX;
+- `Dados.tex` — dados do trabalho, autor, orientador, instituição e pré-textuais;
+- `1-Pre-Textual/` — abstract, resumo e elementos pré-textuais;
+- `2-Textual/` — capítulos do trabalho;
+- `3-Pos-Textual/` — anexos, apêndices e glossário;
+- `Imagens/` — arquivos gráficos, capturas e capa do projeto;
+- `Pacotes/` — estilos e configurações do template LaTeX.
+
+## Requisitos
+
+Para compilar o documento localmente, é necessário ter instalado:
+
+- LaTeX (preferencialmente com `texlive-full` ou equivalente);
+- `latexmk` para geração automática do PDF;
+- editor de preferência, como VS Code com a extensão LaTeX Workshop.
+
+## Execução local
+
+No terminal, na pasta do projeto, execute:
+
+```bash
 latexmk -pdf -output-directory=out main.tex
 ```
 
-## Customization
-This package can be customized by passing arguments as follows:
-```latex
-\usepackage[acronym, glossaries, index, labelref, debug]{CEFET}
-```
+Esse comando gera o PDF final do trabalho em uma pasta de saída separada para manter a raiz do projeto organizada.
 
-- **acronym:** adds support for the list of abbreviations and acronyms;
-- **glossaries:** adds support for the glossary;
-- **index:** adds support for the subject index;
-- **labelref:** `\ref{fig:1}` returns `Figure 1` instead of `1` for all references;
-- **debug:** enables rulers and frames to improve measurement visualization.
+## Execução no Overleaf
+
+Também é possível importar o projeto para o Overleaf e compilar diretamente no ambiente online.
+
+## Autor
+
+- Pablo Sousa da Silva
+
+## Orientação
+
+- Orientador: Prof. Me. Diego Ascânio Santos
+- Coorientador(a): Prof. Dra. Thabatta Moreira Alves de Araújo
+
+## Observações
+
+Este repositório reúne tanto a parte documental do TCC quanto os elementos necessários para a compilação da monografia acadêmica, incluindo a estrutura do texto, os capítulos e os materiais visuais do projeto.
+
+---
+
+Se quiser, posso também criar uma versão mais enxuta do README para GitHub, ou uma versão mais formal, com resumo acadêmico em inglês e em português.
