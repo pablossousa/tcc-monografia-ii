@@ -1,40 +1,40 @@
-# Template CEFET-MG
+# CEFET-MG Template
 
-![Capa](./Imagens/Capa.png)
+![Cover](./Imagens/Capa.png)
 
-Esse repositório consiste no template latex que atende as normas oficiais da [Biblioteca Universitária](https://www.bu.cefetmg.br/wp-content-uploads-sites-181-2023-04-manual-de-normalizacao-do-cefet-mg-pdf/) do CEFET.
+This repository contains the LaTeX template that follows the official standards of the [University Library](https://www.bu.cefetmg.br/wp-content-uploads-sites-181-2023-04-manual-de-normalizacao-do-cefet-mg-pdf/) of CEFET.
 
-## Execução
+## Execution
 
 ### Overleaf
-Basta duplicar o projeto neste [link](https://www.overleaf.com/read/dtjckhkgjtqk) ou baixar o zip do repositório e subir para o Overleaf.
+Simply duplicate the project using this [link](https://www.overleaf.com/read/dtjckhkgjtqk) or download the repository ZIP and upload it to Overleaf.
 
 ### Local
-Para utilizar localmente, verifique-se possui o pacote `texlive-full` instalado no seu sistema derivado do [Debian](https://www.debian.org/), ou o equivalente em outros sistemas operacionais. 
+To use it locally, make sure you have the `texlive-full` package installed on your Debian-based system or the equivalent for other operating systems.
 
 #### Visual Studio Code
-Recomenda-se a extensão [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) juntamente com a [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-portuguese-brazilian) para o [Visual Studio Code](https://code.visualstudio.com/) com a seguinte configuração.
+It is recommended to install the [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension together with [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-portuguese-brazilian) for [Visual Studio Code](https://code.visualstudio.com/) with the following configuration.
 
 ```
-"latex-workshop.latex.outDir": "./.out/", 
+"latex-workshop.latex.outDir": "./.out/",
 ```
-para não poluir o diretório raiz.
+This keeps the project root directory clean.
 
-#### Manualmente
-Como esse projeto foi configurado pelo [latexmk](https://ctan.org/pkg/latexmk?lang%253Den) de forma a manter a compatibilidade total com o Overleaf, basta executar o seguinte comando no terminal:
+#### Manually
+Since this project was configured with [latexmk](https://ctan.org/pkg/latexmk?lang%253En) to maintain full compatibility with Overleaf, simply run the following command in the terminal:
 
 ```
 latexmk -pdf -output-directory=out main.tex
 ```
 
-## Customização
-Esse pacote pode ser customizado passando argumentos da seguinte forma:
+## Customization
+This package can be customized by passing arguments as follows:
 ```latex
 \usepackage[acronym, glossaries, index, labelref, debug]{CEFET}
 ```
 
-- **acronym:** adiciona o suporte para lista de abreviaturas e siglas;
-- **glossaries:** adiciona o suporte para glossário;
-- **index:** adiciona o suporte para índice de assunto;
-- **labelref:** `\ref{fig:1}` retorna `Figura 1` em vez de `1` para todas as referências;
-- **debug:** Ativa as réguas e os quadros para melhorar a visualização das medidas.
+- **acronym:** adds support for the list of abbreviations and acronyms;
+- **glossaries:** adds support for the glossary;
+- **index:** adds support for the subject index;
+- **labelref:** `\ref{fig:1}` returns `Figure 1` instead of `1` for all references;
+- **debug:** enables rulers and frames to improve measurement visualization.
